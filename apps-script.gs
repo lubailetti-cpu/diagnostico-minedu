@@ -95,7 +95,6 @@ function writeHeaders(sheet) {
     'p8_plantillas',
     'p9_reproceso',
     'p10_rondas',
-    'p11_cambios',
     'p12_devolucion',
     'p13_razon_dev',
     'p14_aprobadores',
