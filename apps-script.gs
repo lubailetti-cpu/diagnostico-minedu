@@ -84,9 +84,8 @@ function writeHeaders(sheet) {
     'p15_vigencia',
     'p18_urgentes',
     'p19_plazo',
-    'p20_poi',
-    'p21_jornada',
-    // BCP — afirmaciones (7) escala semáforo 1-4
+    // BCP — afirmaciones (8) escala semáforo 1-4
+    'pbcp_bcp_poi_retrasos',
     'pbcp_bcp_carga_no_distrib',
     'pbcp_bcp_agotamiento',
     'pbcp_bcp_satis_calidad',
@@ -94,6 +93,7 @@ function writeHeaders(sheet) {
     'pbcp_bcp_info_personas',
     'pbcp_bcp_datos_dispersos',
     'pbcp_bcp_indicadores',
+    'p21_jornada',
     'p26_uso_tiempo',
     'p27_nivel_ia',
     'p28_usa_ia',

@@ -1081,15 +1081,18 @@
         <div class="err-msg">Seleccione una opción.</div>
       </div>
 
+    </div>
+
+    <!-- ========== SECCIÓN F: OPORTUNIDADES EN TU ÁREA ========== -->
+    <div class="section">
+      <div class="section-title"><span class="section-letter">F</span>Oportunidades en tu área</div>
+      <div class="section-desc">Indica qué tan presentes están estas situaciones en tu equipo (jefe directo, compañeros y personas a tu cargo).</div>
+
       <div class="question">
-        <label class="question-label"><span class="num">16.</span>En el último trimestre, ¿la carga documental y administrativa ha ocasionado retrasos en el cumplimiento de actividades planificadas en el POI de su unidad?<span class="required">*</span></label>
-        <div class="options">
-          <label class="option"><input type="radio" name="p20_poi" value="Nunca"><span class="option-text">Nunca</span></label>
-          <label class="option"><input type="radio" name="p20_poi" value="En pocas ocasiones"><span class="option-text">En pocas ocasiones</span></label>
-          <label class="option"><input type="radio" name="p20_poi" value="Con frecuencia"><span class="option-text">Con frecuencia</span></label>
-          <label class="option"><input type="radio" name="p20_poi" value="Muy frecuentemente"><span class="option-text">Muy frecuentemente</span></label>
-        </div>
-        <div class="err-msg">Seleccione una opción.</div>
+        <label class="question-label"><span class="num">16.</span>Valore qué tan identificado se siente con cada afirmación.<span class="required">*</span></label>
+        <div class="question-hint">Escala: 1 = nada / casi nunca · 4 = mucho / muy frecuente / totalmente</div>
+        <div id="pBcpLikert"></div>
+        <div class="err-msg">Complete todas las afirmaciones.</div>
       </div>
 
       <div class="question">
@@ -1102,22 +1105,9 @@
         </div>
         <div class="err-msg">Seleccione una opción.</div>
       </div>
-    </div>
-
-    <!-- ========== SECCIÓN F: OPORTUNIDADES EN TU ÁREA ========== -->
-    <div class="section">
-      <div class="section-title"><span class="section-letter">F</span>Oportunidades en tu área</div>
-      <div class="section-desc">Indica qué tan presentes están estas situaciones en tu equipo (jefe directo, compañeros y personas a tu cargo).</div>
 
       <div class="question">
-        <label class="question-label"><span class="num">18.</span>Valore qué tan identificado se siente con cada afirmación.<span class="required">*</span></label>
-        <div class="question-hint">Escala: 1 = nada / casi nunca · 4 = mucho / muy frecuente / totalmente</div>
-        <div id="pBcpLikert"></div>
-        <div class="err-msg">Complete todas las afirmaciones.</div>
-      </div>
-
-      <div class="question">
-        <label class="question-label"><span class="num">19.</span>Si pudiera recuperar tiempo de las tareas repetitivas y administrativas, ¿a qué actividades lo destinaría?<span class="required">*</span></label>
+        <label class="question-label"><span class="num">18.</span>Si pudiera recuperar tiempo de las tareas repetitivas y administrativas, ¿a qué actividades lo destinaría?<span class="required">*</span></label>
         <div class="question-hint">Seleccione como máximo 2 opciones.</div>
         <div class="options" data-max="2" data-group="p26_uso_tiempo">
           <label class="option"><input type="checkbox" name="p26_uso_tiempo" value="Análisis y diagnóstico de problemas"><span class="option-text">Análisis y diagnóstico de problemas</span></label>
@@ -1136,7 +1126,7 @@
       <div class="section-title"><span class="section-letter">G</span>Uso actual de inteligencia artificial</div>
 
       <div class="question">
-        <label class="question-label"><span class="num">20.</span>¿Cuál es tu nivel actual de uso de inteligencia artificial?<span class="required">*</span></label>
+        <label class="question-label"><span class="num">19.</span>¿Cuál es tu nivel actual de uso de inteligencia artificial?<span class="required">*</span></label>
         <div class="options">
           <label class="option"><input type="radio" name="p27_nivel_ia" value="No uso"><span class="option-text">No uso ninguna herramienta de IA</span></label>
           <label class="option"><input type="radio" name="p27_nivel_ia" value="1 - Básico"><span class="option-text">Nivel 1 - Básico: consultas y consejos puntuales</span></label>
@@ -1148,7 +1138,7 @@
       </div>
 
       <div class="question">
-        <label class="question-label"><span class="num">21.</span>¿Usas alguna herramienta de inteligencia artificial para facilitar tu trabajo?<span class="required">*</span></label>
+        <label class="question-label"><span class="num">20.</span>¿Usas alguna herramienta de inteligencia artificial para facilitar tu trabajo?<span class="required">*</span></label>
         <div class="options">
           <label class="option"><input type="radio" name="p28_usa_ia" value="Sí, con cuenta pagada por mí"><span class="option-text">Sí, con cuenta pagada por mí</span></label>
           <label class="option"><input type="radio" name="p28_usa_ia" value="Sí, con cuenta gratuita"><span class="option-text">Sí, con cuenta gratuita</span></label>
@@ -1158,7 +1148,7 @@
       </div>
 
       <div class="question question-tareas-ia">
-        <label class="question-label"><span class="num">22.</span>¿Para qué tareas de tu trabajo usas inteligencia artificial hoy?<span class="required">*</span></label>
+        <label class="question-label"><span class="num">21.</span>¿Para qué tareas de tu trabajo usas inteligencia artificial hoy?<span class="required">*</span></label>
         <div class="question-hint">Seleccione hasta 3 opciones. Si no usa IA, marque "No uso IA para mi trabajo".</div>
         <div class="options" data-max="3" data-group="p29_tareas_ia">
           <label class="option"><input type="checkbox" name="p29_tareas_ia" value="Redactar borradores de informes u oficios"><span class="option-text">Redactar borradores de informes u oficios</span></label>
@@ -1180,14 +1170,14 @@
       <div class="section-title"><span class="section-letter">H</span>Percepción sobre una plataforma de asistencia con IA</div>
 
       <div class="question">
-        <label class="question-label"><span class="num">23.</span>Valore su nivel de acuerdo con las siguientes afirmaciones sobre una posible plataforma de asistencia con IA para elaborar instrumentos de gestión.<span class="required">*</span></label>
+        <label class="question-label"><span class="num">22.</span>Valore su nivel de acuerdo con las siguientes afirmaciones sobre una posible plataforma de asistencia con IA para elaborar instrumentos de gestión.<span class="required">*</span></label>
         <div class="question-hint">Escala: 1 = Totalmente en desacuerdo · 5 = Totalmente de acuerdo</div>
         <div id="p30Likert"></div>
         <div class="err-msg">Complete todas las afirmaciones.</div>
       </div>
 
       <div class="question">
-        <label class="question-label"><span class="num">24.</span>¿Cuáles serían sus principales preocupaciones al usar una herramienta de IA para elaborar instrumentos de gestión?<span class="required">*</span></label>
+        <label class="question-label"><span class="num">23.</span>¿Cuáles serían sus principales preocupaciones al usar una herramienta de IA para elaborar instrumentos de gestión?<span class="required">*</span></label>
         <div class="question-hint">Seleccione como máximo 2 opciones.</div>
         <div class="options" data-max="2" data-group="p31_preocup">
           <label class="option"><input type="checkbox" name="p31_preocup" value="Errores técnicos o normativos en los borradores"><span class="option-text">Que los borradores generados tengan errores técnicos o normativos</span></label>
@@ -1203,7 +1193,7 @@
       </div>
 
       <div class="question">
-        <label class="question-label"><span class="num">25.</span>¿Qué condición considera indispensable para adoptar una herramienta de IA en su trabajo?<span class="required">*</span></label>
+        <label class="question-label"><span class="num">24.</span>¿Qué condición considera indispensable para adoptar una herramienta de IA en su trabajo?<span class="required">*</span></label>
         <div class="question-hint">Seleccione como máximo 2 opciones.</div>
         <div class="options" data-max="2" data-group="p33_condicion">
           <label class="option"><input type="checkbox" name="p33_condicion" value="Validada institucionalmente"><span class="option-text">Que esté validada y autorizada institucionalmente</span></label>
@@ -1223,7 +1213,7 @@
       <div class="section-desc">Cuéntanos en tus palabras lo que no entró en las preguntas anteriores.</div>
 
       <div class="question">
-        <label class="question-label" for="p35_repetitivas"><span class="num">26.</span>En sus propias palabras: ¿cuáles son las 2 o 3 tareas repetitivas que más tiempo le quitan en su trabajo semanal?<span class="required">*</span></label>
+        <label class="question-label" for="p35_repetitivas"><span class="num">25.</span>En sus propias palabras: ¿cuáles son las 2 o 3 tareas repetitivas que más tiempo le quitan en su trabajo semanal?<span class="required">*</span></label>
         <textarea class="textarea" id="p35_repetitivas" name="p35_repetitivas" rows="3" required></textarea>
         <div class="err-msg">Por favor escriba una respuesta.</div>
       </div>
@@ -1317,6 +1307,7 @@
 
   // ============== AFIRMACIONES BCP — oportunidades en el área (todas semáforo 1-4) ==============
   const BCP_AFIRMACIONES = [
+    { id: "bcp_poi_retrasos", txt: "La carga documental y administrativa ha ocasionado retrasos en el cumplimiento de actividades planificadas en el POI de mi unidad" },
     { id: "bcp_carga_no_distrib", txt: "La carga de trabajo de mi equipo NO está distribuida de la mejor manera" },
     { id: "bcp_agotamiento", txt: "Me siento agotado/a al terminar mi semana laboral" },
     { id: "bcp_satis_calidad", txt: "Me siento poco satisfecho/a con la calidad de los entregables que terminamos produciendo como área" },
