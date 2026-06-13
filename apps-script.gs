@@ -81,7 +81,9 @@ function writeHeaders(sheet) {
     'p3_rol',
     'p4_anios',
     'p5_frecuencia',
-    // P6: matriz volumen + tiempo por tipo de documento (9 tipos × 2 columnas)
+    // P6: distribución porcentual del tiempo semanal (4 categorías)
+    'p6_p6a', 'p6_p6b', 'p6_p6c', 'p6_p6d',
+    // P7: matriz volumen + tiempo por tipo de documento (9 tipos × 2 columnas)
     'p6_cant_0', 'p6_tiempo_0',
     'p6_cant_1', 'p6_tiempo_1',
     'p6_cant_2', 'p6_tiempo_2',
