@@ -87,33 +87,25 @@ function writeHeaders(sheet) {
     'p19_plazo',
     'p20_poi',
     'p21_jornada',
-    // BCP — afirmaciones (5)
+    // BCP — afirmaciones (7) escala semáforo 1-4
+    'pbcp_bcp_carga_no_distrib',
+    'pbcp_bcp_agotamiento',
+    'pbcp_bcp_satis_calidad',
     'pbcp_bcp_manual_auto',
     'pbcp_bcp_info_personas',
     'pbcp_bcp_datos_dispersos',
     'pbcp_bcp_indicadores',
-    'pbcp_bcp_carga_equitativa',
-    'p21_agotamiento',
-    'p22_satis_calidad',
     'p26_uso_tiempo',
     'p27_nivel_ia',
     'p28_usa_ia',
     'p29_tareas_ia',
-    // Likert plataforma (6)
+    // Likert plataforma (4)
     'p30_lik_reduce_tiempo',
     'p30_lik_calidad_borradores',
     'p30_lik_mas_tiempo_estrategico',
-    'p30_lik_confiaria',
-    'p30_lik_errores_haria_dejar',
     'p30_lik_piloto',
     'p31_preocup',
     'p33_condicion',
-    // Orden de impacto (5)
-    'p31_orden_fichas_de_proceso',
-    'p31_orden_diagramas_de_procesos',
-    'p31_orden_informes_tecnicos',
-    'p31_orden_presentaciones_institucionales',
-    'p31_orden_inventario_de_procesos',
     'p35_repetitivas'
   ];
   sheet.getRange(1, 1, 1, headers.length).setValues([headers]);
