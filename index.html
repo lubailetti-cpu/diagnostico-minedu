@@ -752,15 +752,16 @@
       <div class="section-title"><span class="section-letter">A</span>Perfil del servidor</div>
 
       <div class="question">
-        <label class="question-label"><span class="num">1.</span>¿A qué régimen laboral pertenece?<span class="required">*</span></label>
-        <div class="options">
-          <label class="option"><input type="radio" name="p1_regimen" value="D.L. N° 1057 - CAS"><span class="option-text">D. L. N° 1057 - CAS (Contrato Administrativo de Servicios)</span></label>
-          <label class="option"><input type="radio" name="p1_regimen" value="D.L. N° 276"><span class="option-text">D.L. N° 276 (Carrera Administrativa)</span></label>
-          <label class="option"><input type="radio" name="p1_regimen" value="D.L. N° 728"><span class="option-text">D. L. N° 728 (Régimen de la actividad privada)</span></label>
-          <label class="option"><input type="radio" name="p1_regimen" value="Ley N° 30057"><span class="option-text">Ley N° 30057 (Ley del Servicio Civil)</span></label>
-          <label class="option"><input type="radio" name="p1_regimen" value="Locador de servicios"><span class="option-text">Locador de servicios</span></label>
-          <label class="option"><input type="radio" name="p1_regimen" value="Practicante"><span class="option-text">Practicante</span></label>
-        </div>
+        <label class="question-label" for="p1_regimen"><span class="num">1.</span>¿A qué régimen laboral pertenece?<span class="required">*</span></label>
+        <select class="select" id="p1_regimen" name="p1_regimen" required>
+          <option value="">— Seleccionar —</option>
+          <option>D. L. N° 1057 - CAS (Contrato Administrativo de Servicios)</option>
+          <option>D.L. N° 276 (Carrera Administrativa)</option>
+          <option>D. L. N° 728 (Régimen de la actividad privada)</option>
+          <option>Ley N° 30057 (Ley del Servicio Civil)</option>
+          <option>Locador de servicios</option>
+          <option>Practicante</option>
+        </select>
         <div class="err-msg">Seleccione una opción.</div>
       </div>
 
@@ -858,25 +859,27 @@
       </div>
 
       <div class="question">
-        <label class="question-label"><span class="num">3.</span>¿Cuál es el rol principal que ejerce actualmente dentro de su U.O.?<span class="required">*</span></label>
-        <div class="options">
-          <label class="option"><input type="radio" name="p3_rol" value="Asesor/a"><span class="option-text">Asesor/a</span></label>
-          <label class="option"><input type="radio" name="p3_rol" value="Coordinador/a"><span class="option-text">Coordinador/a</span></label>
-          <label class="option"><input type="radio" name="p3_rol" value="Especialista técnico/a"><span class="option-text">Especialista técnico/a</span></label>
-          <label class="option"><input type="radio" name="p3_rol" value="Especialista administrativo/a"><span class="option-text">Especialista administrativo/a</span></label>
-          <label class="option"><input type="radio" name="p3_rol" value="Otras"><span class="option-text">Otras</span></label>
-        </div>
+        <label class="question-label" for="p3_rol"><span class="num">3.</span>¿Cuál es el rol principal que ejerce actualmente dentro de su U.O.?<span class="required">*</span></label>
+        <select class="select" id="p3_rol" name="p3_rol" required>
+          <option value="">— Seleccionar —</option>
+          <option>Asesor/a</option>
+          <option>Coordinador/a</option>
+          <option>Especialista técnico/a</option>
+          <option>Especialista administrativo/a</option>
+          <option>Otras</option>
+        </select>
         <div class="err-msg">Seleccione una opción.</div>
       </div>
 
       <div class="question">
-        <label class="question-label"><span class="num">4.</span>En general, ¿cuántos años de experiencia tiene en el sector público?<span class="required">*</span></label>
-        <div class="options">
-          <label class="option"><input type="radio" name="p4_anios" value="Menos de 2 años"><span class="option-text">Menos de 2 años</span></label>
-          <label class="option"><input type="radio" name="p4_anios" value="De 2 a 5 años"><span class="option-text">De 2 a 5 años</span></label>
-          <label class="option"><input type="radio" name="p4_anios" value="De 6 a 10 años"><span class="option-text">De 6 a 10 años</span></label>
-          <label class="option"><input type="radio" name="p4_anios" value="Más de 10 años"><span class="option-text">Más de 10 años</span></label>
-        </div>
+        <label class="question-label" for="p4_anios"><span class="num">4.</span>En general, ¿cuántos años de experiencia tiene en el sector público?<span class="required">*</span></label>
+        <select class="select" id="p4_anios" name="p4_anios" required>
+          <option value="">— Seleccionar —</option>
+          <option>Menos de 2 años</option>
+          <option>De 2 a 5 años</option>
+          <option>De 6 a 10 años</option>
+          <option>Más de 10 años</option>
+        </select>
         <div class="err-msg">Seleccione una opción.</div>
       </div>
     </div>
@@ -979,13 +982,13 @@
       <div class="section-title"><span class="section-letter">C</span>Reproceso y calidad</div>
 
       <div class="question">
-        <label class="question-label"><span class="num">9.</span>¿Con qué frecuencia tiene que realizar reprocesos en un mismo instrumento (revisiones por errores, cambios de criterio, ajustes de formato)?<span class="required">*</span></label>
+        <label class="question-label"><span class="num">9.</span>De cada 10 documentos que entrega, ¿cuántos le devuelven con observaciones?<span class="required">*</span></label>
         <div class="options">
-          <label class="option"><input type="radio" name="p9_reproceso" value="Muy frecuentemente"><span class="option-text">Muy frecuentemente (en casi todos los instrumentos)</span></label>
-          <label class="option"><input type="radio" name="p9_reproceso" value="Frecuentemente"><span class="option-text">Frecuentemente (en la mayoría de los casos)</span></label>
-          <label class="option"><input type="radio" name="p9_reproceso" value="A veces"><span class="option-text">A veces (en algunos casos)</span></label>
-          <label class="option"><input type="radio" name="p9_reproceso" value="Raramente"><span class="option-text">Raramente</span></label>
-          <label class="option"><input type="radio" name="p9_reproceso" value="Nunca"><span class="option-text">Nunca</span></label>
+          <label class="option"><input type="radio" name="p12_devolucion" value="0-1"><span class="option-text">Casi ninguno (0-1)</span></label>
+          <label class="option"><input type="radio" name="p12_devolucion" value="2-3"><span class="option-text">Pocos (2-3)</span></label>
+          <label class="option"><input type="radio" name="p12_devolucion" value="4-6"><span class="option-text">La mitad (4-6)</span></label>
+          <label class="option"><input type="radio" name="p12_devolucion" value="7-8"><span class="option-text">Bastantes (7-8)</span></label>
+          <label class="option"><input type="radio" name="p12_devolucion" value="9-10"><span class="option-text">Casi todos (9-10)</span></label>
         </div>
         <div class="err-msg">Seleccione una opción.</div>
       </div>
@@ -1002,19 +1005,7 @@
       </div>
 
       <div class="question">
-        <label class="question-label"><span class="num">11.</span>De cada 10 documentos que entrega, ¿cuántos le devuelven con observaciones?<span class="required">*</span></label>
-        <div class="options">
-          <label class="option"><input type="radio" name="p12_devolucion" value="0-1"><span class="option-text">Casi ninguno (0-1)</span></label>
-          <label class="option"><input type="radio" name="p12_devolucion" value="2-3"><span class="option-text">Pocos (2-3)</span></label>
-          <label class="option"><input type="radio" name="p12_devolucion" value="4-6"><span class="option-text">La mitad (4-6)</span></label>
-          <label class="option"><input type="radio" name="p12_devolucion" value="7-8"><span class="option-text">Bastantes (7-8)</span></label>
-          <label class="option"><input type="radio" name="p12_devolucion" value="9-10"><span class="option-text">Casi todos (9-10)</span></label>
-        </div>
-        <div class="err-msg">Seleccione una opción.</div>
-      </div>
-
-      <div class="question">
-        <label class="question-label"><span class="num">12.</span>Cuando le devuelven un documento, ¿por qué suele ser?<span class="required">*</span></label>
+        <label class="question-label"><span class="num">11.</span>Cuando le devuelven un documento, ¿por qué suele ser?<span class="required">*</span></label>
         <div class="question-hint">Seleccione como máximo 2 opciones.</div>
         <div class="options" data-max="2" data-group="p13_razon_dev">
           <label class="option"><input type="checkbox" name="p13_razon_dev" value="Errores de forma (formato, redacción, ortografía, citas)"><span class="option-text">Errores de forma (formato, redacción, ortografía, citas)</span></label>
@@ -1034,7 +1025,7 @@
       <div class="section-title"><span class="section-letter">D</span>Búsqueda de información</div>
 
       <div class="question">
-        <label class="question-label"><span class="num">13.</span>En promedio, ¿cuánto tiempo dedica a buscar normativa, guías metodológicas o modelos de referencia ANTES de empezar a elaborar un instrumento?<span class="required">*</span></label>
+        <label class="question-label"><span class="num">12.</span>En promedio, ¿cuánto tiempo dedica a buscar normativa, guías metodológicas o modelos de referencia ANTES de empezar a elaborar un instrumento?<span class="required">*</span></label>
         <div class="options">
           <label class="option"><input type="radio" name="p15_busqueda_norma" value="Menos de 30 minutos"><span class="option-text">Menos de 30 minutos</span></label>
           <label class="option"><input type="radio" name="p15_busqueda_norma" value="Entre 30 minutos y 1 hora"><span class="option-text">Entre 30 minutos y 1 hora</span></label>
@@ -1046,7 +1037,7 @@
       </div>
 
       <div class="question">
-        <label class="question-label"><span class="num">14.</span>¿Qué tan trabajoso le resulta asegurarse de que la normativa, guía o modelo que está usando es la versión vigente?<span class="required">*</span></label>
+        <label class="question-label"><span class="num">13.</span>¿Qué tan trabajoso le resulta asegurarse de que la normativa, guía o modelo que está usando es la versión vigente?<span class="required">*</span></label>
         <div class="escala semaforo" data-escala-name="p15_vigencia">
           <div class="escala-row cols-4">
             <label class="escala-btn" data-val="1"><input type="radio" name="p15_vigencia" value="1">1</label>
@@ -1068,7 +1059,7 @@
       <div class="section-title"><span class="section-letter">E</span>Ritmo y demandas externas</div>
 
       <div class="question">
-        <label class="question-label"><span class="num">15.</span>¿Con qué frecuencia recibe solicitudes urgentes de entidades externas (Congreso, Contraloría, PCM, Defensoría, GOREs u otras) que interrumpen su planificación semanal?<span class="required">*</span></label>
+        <label class="question-label"><span class="num">14.</span>¿Con qué frecuencia recibe solicitudes urgentes de entidades externas (Congreso, Contraloría, PCM, Defensoría, GOREs u otras) que interrumpen su planificación semanal?<span class="required">*</span></label>
         <div class="options">
           <label class="option"><input type="radio" name="p18_urgentes" value="Nunca"><span class="option-text">Nunca</span></label>
           <label class="option"><input type="radio" name="p18_urgentes" value="1 a 2 veces por semana"><span class="option-text">1 a 2 veces por semana</span></label>
@@ -1079,7 +1070,7 @@
       </div>
 
       <div class="question">
-        <label class="question-label"><span class="num">16.</span>Cuando recibe estas solicitudes externas, ¿cuál es el plazo habitual que le otorgan para responder?<span class="required">*</span></label>
+        <label class="question-label"><span class="num">15.</span>Cuando recibe estas solicitudes externas, ¿cuál es el plazo habitual que le otorgan para responder?<span class="required">*</span></label>
         <div class="options">
           <label class="option"><input type="radio" name="p19_plazo" value="Más de 3 días"><span class="option-text">Más de 3 días</span></label>
           <label class="option"><input type="radio" name="p19_plazo" value="Entre 1 y 3 días"><span class="option-text">Entre 1 y 3 días</span></label>
@@ -1091,7 +1082,7 @@
       </div>
 
       <div class="question">
-        <label class="question-label"><span class="num">17.</span>En el último trimestre, ¿la carga documental y administrativa ha ocasionado retrasos en el cumplimiento de actividades planificadas en el POI de su unidad?<span class="required">*</span></label>
+        <label class="question-label"><span class="num">16.</span>En el último trimestre, ¿la carga documental y administrativa ha ocasionado retrasos en el cumplimiento de actividades planificadas en el POI de su unidad?<span class="required">*</span></label>
         <div class="options">
           <label class="option"><input type="radio" name="p20_poi" value="Nunca"><span class="option-text">Nunca</span></label>
           <label class="option"><input type="radio" name="p20_poi" value="En pocas ocasiones"><span class="option-text">En pocas ocasiones</span></label>
@@ -1102,7 +1093,7 @@
       </div>
 
       <div class="question">
-        <label class="question-label"><span class="num">18.</span>En el último mes, ¿cuántas veces ha tenido que extender su jornada laboral para cumplir con entregables documentales o administrativos?<span class="required">*</span></label>
+        <label class="question-label"><span class="num">17.</span>En el último mes, ¿cuántas veces ha tenido que extender su jornada laboral para cumplir con entregables documentales o administrativos?<span class="required">*</span></label>
         <div class="options">
           <label class="option"><input type="radio" name="p21_jornada" value="Nunca"><span class="option-text">Nunca</span></label>
           <label class="option"><input type="radio" name="p21_jornada" value="1 a 2 veces"><span class="option-text">1 a 2 veces</span></label>
@@ -1119,14 +1110,14 @@
       <div class="section-desc">Indica qué tan presentes están estas situaciones en tu equipo (jefe directo, compañeros y personas a tu cargo).</div>
 
       <div class="question">
-        <label class="question-label"><span class="num">19.</span>Valore qué tan identificado se siente con cada afirmación.<span class="required">*</span></label>
+        <label class="question-label"><span class="num">18.</span>Valore qué tan identificado se siente con cada afirmación.<span class="required">*</span></label>
         <div class="question-hint">Escala: 1 = nada / casi nunca · 4 = mucho / muy frecuente / totalmente</div>
         <div id="pBcpLikert"></div>
         <div class="err-msg">Complete todas las afirmaciones.</div>
       </div>
 
       <div class="question">
-        <label class="question-label"><span class="num">20.</span>Si pudiera recuperar tiempo de las tareas repetitivas y administrativas, ¿a qué actividades lo destinaría?<span class="required">*</span></label>
+        <label class="question-label"><span class="num">19.</span>Si pudiera recuperar tiempo de las tareas repetitivas y administrativas, ¿a qué actividades lo destinaría?<span class="required">*</span></label>
         <div class="question-hint">Seleccione como máximo 2 opciones.</div>
         <div class="options" data-max="2" data-group="p26_uso_tiempo">
           <label class="option"><input type="checkbox" name="p26_uso_tiempo" value="Análisis y diagnóstico de problemas"><span class="option-text">Análisis y diagnóstico de problemas</span></label>
@@ -1145,7 +1136,7 @@
       <div class="section-title"><span class="section-letter">G</span>Uso actual de inteligencia artificial</div>
 
       <div class="question">
-        <label class="question-label"><span class="num">21.</span>¿Cuál es tu nivel actual de uso de inteligencia artificial?<span class="required">*</span></label>
+        <label class="question-label"><span class="num">20.</span>¿Cuál es tu nivel actual de uso de inteligencia artificial?<span class="required">*</span></label>
         <div class="options">
           <label class="option"><input type="radio" name="p27_nivel_ia" value="No uso"><span class="option-text">No uso ninguna herramienta de IA</span></label>
           <label class="option"><input type="radio" name="p27_nivel_ia" value="1 - Básico"><span class="option-text">Nivel 1 - Básico: consultas y consejos puntuales</span></label>
@@ -1157,7 +1148,7 @@
       </div>
 
       <div class="question">
-        <label class="question-label"><span class="num">22.</span>¿Usas alguna herramienta de inteligencia artificial para facilitar tu trabajo?<span class="required">*</span></label>
+        <label class="question-label"><span class="num">21.</span>¿Usas alguna herramienta de inteligencia artificial para facilitar tu trabajo?<span class="required">*</span></label>
         <div class="options">
           <label class="option"><input type="radio" name="p28_usa_ia" value="Sí, con cuenta pagada por mí"><span class="option-text">Sí, con cuenta pagada por mí</span></label>
           <label class="option"><input type="radio" name="p28_usa_ia" value="Sí, con cuenta gratuita"><span class="option-text">Sí, con cuenta gratuita</span></label>
@@ -1167,7 +1158,7 @@
       </div>
 
       <div class="question question-tareas-ia">
-        <label class="question-label"><span class="num">23.</span>¿Para qué tareas de tu trabajo usas inteligencia artificial hoy?<span class="required">*</span></label>
+        <label class="question-label"><span class="num">22.</span>¿Para qué tareas de tu trabajo usas inteligencia artificial hoy?<span class="required">*</span></label>
         <div class="question-hint">Seleccione hasta 3 opciones. Si no usa IA, marque "No uso IA para mi trabajo".</div>
         <div class="options" data-max="3" data-group="p29_tareas_ia">
           <label class="option"><input type="checkbox" name="p29_tareas_ia" value="Redactar borradores de informes u oficios"><span class="option-text">Redactar borradores de informes u oficios</span></label>
@@ -1189,14 +1180,14 @@
       <div class="section-title"><span class="section-letter">H</span>Percepción sobre una plataforma de asistencia con IA</div>
 
       <div class="question">
-        <label class="question-label"><span class="num">24.</span>Valore su nivel de acuerdo con las siguientes afirmaciones sobre una posible plataforma de asistencia con IA para elaborar instrumentos de gestión.<span class="required">*</span></label>
+        <label class="question-label"><span class="num">23.</span>Valore su nivel de acuerdo con las siguientes afirmaciones sobre una posible plataforma de asistencia con IA para elaborar instrumentos de gestión.<span class="required">*</span></label>
         <div class="question-hint">Escala: 1 = Totalmente en desacuerdo · 5 = Totalmente de acuerdo</div>
         <div id="p30Likert"></div>
         <div class="err-msg">Complete todas las afirmaciones.</div>
       </div>
 
       <div class="question">
-        <label class="question-label"><span class="num">25.</span>¿Cuáles serían sus principales preocupaciones al usar una herramienta de IA para elaborar instrumentos de gestión?<span class="required">*</span></label>
+        <label class="question-label"><span class="num">24.</span>¿Cuáles serían sus principales preocupaciones al usar una herramienta de IA para elaborar instrumentos de gestión?<span class="required">*</span></label>
         <div class="question-hint">Seleccione como máximo 2 opciones.</div>
         <div class="options" data-max="2" data-group="p31_preocup">
           <label class="option"><input type="checkbox" name="p31_preocup" value="Errores técnicos o normativos en los borradores"><span class="option-text">Que los borradores generados tengan errores técnicos o normativos</span></label>
@@ -1212,7 +1203,7 @@
       </div>
 
       <div class="question">
-        <label class="question-label"><span class="num">26.</span>¿Qué condición considera indispensable para adoptar una herramienta de IA en su trabajo?<span class="required">*</span></label>
+        <label class="question-label"><span class="num">25.</span>¿Qué condición considera indispensable para adoptar una herramienta de IA en su trabajo?<span class="required">*</span></label>
         <div class="question-hint">Seleccione como máximo 2 opciones.</div>
         <div class="options" data-max="2" data-group="p33_condicion">
           <label class="option"><input type="checkbox" name="p33_condicion" value="Validada institucionalmente"><span class="option-text">Que esté validada y autorizada institucionalmente</span></label>
@@ -1232,7 +1223,7 @@
       <div class="section-desc">Cuéntanos en tus palabras lo que no entró en las preguntas anteriores.</div>
 
       <div class="question">
-        <label class="question-label" for="p35_repetitivas"><span class="num">27.</span>En sus propias palabras: ¿cuáles son las 2 o 3 tareas repetitivas que más tiempo le quitan en su trabajo semanal?<span class="required">*</span></label>
+        <label class="question-label" for="p35_repetitivas"><span class="num">26.</span>En sus propias palabras: ¿cuáles son las 2 o 3 tareas repetitivas que más tiempo le quitan en su trabajo semanal?<span class="required">*</span></label>
         <textarea class="textarea" id="p35_repetitivas" name="p35_repetitivas" rows="3" required></textarea>
         <div class="err-msg">Por favor escriba una respuesta.</div>
       </div>
