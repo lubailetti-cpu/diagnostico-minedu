@@ -1014,20 +1014,7 @@
       </div>
 
       <div class="question">
-        <label class="question-label"><span class="num">24.</span>¿Qué tan satisfecho/a estás con cómo aprovechas tu tiempo profesional?<span class="required">*</span></label>
-        <div class="question-hint">1 = muy insatisfecho/a · 5 = muy satisfecho/a</div>
-        <div class="options" style="flex-direction: row; gap: 6px;">
-          <label class="option" style="flex: 1; text-align: center; flex-direction: column; align-items: center; padding: 14px 4px;"><input type="radio" name="p24_satis_tiempo" value="1" style="margin: 0 0 6px;"><span class="option-text">1</span></label>
-          <label class="option" style="flex: 1; text-align: center; flex-direction: column; align-items: center; padding: 14px 4px;"><input type="radio" name="p24_satis_tiempo" value="2" style="margin: 0 0 6px;"><span class="option-text">2</span></label>
-          <label class="option" style="flex: 1; text-align: center; flex-direction: column; align-items: center; padding: 14px 4px;"><input type="radio" name="p24_satis_tiempo" value="3" style="margin: 0 0 6px;"><span class="option-text">3</span></label>
-          <label class="option" style="flex: 1; text-align: center; flex-direction: column; align-items: center; padding: 14px 4px;"><input type="radio" name="p24_satis_tiempo" value="4" style="margin: 0 0 6px;"><span class="option-text">4</span></label>
-          <label class="option" style="flex: 1; text-align: center; flex-direction: column; align-items: center; padding: 14px 4px;"><input type="radio" name="p24_satis_tiempo" value="5" style="margin: 0 0 6px;"><span class="option-text">5</span></label>
-        </div>
-        <div class="err-msg">Seleccione una opción.</div>
-      </div>
-
-      <div class="question">
-        <label class="question-label"><span class="num">25.</span>¿Considera que la carga de trabajo en su equipo está distribuida de manera equitativa?<span class="required">*</span></label>
+        <label class="question-label"><span class="num">24.</span>¿Considera que la carga de trabajo en su equipo está distribuida de manera equitativa?<span class="required">*</span></label>
         <div class="options">
           <label class="option"><input type="radio" name="p25_carga_equitativa" value="Sí, está bien distribuida"><span class="option-text">Sí, está bien distribuida</span></label>
           <label class="option"><input type="radio" name="p25_carga_equitativa" value="No, algunos absorben la carga de otros"><span class="option-text">No, algunos miembros del equipo absorben la carga de otros</span></label>
@@ -1038,7 +1025,7 @@
       </div>
 
       <div class="question">
-        <label class="question-label"><span class="num">26.</span>Si pudiera recuperar tiempo de las tareas repetitivas y administrativas, ¿a qué actividades lo destinaría?<span class="required">*</span></label>
+        <label class="question-label"><span class="num">25.</span>Si pudiera recuperar tiempo de las tareas repetitivas y administrativas, ¿a qué actividades lo destinaría?<span class="required">*</span></label>
         <div class="question-hint">Seleccione como máximo 2 opciones.</div>
         <div class="options" data-max="2" data-group="p26_uso_tiempo">
           <label class="option"><input type="checkbox" name="p26_uso_tiempo" value="Análisis y diagnóstico de problemas"><span class="option-text">Análisis y diagnóstico de problemas</span></label>
@@ -1052,9 +1039,22 @@
       </div>
     </div>
 
-    <!-- ========== SECCIÓN G: USO ACTUAL DE IA ========== -->
+    <!-- ========== SECCIÓN G: OPORTUNIDADES EN TU ÁREA ========== -->
     <div class="section">
-      <div class="section-title"><span class="section-letter">G</span>Uso actual de inteligencia artificial</div>
+      <div class="section-title"><span class="section-letter">G</span>Oportunidades en tu área</div>
+      <div class="section-desc">Indica qué tan presentes están estas situaciones en tu equipo (jefe directo, compañeros y personas a tu cargo).</div>
+
+      <div class="question">
+        <label class="question-label"><span class="num">26.</span>Valore qué tan identificado se siente con cada afirmación.<span class="required">*</span></label>
+        <div class="question-hint">Escala: 1 = nada / casi nunca · 4 = mucho / muy frecuente / totalmente</div>
+        <div id="pBcpLikert"></div>
+        <div class="err-msg">Complete todas las afirmaciones.</div>
+      </div>
+    </div>
+
+    <!-- ========== SECCIÓN H: USO ACTUAL DE IA ========== -->
+    <div class="section">
+      <div class="section-title"><span class="section-letter">H</span>Uso actual de inteligencia artificial</div>
 
       <div class="question">
         <label class="question-label"><span class="num">27.</span>¿Cuál es tu nivel actual de uso de inteligencia artificial?<span class="required">*</span></label>
@@ -1098,7 +1098,7 @@
 
     <!-- ========== SECCIÓN H: PERCEPCIÓN MODERNIZA ========== -->
     <div class="section">
-      <div class="section-title"><span class="section-letter">H</span>Percepción sobre una plataforma de asistencia con IA</div>
+      <div class="section-title"><span class="section-letter">I</span>Percepción sobre una plataforma de asistencia con IA</div>
 
       <div class="question">
         <label class="question-label"><span class="num">30.</span>Valore su nivel de acuerdo con las siguientes afirmaciones sobre una posible plataforma de asistencia con IA para elaborar instrumentos de gestión.<span class="required">*</span></label>
@@ -1124,22 +1124,7 @@
       </div>
 
       <div class="question">
-        <label class="question-label"><span class="num">32.</span>¿Para cuáles de estos documentos o productos le sería MÁS útil una herramienta de asistencia con IA?<span class="required">*</span></label>
-        <div class="options" data-group="p32_docs_utiles">
-          <label class="option"><input type="checkbox" name="p32_docs_utiles" value="Informes técnicos"><span class="option-text">Informes técnicos</span></label>
-          <label class="option"><input type="checkbox" name="p32_docs_utiles" value="Presentaciones institucionales"><span class="option-text">Presentaciones institucionales</span></label>
-          <label class="option"><input type="checkbox" name="p32_docs_utiles" value="Ayudas memoria"><span class="option-text">Ayudas memoria o resúmenes de documentos técnicos extensos</span></label>
-          <label class="option"><input type="checkbox" name="p32_docs_utiles" value="Guías metodológicas"><span class="option-text">Guías metodológicas</span></label>
-          <label class="option"><input type="checkbox" name="p32_docs_utiles" value="Documentos normativos"><span class="option-text">Documentos normativos (lineamientos, normas técnicas, directivas, manuales)</span></label>
-          <label class="option"><input type="checkbox" name="p32_docs_utiles" value="Fichas de procesos y procedimientos"><span class="option-text">Fichas de procesos y procedimientos</span></label>
-          <label class="option"><input type="checkbox" name="p32_docs_utiles" value="Diagramas de procesos"><span class="option-text">Diagramas de procesos (notación BPMN u otros)</span></label>
-          <label class="option"><input type="checkbox" name="p32_docs_utiles" value="Otras"><span class="option-text">Otras</span></label>
-        </div>
-        <div class="err-msg">Seleccione al menos una opción.</div>
-      </div>
-
-      <div class="question">
-        <label class="question-label"><span class="num">33.</span>¿Qué condición considera indispensable para adoptar una herramienta de IA en su trabajo?<span class="required">*</span></label>
+        <label class="question-label"><span class="num">32.</span>¿Qué condición considera indispensable para adoptar una herramienta de IA en su trabajo?<span class="required">*</span></label>
         <div class="question-hint">Seleccione como máximo 2 opciones.</div>
         <div class="options" data-max="2" data-group="p33_condicion">
           <label class="option"><input type="checkbox" name="p33_condicion" value="Validada institucionalmente"><span class="option-text">Que esté validada y autorizada institucionalmente</span></label>
@@ -1155,11 +1140,11 @@
 
     <!-- ========== SECCIÓN I: HIPÓTESIS DE IMPACTO ========== -->
     <div class="section">
-      <div class="section-title"><span class="section-letter">I</span>Tu estimación de impacto</div>
+      <div class="section-title"><span class="section-letter">J</span>Tu estimación de impacto</div>
       <div class="section-desc">Imagina por un momento que tienes una herramienta de IA que te genera borradores automáticos de los siguientes documentos.</div>
 
       <div class="question">
-        <label class="question-label"><span class="num">34.</span>¿Cuántas horas a la semana estimas que te ahorraría en cada tipo de documento?<span class="required">*</span></label>
+        <label class="question-label"><span class="num">33.</span>¿Cuántas horas a la semana estimas que te ahorraría en cada tipo de documento?<span class="required">*</span></label>
         <div class="matrix-wrap" id="p34Matrix"></div>
         <div class="err-msg">Complete todas las filas.</div>
       </div>
@@ -1167,25 +1152,15 @@
 
     <!-- ========== SECCIÓN J: PREGUNTAS ABIERTAS ========== -->
     <div class="section">
-      <div class="section-title"><span class="section-letter">J</span>Tu voz cuenta</div>
+      <div class="section-title"><span class="section-letter">K</span>Tu voz cuenta</div>
       <div class="section-desc">Cuéntanos en tus palabras lo que no entró en las preguntas anteriores.</div>
 
       <div class="question">
-        <label class="question-label" for="p35_repetitivas"><span class="num">35.</span>En sus propias palabras: ¿cuáles son las 2 o 3 tareas repetitivas que más tiempo le quitan en su trabajo semanal?<span class="required">*</span></label>
+        <label class="question-label" for="p35_repetitivas"><span class="num">34.</span>En sus propias palabras: ¿cuáles son las 2 o 3 tareas repetitivas que más tiempo le quitan en su trabajo semanal?<span class="required">*</span></label>
         <textarea class="textarea" id="p35_repetitivas" name="p35_repetitivas" rows="3" required></textarea>
         <div class="err-msg">Por favor escriba una respuesta.</div>
       </div>
 
-      <div class="question">
-        <label class="question-label" for="p36_funcionalidad"><span class="num">36.</span>¿Qué funcionalidad le parecería más útil en una plataforma de asistencia con IA para su trabajo?<span class="required">*</span></label>
-        <textarea class="textarea" id="p36_funcionalidad" name="p36_funcionalidad" rows="3" required></textarea>
-        <div class="err-msg">Por favor escriba una respuesta.</div>
-      </div>
-
-      <div class="question">
-        <label class="question-label" for="p37_ojala"><span class="num">37.</span>¿Cuál fue la última vez que pensaste "ojalá esto se hiciera solo"? Cuéntenos brevemente la tarea.</label>
-        <textarea class="textarea" id="p37_ojala" name="p37_ojala" rows="3"></textarea>
-      </div>
     </div>
 
     <!-- ========== SUBMIT ========== -->
@@ -1275,6 +1250,14 @@
     { id: "lik_piloto", txt: "Me gustaría participar en una prueba piloto de esta herramienta" }
   ];
 
+  // ============== AFIRMACIONES BCP — oportunidades en el área ==============
+  const BCP_AFIRMACIONES = [
+    { id: "bcp_manual_auto", txt: "Hay mucho trabajo manual repetitivo en mi área que podría automatizarse" },
+    { id: "bcp_info_personas", txt: "Mucha información importante de mi área está en la cabeza de pocas personas" },
+    { id: "bcp_datos_dispersos", txt: "Tenemos datos importantes pero dispersos en distintos formatos que nos cuesta consolidar" },
+    { id: "bcp_indicadores", txt: "Nos cuesta transformar la información disponible en indicadores para tomar decisiones" }
+  ];
+
   // ============== BUILD CARDS P6 (volumen + tiempo) ==============
   function buildMatrixP6() {
     let html = '<div class="doc-cards">';
@@ -1299,6 +1282,28 @@
     });
     html += '</div>';
     document.getElementById('p6Matrix').innerHTML = html;
+  }
+
+  // ============== BUILD LIKERT BCP (4 niveles) ==============
+  function buildLikertBcp() {
+    const NIVELES = [
+      { n: 1, lbl: 'Nada / casi nunca' },
+      { n: 2, lbl: 'Poco' },
+      { n: 3, lbl: 'Bastante' },
+      { n: 4, lbl: 'Mucho / muy frecuente' }
+    ];
+    let html = '<div class="doc-cards">';
+    BCP_AFIRMACIONES.forEach(af => {
+      html += '<div class="doc-card">';
+      html += '<div class="doc-card-title">' + af.txt + '</div>';
+      html += '<div class="pill-group">';
+      NIVELES.forEach(lv => {
+        html += '<label class="pill" title="' + lv.lbl + '"><input type="radio" name="pbcp_' + af.id + '" value="' + lv.n + '">' + lv.n + ' · ' + lv.lbl + '</label>';
+      });
+      html += '</div></div>';
+    });
+    html += '</div>';
+    document.getElementById('pBcpLikert').innerHTML = html;
   }
 
   // ============== BUILD LIKERT P29 ==============
@@ -1459,8 +1464,8 @@
       if (!checked) {
         const input = form.querySelector('[name="' + name + '"]');
         const q = input.closest('.question');
-        // skip P6 / P34 matrices (validated as group below)
-        if (name.startsWith('p6_') || name.startsWith('p34_') || name.startsWith('p30_')) return;
+        // skip P6 / P34 matrices and BCP/P30 likerts (validated as group below)
+        if (name.startsWith('p6_') || name.startsWith('p34_') || name.startsWith('p30_') || name.startsWith('pbcp_')) return;
         q.classList.add('has-error');
         if (!firstError) firstError = q;
       }
@@ -1504,6 +1509,17 @@
     });
     if (!p30Complete) {
       const q = document.getElementById('p30Likert').closest('.question');
+      q.classList.add('has-error');
+      if (!firstError) firstError = q;
+    }
+
+    // BCP likert: all 4 statements
+    let bcpComplete = true;
+    BCP_AFIRMACIONES.forEach(af => {
+      if (!document.querySelector('[name="pbcp_' + af.id + '"]:checked')) bcpComplete = false;
+    });
+    if (!bcpComplete) {
+      const q = document.getElementById('pBcpLikert').closest('.question');
       q.classList.add('has-error');
       if (!firstError) firstError = q;
     }
@@ -1614,6 +1630,7 @@
   // ============== INIT ==============
   document.addEventListener('DOMContentLoaded', () => {
     buildMatrixP6();
+    buildLikertBcp();
     buildLikertP30();
     buildMatrixP34();
     bindSliders();

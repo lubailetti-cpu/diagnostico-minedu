@@ -109,13 +109,17 @@ function writeHeaders(sheet) {
     'p21_jornada',
     'p22_agotamiento',
     'p23_satis_calidad',
-    'p24_satis_tiempo',
     'p25_carga_equitativa',
     'p26_uso_tiempo',
+    // BCP: 4 afirmaciones sobre dolores estructurales del área
+    'pbcp_bcp_manual_auto',
+    'pbcp_bcp_info_personas',
+    'pbcp_bcp_datos_dispersos',
+    'pbcp_bcp_indicadores',
     'p27_nivel_ia',
     'p28_usa_ia',
     'p29_tareas_ia',
-    // P30: 6 afirmaciones Likert
+    // P30: 6 afirmaciones Likert sobre la plataforma futura
     'p30_lik_reduce_tiempo',
     'p30_lik_calidad_borradores',
     'p30_lik_mas_tiempo_estrategico',
@@ -123,7 +127,6 @@ function writeHeaders(sheet) {
     'p30_lik_errores_haria_dejar',
     'p30_lik_piloto',
     'p31_preocup',
-    'p32_docs_utiles',
     'p33_condicion',
     // P34: matriz de impacto (5 tipos)
     'p34_impacto_0',
@@ -131,9 +134,7 @@ function writeHeaders(sheet) {
     'p34_impacto_2',
     'p34_impacto_3',
     'p34_impacto_4',
-    'p35_repetitivas',
-    'p36_funcionalidad',
-    'p37_ojala'
+    'p35_repetitivas'
   ];
   sheet.getRange(1, 1, 1, headers.length).setValues([headers]);
   // Formato bonito a los encabezados
