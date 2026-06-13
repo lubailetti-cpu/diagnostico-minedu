@@ -75,15 +75,16 @@ function doGet() {
 function writeHeaders(sheet) {
   const headers = [
     'timestamp',
-    'nombre',
     'p1_regimen',
     'p2_unidad',
     'p3_rol',
     'p4_anios',
-    'p5_frecuencia',
-    // P6: distribución porcentual del tiempo semanal (4 categorías)
-    'p6_p6a', 'p6_p6b', 'p6_p6c', 'p6_p6d',
-    // P7: matriz volumen + tiempo por tipo de documento (9 tipos × 2 columnas)
+    // P5: distribución porcentual del tiempo semanal (4 categorías)
+    'p6_distrib_sustantivas',
+    'p6_distrib_documentos',
+    'p6_distrib_administrativas',
+    'p6_distrib_externas',
+    // P6: matriz volumen + tiempo por tipo de documento (9 tipos × 2 columnas)
     'p6_cant_0', 'p6_tiempo_0',
     'p6_cant_1', 'p6_tiempo_1',
     'p6_cant_2', 'p6_tiempo_2',
@@ -99,7 +100,6 @@ function writeHeaders(sheet) {
     'p10_rondas',
     'p12_devolucion',
     'p13_razon_dev',
-    'p14_aprobadores',
     'p15_busqueda_norma',
     'p16_busqueda_antec',
     'p17_seguridad',

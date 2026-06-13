@@ -287,100 +287,130 @@
     margin-bottom: 6px;
   }
 
-  /* ========== SLIDERS (distribución 100%) ========== */
-  .slider-block {
+  /* ========== SEGMENTED RANGE (distribución 100% con 3 handles) ========== */
+  .seg-range {
     background: var(--bg);
     border: 1px solid var(--border);
     border-radius: var(--radius-sm);
-    padding: 16px;
+    padding: 20px 18px;
   }
-  .slider-row {
-    display: grid;
-    grid-template-columns: 1fr 60px;
-    gap: 12px;
+  .seg-range-track {
+    position: relative;
+    height: 32px;
+    border-radius: 99px;
+    overflow: hidden;
+    display: flex;
+    box-shadow: inset 0 1px 2px rgba(0,0,0,0.06);
+  }
+  .seg-part {
+    height: 100%;
+    transition: width 0.05s linear;
+  }
+  .seg-part[data-seg="0"] { background: #2563EB; }   /* azul */
+  .seg-part[data-seg="1"] { background: #7C3AED; }   /* morado */
+  .seg-part[data-seg="2"] { background: #D97706; }   /* dorado */
+  .seg-part[data-seg="3"] { background: #E11D48; }   /* rojo */
+
+  .seg-range-handles {
+    position: relative;
+    margin-top: -32px;
+    height: 32px;
+    pointer-events: none;
+  }
+  .seg-handle {
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 28px;
+    height: 28px;
+    background: white;
+    border: 4px solid #1A1D2B;
+    border-radius: 50%;
+    cursor: ew-resize;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    pointer-events: auto;
+    touch-action: none;
+    user-select: none;
+    z-index: 2;
+  }
+  .seg-handle:hover {
+    border-color: var(--blue);
+    transform: translate(-50%, -50%) scale(1.1);
+  }
+  .seg-handle:active {
+    cursor: grabbing;
+    transform: translate(-50%, -50%) scale(1.15);
+  }
+
+  .seg-legend {
+    margin-top: 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .seg-legend-item {
+    background: white;
+    border-radius: var(--radius-sm);
+    padding: 10px 12px;
+    border: 1px solid var(--border);
+  }
+  .seg-legend-row {
+    display: flex;
     align-items: center;
-    margin-bottom: 16px;
-  }
-  .slider-row:last-child { margin-bottom: 0; }
-  .slider-label {
-    font-size: 13px;
-    line-height: 1.4;
-    color: var(--text);
-    font-weight: 600;
-    grid-column: 1 / -1;
+    gap: 8px;
     margin-bottom: 4px;
   }
-  .slider-label small {
-    display: block;
-    font-weight: 400;
-    color: var(--text-muted);
-    font-size: 11.5px;
-    margin-top: 2px;
-    line-height: 1.4;
+  .seg-legend-title {
+    flex: 1;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--text);
   }
-  .slider {
-    width: 100%;
-    height: 8px;
-    -webkit-appearance: none;
-    appearance: none;
-    background: var(--border);
-    border-radius: 99px;
-    outline: none;
-    cursor: pointer;
-  }
-  .slider::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    width: 22px;
-    height: 22px;
-    border-radius: 50%;
-    background: var(--blue);
-    cursor: grab;
-    box-shadow: 0 2px 6px rgba(37, 99, 235, 0.35);
-    border: 3px solid white;
-  }
-  .slider::-moz-range-thumb {
-    width: 22px;
-    height: 22px;
-    border-radius: 50%;
-    background: var(--blue);
-    cursor: grab;
-    box-shadow: 0 2px 6px rgba(37, 99, 235, 0.35);
-    border: 3px solid white;
-  }
-  .slider-value {
-    text-align: center;
+  .seg-legend-pct {
     font-size: 15px;
     font-weight: 800;
-    color: var(--blue);
-    background: var(--white);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 6px 4px;
+    color: var(--text);
+    min-width: 42px;
+    text-align: right;
   }
-  .slider-total {
-    margin-top: 16px;
-    padding: 12px 14px;
-    background: var(--white);
+  .seg-legend-item small {
+    display: block;
+    font-size: 11.5px;
+    color: var(--text-muted);
+    line-height: 1.4;
+    padding-left: 18px;
+  }
+  .seg-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .seg-dot[data-seg-color="0"] { background: #2563EB; }
+  .seg-dot[data-seg-color="1"] { background: #7C3AED; }
+  .seg-dot[data-seg-color="2"] { background: #D97706; }
+  .seg-dot[data-seg-color="3"] { background: #E11D48; }
+
+  .seg-confirm {
+    margin-top: 18px;
+    width: 100%;
+    padding: 14px;
+    background: var(--blue);
+    color: white;
+    border: none;
     border-radius: var(--radius-sm);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 13.5px;
+    font-family: inherit;
     font-weight: 700;
-    transition: all 0.2s;
-    border: 2px solid var(--border);
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.15s;
   }
-  .slider-total.ok {
-    background: var(--green-soft);
-    border-color: var(--green);
-    color: var(--green);
+  .seg-confirm:hover { background: var(--blue-dark); }
+  .seg-confirm.confirmed {
+    background: var(--green);
+    cursor: default;
   }
-  .slider-total.bad {
-    background: var(--red-soft);
-    border-color: var(--red);
-    color: var(--red);
-  }
-  .slider-total-num { font-size: 18px; font-weight: 800; }
+  .seg-confirm.confirmed:hover { background: var(--green); }
 
   /* ========== PILL GROUP (segmented control) ========== */
   .pill-group {
@@ -590,15 +620,6 @@
   <!-- FORM -->
   <form id="form" novalidate>
 
-    <!-- Campo NOMBRE (como en Forms original) -->
-    <div class="section">
-      <div class="question">
-        <label class="question-label" for="nombre">Este formulario registrará su nombre, escriba su nombre.<span class="required">*</span></label>
-        <input type="text" class="input" id="nombre" name="nombre" required autocomplete="off">
-        <div class="err-msg">Por favor escriba su nombre.</div>
-      </div>
-    </div>
-
     <!-- ========== SECCIÓN A: PERFIL ========== -->
     <div class="section">
       <div class="section-title"><span class="section-letter">A</span>Perfil del servidor</div>
@@ -738,67 +759,68 @@
       <div class="section-title"><span class="section-letter">B</span>Tu trabajo documental</div>
 
       <div class="question">
-        <label class="question-label"><span class="num">5.</span>¿Con qué frecuencia elabora o revisa instrumentos de gestión pública (informes, fichas de procesos, presentaciones, normativa, etc.)?<span class="required">*</span></label>
-        <div class="options">
-          <label class="option"><input type="radio" name="p5_frecuencia" value="Todos los días"><span class="option-text">Todos los días</span></label>
-          <label class="option"><input type="radio" name="p5_frecuencia" value="Varias veces a la semana"><span class="option-text">Varias veces a la semana</span></label>
-          <label class="option"><input type="radio" name="p5_frecuencia" value="Una vez a la semana"><span class="option-text">Una vez a la semana</span></label>
-          <label class="option"><input type="radio" name="p5_frecuencia" value="Una o dos veces al mes"><span class="option-text">Una o dos veces al mes</span></label>
-          <label class="option"><input type="radio" name="p5_frecuencia" value="Rara vez"><span class="option-text">Rara vez</span></label>
-          <label class="option"><input type="radio" name="p5_frecuencia" value="No elaboro ni reviso"><span class="option-text">No elaboro ni reviso instrumentos de gestión pública</span></label>
+        <label class="question-label"><span class="num">5.</span>Distribución de su tiempo laboral semanal<span class="required">*</span></label>
+        <div class="question-hint">Arrastra los puntos para indicar cómo se distribuye en porcentajes tu tiempo entre estas 4 actividades. Cuando termines, haz clic en "Confirmar distribución".</div>
+        <div class="seg-range" id="segRange">
+          <div class="seg-range-track" id="segTrack">
+            <div class="seg-part" data-seg="0"></div>
+            <div class="seg-part" data-seg="1"></div>
+            <div class="seg-part" data-seg="2"></div>
+            <div class="seg-part" data-seg="3"></div>
+          </div>
+          <div class="seg-range-handles">
+            <div class="seg-handle" data-handle="0"></div>
+            <div class="seg-handle" data-handle="1"></div>
+            <div class="seg-handle" data-handle="2"></div>
+          </div>
+          <div class="seg-legend">
+            <div class="seg-legend-item" data-seg-leg="0">
+              <div class="seg-legend-row">
+                <span class="seg-dot" data-seg-color="0"></span>
+                <span class="seg-legend-title">Funciones sustantivas</span>
+                <strong class="seg-legend-pct" id="segPct0">25%</strong>
+              </div>
+              <small>Análisis técnico y de políticas, propuestas de mejora, asesoría a DREs/UGELs, diseño de proyectos, coordinación interinstitucional.</small>
+            </div>
+            <div class="seg-legend-item" data-seg-leg="1">
+              <div class="seg-legend-row">
+                <span class="seg-dot" data-seg-color="1"></span>
+                <span class="seg-legend-title">Documentos normativos e instrumentos de gestión</span>
+                <strong class="seg-legend-pct" id="segPct1">25%</strong>
+              </div>
+              <small>Directivas, normas técnicas, lineamientos, manuales, ROF, MOF, MAPRO, TUPA, CAP, fichas y diagramas BPMN.</small>
+            </div>
+            <div class="seg-legend-item" data-seg-leg="2">
+              <div class="seg-legend-row">
+                <span class="seg-dot" data-seg-color="2"></span>
+                <span class="seg-legend-title">Tareas administrativas repetitivas</span>
+                <strong class="seg-legend-pct" id="segPct2">25%</strong>
+              </div>
+              <small>Informes de conformidad, oficios, memorandos, ayudas memoria, reportes en PPT o Excel, atención de correos.</small>
+            </div>
+            <div class="seg-legend-item" data-seg-leg="3">
+              <div class="seg-legend-row">
+                <span class="seg-dot" data-seg-color="3"></span>
+                <span class="seg-legend-title">Demandas externas no planificadas</span>
+                <strong class="seg-legend-pct" id="segPct3">25%</strong>
+              </div>
+              <small>Solicitudes del Congreso, Contraloría, PCM, Defensoría del Pueblo, GOREs; CCVs y pedidos urgentes.</small>
+            </div>
+          </div>
+          <button type="button" class="seg-confirm" id="segConfirm">Confirmar distribución</button>
         </div>
-        <div class="err-msg">Seleccione una opción.</div>
+        <div class="err-msg">Por favor confirma tu distribución antes de continuar.</div>
       </div>
 
       <div class="question">
-        <label class="question-label"><span class="num">6.</span>Distribución de su tiempo laboral semanal<span class="required">*</span></label>
-        <div class="question-hint">Arrastre cada deslizador para indicar qué porcentaje de su semana dedica a cada tipo de actividad. <strong>La suma debe ser 100%.</strong></div>
-        <div class="slider-block">
-          <div class="slider-row">
-            <div class="slider-label">Funciones sustantivas de tu unidad o equipo
-              <small>análisis técnico y de políticas, propuestas de mejora, asesoría especializada a DREs/UGELs, diseño de proyectos o iniciativas de innovación, coordinación estratégica interinstitucional.</small>
-            </div>
-            <input type="range" min="0" max="100" step="5" value="25" class="slider" data-slider="p6a">
-            <div class="slider-value"><span id="val_p6a">25</span>%</div>
-          </div>
-          <div class="slider-row">
-            <div class="slider-label">Elaboración o revisión de documentos normativos e instrumentos de gestión
-              <small>directivas, normas técnicas, lineamientos, resoluciones, manuales, ROF, MOF, MAPRO, TUPA, CAP, fichas de procesos, diagramas BPMN.</small>
-            </div>
-            <input type="range" min="0" max="100" step="5" value="25" class="slider" data-slider="p6b">
-            <div class="slider-value"><span id="val_p6b">25</span>%</div>
-          </div>
-          <div class="slider-row">
-            <div class="slider-label">Tareas administrativas repetitivas
-              <small>informes de conformidad, oficios, memorandos, ayudas memoria, reportes en PPT o Excel, matrices de registro o seguimiento, atención de correos.</small>
-            </div>
-            <input type="range" min="0" max="100" step="5" value="25" class="slider" data-slider="p6c">
-            <div class="slider-value"><span id="val_p6c">25</span>%</div>
-          </div>
-          <div class="slider-row">
-            <div class="slider-label">Atención de demandas externas no planificadas
-              <small>solicitudes del Congreso, Contraloría, PCM, Defensoría del Pueblo, GOREs; CCVs y pedidos urgentes de mayor jerarquía.</small>
-            </div>
-            <input type="range" min="0" max="100" step="5" value="25" class="slider" data-slider="p6d">
-            <div class="slider-value"><span id="val_p6d">25</span>%</div>
-          </div>
-          <div class="slider-total" id="slider_total">
-            <span>Total</span>
-            <span class="slider-total-num"><span id="total_pct">100</span>%</span>
-          </div>
-        </div>
-        <div class="err-msg">La suma de los porcentajes debe ser exactamente 100%.</div>
-      </div>
-
-      <div class="question">
-        <label class="question-label"><span class="num">7.</span>Para cada tipo de documento, indique cuántos elabora o revisa al mes y cuánto tiempo le toma en promedio elaborar cada uno.<span class="required">*</span></label>
+        <label class="question-label"><span class="num">6.</span>Para cada tipo de documento, indique cuántos elabora o revisa al mes y cuánto tiempo le toma en promedio elaborar cada uno.<span class="required">*</span></label>
         <div class="question-hint">Si no elabora ese tipo, marque "0" en cantidad. Si elabora pero no aplica el tiempo, déjelo en blanco.</div>
         <div class="matrix-wrap" id="p6Matrix"></div>
         <div class="err-msg">Complete al menos un tipo de documento.</div>
       </div>
 
       <div class="question">
-        <label class="question-label"><span class="num">8.</span>¿Cuál es la principal dificultad al elaborar estos instrumentos?<span class="required">*</span></label>
+        <label class="question-label"><span class="num">7.</span>¿Cuál es la principal dificultad al elaborar estos instrumentos?<span class="required">*</span></label>
         <div class="question-hint">Seleccione como máximo 2 opciones.</div>
         <div class="options" data-max="2" data-group="p7_dificultad">
           <label class="option"><input type="checkbox" name="p7_dificultad" value="La normativa está dispersa o es de difícil acceso"><span class="option-text">La normativa está dispersa o es de difícil acceso</span></label>
@@ -814,7 +836,7 @@
       </div>
 
       <div class="question">
-        <label class="question-label"><span class="num">9.</span>¿Tiene acceso a plantillas, guías o herramientas estandarizadas para elaborar estos instrumentos?<span class="required">*</span></label>
+        <label class="question-label"><span class="num">8.</span>¿Tiene acceso a plantillas, guías o herramientas estandarizadas para elaborar estos instrumentos?<span class="required">*</span></label>
         <div class="options">
           <label class="option"><input type="radio" name="p8_plantillas" value="Sí, y las uso regularmente"><span class="option-text">Sí, y las uso regularmente</span></label>
           <label class="option"><input type="radio" name="p8_plantillas" value="Sí, pero están desactualizadas o son insuficientes"><span class="option-text">Sí, pero están desactualizadas o son insuficientes</span></label>
@@ -830,7 +852,7 @@
       <div class="section-title"><span class="section-letter">C</span>Reproceso y calidad</div>
 
       <div class="question">
-        <label class="question-label"><span class="num">10.</span>¿Con qué frecuencia tiene que realizar reprocesos en un mismo instrumento (revisiones por errores, cambios de criterio, ajustes de formato)?<span class="required">*</span></label>
+        <label class="question-label"><span class="num">9.</span>¿Con qué frecuencia tiene que realizar reprocesos en un mismo instrumento (revisiones por errores, cambios de criterio, ajustes de formato)?<span class="required">*</span></label>
         <div class="options">
           <label class="option"><input type="radio" name="p9_reproceso" value="Muy frecuentemente"><span class="option-text">Muy frecuentemente (en casi todos los instrumentos)</span></label>
           <label class="option"><input type="radio" name="p9_reproceso" value="Frecuentemente"><span class="option-text">Frecuentemente (en la mayoría de los casos)</span></label>
@@ -842,7 +864,7 @@
       </div>
 
       <div class="question">
-        <label class="question-label"><span class="num">11.</span>Cuando un documento requiere reproceso, ¿cuántas rondas de revisión/devolución se producen en promedio antes de su aprobación final?<span class="required">*</span></label>
+        <label class="question-label"><span class="num">10.</span>Cuando un documento requiere reproceso, ¿cuántas rondas de revisión/devolución se producen en promedio antes de su aprobación final?<span class="required">*</span></label>
         <div class="options">
           <label class="option"><input type="radio" name="p10_rondas" value="1 ronda"><span class="option-text">1 ronda</span></label>
           <label class="option"><input type="radio" name="p10_rondas" value="2 rondas"><span class="option-text">2 rondas</span></label>
@@ -853,7 +875,7 @@
       </div>
 
       <div class="question">
-        <label class="question-label"><span class="num">12.</span>De cada 10 documentos que entrega, ¿cuántos le devuelven con observaciones?<span class="required">*</span></label>
+        <label class="question-label"><span class="num">11.</span>De cada 10 documentos que entrega, ¿cuántos le devuelven con observaciones?<span class="required">*</span></label>
         <div class="options">
           <label class="option"><input type="radio" name="p12_devolucion" value="0-1"><span class="option-text">Casi ninguno (0-1)</span></label>
           <label class="option"><input type="radio" name="p12_devolucion" value="2-3"><span class="option-text">Pocos (2-3)</span></label>
@@ -865,7 +887,7 @@
       </div>
 
       <div class="question">
-        <label class="question-label"><span class="num">13.</span>Cuando le devuelven un documento, ¿por qué suele ser?<span class="required">*</span></label>
+        <label class="question-label"><span class="num">12.</span>Cuando le devuelven un documento, ¿por qué suele ser?<span class="required">*</span></label>
         <div class="question-hint">Seleccione como máximo 2 opciones.</div>
         <div class="options" data-max="2" data-group="p13_razon_dev">
           <label class="option"><input type="checkbox" name="p13_razon_dev" value="Errores de forma (formato, redacción, ortografía, citas)"><span class="option-text">Errores de forma (formato, redacción, ortografía, citas)</span></label>
@@ -878,17 +900,6 @@
         <div class="err-msg">Seleccione al menos una opción.</div>
       </div>
 
-      <div class="question">
-        <label class="question-label"><span class="num">14.</span>¿Cuántas personas suelen revisar un documento suyo antes de aprobarse?<span class="required">*</span></label>
-        <div class="options">
-          <label class="option"><input type="radio" name="p14_aprobadores" value="1"><span class="option-text">1 persona</span></label>
-          <label class="option"><input type="radio" name="p14_aprobadores" value="2"><span class="option-text">2 personas</span></label>
-          <label class="option"><input type="radio" name="p14_aprobadores" value="3"><span class="option-text">3 personas</span></label>
-          <label class="option"><input type="radio" name="p14_aprobadores" value="4+"><span class="option-text">4 o más personas</span></label>
-          <label class="option"><input type="radio" name="p14_aprobadores" value="Depende"><span class="option-text">Depende del tipo de documento</span></label>
-        </div>
-        <div class="err-msg">Seleccione una opción.</div>
-      </div>
     </div>
 
     <!-- ========== SECCIÓN D: BÚSQUEDA DE INFORMACIÓN ========== -->
@@ -896,7 +907,7 @@
       <div class="section-title"><span class="section-letter">D</span>Búsqueda de información</div>
 
       <div class="question">
-        <label class="question-label"><span class="num">15.</span>En promedio, ¿cuánto tiempo dedica a buscar normativa, guías metodológicas o modelos de referencia ANTES de empezar a elaborar un instrumento?<span class="required">*</span></label>
+        <label class="question-label"><span class="num">13.</span>En promedio, ¿cuánto tiempo dedica a buscar normativa, guías metodológicas o modelos de referencia ANTES de empezar a elaborar un instrumento?<span class="required">*</span></label>
         <div class="options">
           <label class="option"><input type="radio" name="p15_busqueda_norma" value="Menos de 30 minutos"><span class="option-text">Menos de 30 minutos</span></label>
           <label class="option"><input type="radio" name="p15_busqueda_norma" value="Entre 30 minutos y 1 hora"><span class="option-text">Entre 30 minutos y 1 hora</span></label>
@@ -908,7 +919,7 @@
       </div>
 
       <div class="question">
-        <label class="question-label"><span class="num">16.</span>¿Cuánto tiempo dedica a buscar documentos previos parecidos al que tiene que elaborar (antecedentes, informes anteriores, modelos de otras áreas)?<span class="required">*</span></label>
+        <label class="question-label"><span class="num">14.</span>¿Cuánto tiempo dedica a buscar documentos previos parecidos al que tiene que elaborar (antecedentes, informes anteriores, modelos de otras áreas)?<span class="required">*</span></label>
         <div class="options">
           <label class="option"><input type="radio" name="p16_busqueda_antec" value="Menos de 30 minutos"><span class="option-text">Menos de 30 minutos</span></label>
           <label class="option"><input type="radio" name="p16_busqueda_antec" value="Entre 30 minutos y 1 hora"><span class="option-text">Entre 30 minutos y 1 hora</span></label>
@@ -920,7 +931,7 @@
       </div>
 
       <div class="question">
-        <label class="question-label"><span class="num">17.</span>¿Qué tan seguro/a está de que está usando la versión correcta y actualizada de la normativa o el modelo?<span class="required">*</span></label>
+        <label class="question-label"><span class="num">15.</span>¿Qué tan seguro/a está de que está usando la versión correcta y actualizada de la normativa o el modelo?<span class="required">*</span></label>
         <div class="options">
           <label class="option"><input type="radio" name="p17_seguridad" value="Muy seguro"><span class="option-text">Muy seguro/a</span></label>
           <label class="option"><input type="radio" name="p17_seguridad" value="Bastante seguro"><span class="option-text">Bastante seguro/a</span></label>
@@ -937,7 +948,7 @@
       <div class="section-title"><span class="section-letter">E</span>Ritmo y demandas externas</div>
 
       <div class="question">
-        <label class="question-label"><span class="num">18.</span>¿Con qué frecuencia recibe solicitudes urgentes de entidades externas (Congreso, Contraloría, PCM, Defensoría, GOREs u otras) que interrumpen su planificación semanal?<span class="required">*</span></label>
+        <label class="question-label"><span class="num">16.</span>¿Con qué frecuencia recibe solicitudes urgentes de entidades externas (Congreso, Contraloría, PCM, Defensoría, GOREs u otras) que interrumpen su planificación semanal?<span class="required">*</span></label>
         <div class="options">
           <label class="option"><input type="radio" name="p18_urgentes" value="Nunca"><span class="option-text">Nunca</span></label>
           <label class="option"><input type="radio" name="p18_urgentes" value="1 a 2 veces por semana"><span class="option-text">1 a 2 veces por semana</span></label>
@@ -948,7 +959,7 @@
       </div>
 
       <div class="question">
-        <label class="question-label"><span class="num">19.</span>Cuando recibe estas solicitudes externas, ¿cuál es el plazo habitual que le otorgan para responder?<span class="required">*</span></label>
+        <label class="question-label"><span class="num">17.</span>Cuando recibe estas solicitudes externas, ¿cuál es el plazo habitual que le otorgan para responder?<span class="required">*</span></label>
         <div class="options">
           <label class="option"><input type="radio" name="p19_plazo" value="Más de 3 días"><span class="option-text">Más de 3 días</span></label>
           <label class="option"><input type="radio" name="p19_plazo" value="Entre 1 y 3 días"><span class="option-text">Entre 1 y 3 días</span></label>
@@ -960,7 +971,7 @@
       </div>
 
       <div class="question">
-        <label class="question-label"><span class="num">20.</span>En el último trimestre, ¿la carga documental y administrativa ha ocasionado retrasos en el cumplimiento de actividades planificadas en el POI de su unidad?<span class="required">*</span></label>
+        <label class="question-label"><span class="num">18.</span>En el último trimestre, ¿la carga documental y administrativa ha ocasionado retrasos en el cumplimiento de actividades planificadas en el POI de su unidad?<span class="required">*</span></label>
         <div class="options">
           <label class="option"><input type="radio" name="p20_poi" value="Nunca"><span class="option-text">Nunca</span></label>
           <label class="option"><input type="radio" name="p20_poi" value="En pocas ocasiones"><span class="option-text">En pocas ocasiones</span></label>
@@ -971,7 +982,7 @@
       </div>
 
       <div class="question">
-        <label class="question-label"><span class="num">21.</span>En el último mes, ¿cuántas veces ha tenido que extender su jornada laboral para cumplir con entregables documentales o administrativos?<span class="required">*</span></label>
+        <label class="question-label"><span class="num">19.</span>En el último mes, ¿cuántas veces ha tenido que extender su jornada laboral para cumplir con entregables documentales o administrativos?<span class="required">*</span></label>
         <div class="options">
           <label class="option"><input type="radio" name="p21_jornada" value="Nunca"><span class="option-text">Nunca</span></label>
           <label class="option"><input type="radio" name="p21_jornada" value="1 a 2 veces"><span class="option-text">1 a 2 veces</span></label>
@@ -988,7 +999,7 @@
       <div class="section-desc">Tu percepción honesta nos ayuda a entender cómo la carga documental impacta tu día a día.</div>
 
       <div class="question">
-        <label class="question-label"><span class="num">22.</span>Al cerrar tu semana laboral, ¿cómo te sientes en términos de agotamiento?<span class="required">*</span></label>
+        <label class="question-label"><span class="num">20.</span>Al cerrar tu semana laboral, ¿cómo te sientes en términos de agotamiento?<span class="required">*</span></label>
         <div class="question-hint">1 = nada agotado/a, con energía · 5 = completamente agotado/a</div>
         <div class="options" style="flex-direction: row; gap: 6px;">
           <label class="option" style="flex: 1; text-align: center; flex-direction: column; align-items: center; padding: 14px 4px;"><input type="radio" name="p22_agotamiento" value="1" style="margin: 0 0 6px;"><span class="option-text">1</span></label>
@@ -1001,7 +1012,7 @@
       </div>
 
       <div class="question">
-        <label class="question-label"><span class="num">23.</span>¿Qué tan satisfecho/a estás con la calidad final de los documentos que produces hoy?<span class="required">*</span></label>
+        <label class="question-label"><span class="num">21.</span>¿Qué tan satisfecho/a estás con la calidad final de los documentos que produces hoy?<span class="required">*</span></label>
         <div class="question-hint">1 = muy insatisfecho/a · 5 = muy satisfecho/a</div>
         <div class="options" style="flex-direction: row; gap: 6px;">
           <label class="option" style="flex: 1; text-align: center; flex-direction: column; align-items: center; padding: 14px 4px;"><input type="radio" name="p23_satis_calidad" value="1" style="margin: 0 0 6px;"><span class="option-text">1</span></label>
@@ -1014,7 +1025,7 @@
       </div>
 
       <div class="question">
-        <label class="question-label"><span class="num">24.</span>¿Considera que la carga de trabajo en su equipo está distribuida de manera equitativa?<span class="required">*</span></label>
+        <label class="question-label"><span class="num">22.</span>¿Considera que la carga de trabajo en su equipo está distribuida de manera equitativa?<span class="required">*</span></label>
         <div class="options">
           <label class="option"><input type="radio" name="p25_carga_equitativa" value="Sí, está bien distribuida"><span class="option-text">Sí, está bien distribuida</span></label>
           <label class="option"><input type="radio" name="p25_carga_equitativa" value="No, algunos absorben la carga de otros"><span class="option-text">No, algunos miembros del equipo absorben la carga de otros</span></label>
@@ -1025,7 +1036,7 @@
       </div>
 
       <div class="question">
-        <label class="question-label"><span class="num">25.</span>Si pudiera recuperar tiempo de las tareas repetitivas y administrativas, ¿a qué actividades lo destinaría?<span class="required">*</span></label>
+        <label class="question-label"><span class="num">23.</span>Si pudiera recuperar tiempo de las tareas repetitivas y administrativas, ¿a qué actividades lo destinaría?<span class="required">*</span></label>
         <div class="question-hint">Seleccione como máximo 2 opciones.</div>
         <div class="options" data-max="2" data-group="p26_uso_tiempo">
           <label class="option"><input type="checkbox" name="p26_uso_tiempo" value="Análisis y diagnóstico de problemas"><span class="option-text">Análisis y diagnóstico de problemas</span></label>
@@ -1045,7 +1056,7 @@
       <div class="section-desc">Indica qué tan presentes están estas situaciones en tu equipo (jefe directo, compañeros y personas a tu cargo).</div>
 
       <div class="question">
-        <label class="question-label"><span class="num">26.</span>Valore qué tan identificado se siente con cada afirmación.<span class="required">*</span></label>
+        <label class="question-label"><span class="num">24.</span>Valore qué tan identificado se siente con cada afirmación.<span class="required">*</span></label>
         <div class="question-hint">Escala: 1 = nada / casi nunca · 4 = mucho / muy frecuente / totalmente</div>
         <div id="pBcpLikert"></div>
         <div class="err-msg">Complete todas las afirmaciones.</div>
@@ -1057,7 +1068,7 @@
       <div class="section-title"><span class="section-letter">H</span>Uso actual de inteligencia artificial</div>
 
       <div class="question">
-        <label class="question-label"><span class="num">27.</span>¿Cuál es tu nivel actual de uso de inteligencia artificial?<span class="required">*</span></label>
+        <label class="question-label"><span class="num">25.</span>¿Cuál es tu nivel actual de uso de inteligencia artificial?<span class="required">*</span></label>
         <div class="options">
           <label class="option"><input type="radio" name="p27_nivel_ia" value="No uso"><span class="option-text">No uso ninguna herramienta de IA</span></label>
           <label class="option"><input type="radio" name="p27_nivel_ia" value="1 - Básico"><span class="option-text">Nivel 1 - Básico: consultas y consejos puntuales</span></label>
@@ -1069,7 +1080,7 @@
       </div>
 
       <div class="question">
-        <label class="question-label"><span class="num">28.</span>¿Usas alguna herramienta de inteligencia artificial para facilitar tu trabajo?<span class="required">*</span></label>
+        <label class="question-label"><span class="num">26.</span>¿Usas alguna herramienta de inteligencia artificial para facilitar tu trabajo?<span class="required">*</span></label>
         <div class="options">
           <label class="option"><input type="radio" name="p28_usa_ia" value="Sí, con cuenta pagada por mí"><span class="option-text">Sí, con cuenta pagada por mí</span></label>
           <label class="option"><input type="radio" name="p28_usa_ia" value="Sí, con cuenta gratuita"><span class="option-text">Sí, con cuenta gratuita</span></label>
@@ -1079,7 +1090,7 @@
       </div>
 
       <div class="question">
-        <label class="question-label"><span class="num">29.</span>¿Para qué tareas de tu trabajo usas inteligencia artificial hoy?<span class="required">*</span></label>
+        <label class="question-label"><span class="num">27.</span>¿Para qué tareas de tu trabajo usas inteligencia artificial hoy?<span class="required">*</span></label>
         <div class="question-hint">Seleccione hasta 3 opciones. Si no usa IA, marque "No uso IA para mi trabajo".</div>
         <div class="options" data-max="3" data-group="p29_tareas_ia">
           <label class="option"><input type="checkbox" name="p29_tareas_ia" value="Redactar borradores de informes u oficios"><span class="option-text">Redactar borradores de informes u oficios</span></label>
@@ -1101,14 +1112,14 @@
       <div class="section-title"><span class="section-letter">I</span>Percepción sobre una plataforma de asistencia con IA</div>
 
       <div class="question">
-        <label class="question-label"><span class="num">30.</span>Valore su nivel de acuerdo con las siguientes afirmaciones sobre una posible plataforma de asistencia con IA para elaborar instrumentos de gestión.<span class="required">*</span></label>
+        <label class="question-label"><span class="num">28.</span>Valore su nivel de acuerdo con las siguientes afirmaciones sobre una posible plataforma de asistencia con IA para elaborar instrumentos de gestión.<span class="required">*</span></label>
         <div class="question-hint">Escala: 1 = Totalmente en desacuerdo · 5 = Totalmente de acuerdo</div>
         <div id="p30Likert"></div>
         <div class="err-msg">Complete todas las afirmaciones.</div>
       </div>
 
       <div class="question">
-        <label class="question-label"><span class="num">31.</span>¿Cuáles serían sus principales preocupaciones al usar una herramienta de IA para elaborar instrumentos de gestión?<span class="required">*</span></label>
+        <label class="question-label"><span class="num">29.</span>¿Cuáles serían sus principales preocupaciones al usar una herramienta de IA para elaborar instrumentos de gestión?<span class="required">*</span></label>
         <div class="question-hint">Seleccione como máximo 2 opciones.</div>
         <div class="options" data-max="2" data-group="p31_preocup">
           <label class="option"><input type="checkbox" name="p31_preocup" value="Errores técnicos o normativos en los borradores"><span class="option-text">Que los borradores generados tengan errores técnicos o normativos</span></label>
@@ -1124,7 +1135,7 @@
       </div>
 
       <div class="question">
-        <label class="question-label"><span class="num">32.</span>¿Qué condición considera indispensable para adoptar una herramienta de IA en su trabajo?<span class="required">*</span></label>
+        <label class="question-label"><span class="num">30.</span>¿Qué condición considera indispensable para adoptar una herramienta de IA en su trabajo?<span class="required">*</span></label>
         <div class="question-hint">Seleccione como máximo 2 opciones.</div>
         <div class="options" data-max="2" data-group="p33_condicion">
           <label class="option"><input type="checkbox" name="p33_condicion" value="Validada institucionalmente"><span class="option-text">Que esté validada y autorizada institucionalmente</span></label>
@@ -1144,7 +1155,7 @@
       <div class="section-desc">Imagina por un momento que tienes una herramienta de IA que te genera borradores automáticos de los siguientes documentos.</div>
 
       <div class="question">
-        <label class="question-label"><span class="num">33.</span>¿Cuántas horas a la semana estimas que te ahorraría en cada tipo de documento?<span class="required">*</span></label>
+        <label class="question-label"><span class="num">31.</span>¿Cuántas horas a la semana estimas que te ahorraría en cada tipo de documento?<span class="required">*</span></label>
         <div class="matrix-wrap" id="p34Matrix"></div>
         <div class="err-msg">Complete todas las filas.</div>
       </div>
@@ -1156,7 +1167,7 @@
       <div class="section-desc">Cuéntanos en tus palabras lo que no entró en las preguntas anteriores.</div>
 
       <div class="question">
-        <label class="question-label" for="p35_repetitivas"><span class="num">34.</span>En sus propias palabras: ¿cuáles son las 2 o 3 tareas repetitivas que más tiempo le quitan en su trabajo semanal?<span class="required">*</span></label>
+        <label class="question-label" for="p35_repetitivas"><span class="num">32.</span>En sus propias palabras: ¿cuáles son las 2 o 3 tareas repetitivas que más tiempo le quitan en su trabajo semanal?<span class="required">*</span></label>
         <textarea class="textarea" id="p35_repetitivas" name="p35_repetitivas" rows="3" required></textarea>
         <div class="err-msg">Por favor escriba una respuesta.</div>
       </div>
@@ -1348,27 +1359,76 @@
     document.getElementById('p34Matrix').innerHTML = html;
   }
 
-  // ============== SLIDERS P6 (distribución 100%) ==============
-  function bindSliders() {
-    const sliders = document.querySelectorAll('.slider');
-    const totalEl = document.getElementById('slider_total');
-    const totalNum = document.getElementById('total_pct');
+  // ============== SEGMENTED RANGE P6 (1 barra, 3 handles, 4 segmentos) ==============
+  let segPositions = [25, 50, 75]; // posiciones de los 3 handles
+  let segTouched = false;
+  let segConfirmed = false;
+
+  function bindSegmentedRange() {
+    const track = document.getElementById('segTrack');
+    const handles = document.querySelectorAll('.seg-handle');
+    const parts = document.querySelectorAll('.seg-part');
+    const pcts = [document.getElementById('segPct0'), document.getElementById('segPct1'), document.getElementById('segPct2'), document.getElementById('segPct3')];
 
     function update() {
-      let total = 0;
-      sliders.forEach(s => {
-        const v = parseInt(s.value);
-        total += v;
-        const valEl = document.getElementById('val_' + s.dataset.slider);
-        if (valEl) valEl.textContent = v;
-      });
-      totalNum.textContent = total;
-      totalEl.classList.remove('ok', 'bad');
-      if (total === 100) totalEl.classList.add('ok');
-      else totalEl.classList.add('bad');
+      handles[0].style.left = segPositions[0] + '%';
+      handles[1].style.left = segPositions[1] + '%';
+      handles[2].style.left = segPositions[2] + '%';
+      parts[0].style.width = segPositions[0] + '%';
+      parts[1].style.width = (segPositions[1] - segPositions[0]) + '%';
+      parts[2].style.width = (segPositions[2] - segPositions[1]) + '%';
+      parts[3].style.width = (100 - segPositions[2]) + '%';
+      pcts[0].textContent = Math.round(segPositions[0]) + '%';
+      pcts[1].textContent = Math.round(segPositions[1] - segPositions[0]) + '%';
+      pcts[2].textContent = Math.round(segPositions[2] - segPositions[1]) + '%';
+      pcts[3].textContent = Math.round(100 - segPositions[2]) + '%';
     }
 
-    sliders.forEach(s => s.addEventListener('input', update));
+    let dragIdx = null;
+    function startDrag(idx, e) {
+      e.preventDefault();
+      dragIdx = idx;
+    }
+    function moveDrag(e) {
+      if (dragIdx === null) return;
+      const rect = track.getBoundingClientRect();
+      const clientX = e.clientX !== undefined ? e.clientX : (e.touches && e.touches[0].clientX);
+      let pct = ((clientX - rect.left) / rect.width) * 100;
+      pct = Math.max(0, Math.min(100, pct));
+      // constrain
+      if (dragIdx === 0) pct = Math.min(pct, segPositions[1] - 1);
+      if (dragIdx === 1) pct = Math.max(segPositions[0] + 1, Math.min(pct, segPositions[2] - 1));
+      if (dragIdx === 2) pct = Math.max(segPositions[1] + 1, Math.min(pct, 99));
+      segPositions[dragIdx] = pct;
+      segTouched = true;
+      segConfirmed = false;
+      const btn = document.getElementById('segConfirm');
+      btn.classList.remove('confirmed');
+      btn.textContent = 'Confirmar distribución';
+      update();
+    }
+    function endDrag() { dragIdx = null; }
+
+    handles.forEach((h, i) => {
+      h.addEventListener('mousedown', e => startDrag(i, e));
+      h.addEventListener('touchstart', e => startDrag(i, e), { passive: false });
+    });
+    document.addEventListener('mousemove', moveDrag);
+    document.addEventListener('touchmove', moveDrag, { passive: false });
+    document.addEventListener('mouseup', endDrag);
+    document.addEventListener('touchend', endDrag);
+
+    document.getElementById('segConfirm').addEventListener('click', () => {
+      if (!segTouched) {
+        const ok = confirm('Indicaste que las 4 actividades ocupan exactamente el mismo porcentaje de tu tiempo (25% cada una). ¿Es así? Si no, recuerda arrastrar los puntos.');
+        if (!ok) return;
+      }
+      segConfirmed = true;
+      const btn = document.getElementById('segConfirm');
+      btn.classList.add('confirmed');
+      btn.textContent = '✓ Distribución confirmada';
+    });
+
     update();
   }
 
@@ -1482,11 +1542,9 @@
       }
     });
 
-    // P6 sliders: suma debe ser 100
-    let sumaSliders = 0;
-    document.querySelectorAll('.slider').forEach(s => sumaSliders += parseInt(s.value));
-    if (sumaSliders !== 100) {
-      const q = document.getElementById('slider_total').closest('.question');
+    // P6 segmented range: debe estar confirmado
+    if (!segConfirmed) {
+      const q = document.getElementById('segRange').closest('.question');
       q.classList.add('has-error');
       if (!firstError) firstError = q;
     }
@@ -1545,8 +1603,7 @@
   // ============== COLLECT DATA ==============
   function collectFormData() {
     const data = {
-      timestamp: new Date().toISOString(),
-      nombre: document.getElementById('nombre').value.trim()
+      timestamp: new Date().toISOString()
     };
 
     // Simple radios + text
@@ -1576,10 +1633,11 @@
       data[t.name] = t.value.trim();
     });
 
-    // Sliders P6 distribución
-    document.querySelectorAll('.slider').forEach(s => {
-      data['p6_' + s.dataset.slider] = s.value;
-    });
+    // Segmented range P6 distribución (4 valores que suman 100)
+    data['p6_distrib_sustantivas'] = Math.round(segPositions[0]);
+    data['p6_distrib_documentos'] = Math.round(segPositions[1] - segPositions[0]);
+    data['p6_distrib_administrativas'] = Math.round(segPositions[2] - segPositions[1]);
+    data['p6_distrib_externas'] = Math.round(100 - segPositions[2]);
 
     return data;
   }
@@ -1633,7 +1691,7 @@
     buildLikertBcp();
     buildLikertP30();
     buildMatrixP34();
-    bindSliders();
+    bindSegmentedRange();
     bindMaxCheckboxes();
     document.getElementById('form').addEventListener('submit', handleSubmit);
     document.getElementById('form').addEventListener('change', updateProgress);
