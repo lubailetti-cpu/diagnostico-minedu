@@ -14,35 +14,24 @@
  *       - Ejecutar como: Tú mismo
  *       - Quién tiene acceso: Cualquier persona
  *  7. Copiar la URL que termine en /exec y enviársela a Lucía.
- *
- * La primera vez Google va a pedir autorización para que el script
- * pueda escribir en la hoja. Es normal; aceptar.
  */
 
-// Si querés, podés cambiar este nombre de hoja. Por defecto se usa "Respuestas".
 const SHEET_NAME = 'Respuestas';
 
-/**
- * Recibe POST del formulario y agrega una fila con las respuestas.
- */
 function doPost(e) {
   try {
     const data = JSON.parse(e.postData.contents);
     const ss = SpreadsheetApp.getActiveSpreadsheet();
     let sheet = ss.getSheetByName(SHEET_NAME);
 
-    // Si la hoja no existe, la crea con encabezados.
     if (!sheet) {
       sheet = ss.insertSheet(SHEET_NAME);
       writeHeaders(sheet);
     }
-
-    // Si está vacía, escribir encabezados primero.
     if (sheet.getLastRow() === 0) {
       writeHeaders(sheet);
     }
 
-    // Construir fila siguiendo el orden de columnas.
     const headers = sheet.getRange(1, 1, 1, sheet.getLastColumn()).getValues()[0];
     const row = headers.map(h => data[h] !== undefined ? data[h] : '');
 
@@ -58,20 +47,12 @@ function doPost(e) {
   }
 }
 
-/**
- * Para verificar manualmente que el endpoint funciona.
- * Si abrís la URL del Apps Script en el navegador, verás este mensaje.
- */
 function doGet() {
   return ContentService
     .createTextOutput('Endpoint del diagnóstico MINEDU está activo. Para enviar datos, usar POST con JSON.')
     .setMimeType(ContentService.MimeType.TEXT);
 }
 
-/**
- * Escribe los encabezados de las columnas en la hoja.
- * El orden define el orden de columnas en el Sheet.
- */
 function writeHeaders(sheet) {
   const headers = [
     'timestamp',
@@ -101,25 +82,24 @@ function writeHeaders(sheet) {
     'p12_devolucion',
     'p13_razon_dev',
     'p15_busqueda_norma',
-    'p16_busqueda_antec',
-    'p17_seguridad',
+    'p15_vigencia',
     'p18_urgentes',
     'p19_plazo',
     'p20_poi',
     'p21_jornada',
-    'p22_agotamiento',
-    'p23_satis_calidad',
-    'p25_carga_equitativa',
-    'p26_uso_tiempo',
-    // BCP: 4 afirmaciones sobre dolores estructurales del área
+    // BCP — afirmaciones (5)
     'pbcp_bcp_manual_auto',
     'pbcp_bcp_info_personas',
     'pbcp_bcp_datos_dispersos',
     'pbcp_bcp_indicadores',
+    'pbcp_bcp_carga_equitativa',
+    'p21_agotamiento',
+    'p22_satis_calidad',
+    'p26_uso_tiempo',
     'p27_nivel_ia',
     'p28_usa_ia',
     'p29_tareas_ia',
-    // P30: 6 afirmaciones Likert sobre la plataforma futura
+    // Likert plataforma (6)
     'p30_lik_reduce_tiempo',
     'p30_lik_calidad_borradores',
     'p30_lik_mas_tiempo_estrategico',
@@ -128,16 +108,15 @@ function writeHeaders(sheet) {
     'p30_lik_piloto',
     'p31_preocup',
     'p33_condicion',
-    // P34: matriz de impacto (5 tipos)
-    'p34_impacto_0',
-    'p34_impacto_1',
-    'p34_impacto_2',
-    'p34_impacto_3',
-    'p34_impacto_4',
+    // Orden de impacto (5)
+    'p31_orden_fichas_de_proceso',
+    'p31_orden_diagramas_de_procesos',
+    'p31_orden_informes_tecnicos',
+    'p31_orden_presentaciones_institucionales',
+    'p31_orden_inventario_de_procesos',
     'p35_repetitivas'
   ];
   sheet.getRange(1, 1, 1, headers.length).setValues([headers]);
-  // Formato bonito a los encabezados
   sheet.getRange(1, 1, 1, headers.length)
     .setFontWeight('bold')
     .setBackground('#1E3A5F')

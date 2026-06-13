@@ -412,6 +412,133 @@
   }
   .seg-confirm.confirmed:hover { background: var(--green); }
 
+  /* ========== ESCALA (escala numérica visual) ========== */
+  .escala { padding: 4px 0; }
+  .escala-row {
+    display: grid;
+    gap: 8px;
+    margin-bottom: 10px;
+  }
+  .escala-row.cols-4 { grid-template-columns: repeat(4, 1fr); }
+  .escala-row.cols-5 { grid-template-columns: repeat(5, 1fr); }
+  .escala-btn {
+    background: white;
+    border: 2px solid var(--border);
+    border-radius: 10px;
+    padding: 14px 4px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 800;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: all 0.15s;
+    user-select: none;
+    position: relative;
+    min-height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .escala-btn input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+  }
+  .escala-btn:hover {
+    border-color: var(--blue);
+    transform: translateY(-1px);
+  }
+  .escala-btn.selected {
+    background: var(--blue);
+    border-color: var(--blue);
+    color: white;
+  }
+  .escala-labels {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+    font-size: 11.5px;
+    color: var(--text-muted);
+    font-weight: 600;
+    padding: 0 2px;
+  }
+  .escala-labels .right { text-align: right; }
+
+  /* Escala con colores semáforo (verde -> rojo) */
+  .escala.semaforo .escala-btn[data-val="1"] { border-color: #16A34A; color: #16A34A; }
+  .escala.semaforo .escala-btn[data-val="2"] { border-color: #65A30D; color: #65A30D; }
+  .escala.semaforo .escala-btn[data-val="3"] { border-color: #EA580C; color: #EA580C; }
+  .escala.semaforo .escala-btn[data-val="4"] { border-color: var(--red); color: var(--red); }
+  .escala.semaforo .escala-btn[data-val="1"].selected { background: #16A34A; color: white; }
+  .escala.semaforo .escala-btn[data-val="2"].selected { background: #65A30D; color: white; }
+  .escala.semaforo .escala-btn[data-val="3"].selected { background: #EA580C; color: white; }
+  .escala.semaforo .escala-btn[data-val="4"].selected { background: var(--red); color: white; }
+
+  /* Afirmaciones con escala (cards de Likert) */
+  .afirmaciones { display: flex; flex-direction: column; gap: 12px; }
+  .afirmacion {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 16px 14px 12px;
+  }
+  .afirmacion-text {
+    font-size: 13.5px;
+    font-weight: 600;
+    color: var(--text);
+    line-height: 1.4;
+    margin-bottom: 12px;
+  }
+
+  /* ========== ORDEN ARRASTRABLE (priorización) ========== */
+  .orden-list { display: flex; flex-direction: column; gap: 8px; }
+  .orden-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 16px;
+    background: white;
+    border: 1.5px solid var(--border);
+    border-radius: 12px;
+    cursor: grab;
+    user-select: none;
+    transition: all 0.2s;
+    touch-action: none;
+  }
+  .orden-item:hover { border-color: var(--blue); box-shadow: var(--shadow-sm); }
+  .orden-item.dragging {
+    opacity: 0.4;
+    cursor: grabbing;
+    border-color: var(--blue);
+    background: var(--blue-soft);
+  }
+  .orden-rank {
+    width: 32px; height: 32px;
+    background: var(--blue);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 15px;
+    flex-shrink: 0;
+  }
+  .orden-text {
+    flex: 1;
+    font-size: 13.5px;
+    font-weight: 600;
+    color: var(--text);
+    line-height: 1.4;
+  }
+  .orden-handle {
+    color: var(--text-muted);
+    font-size: 22px;
+    cursor: grab;
+    line-height: 1;
+    letter-spacing: -3px;
+  }
+
   /* ========== PILL GROUP (segmented control) ========== */
   .pill-group {
     display: flex;
@@ -919,25 +1046,18 @@
       </div>
 
       <div class="question">
-        <label class="question-label"><span class="num">14.</span>¿Cuánto tiempo dedica a buscar documentos previos parecidos al que tiene que elaborar (antecedentes, informes anteriores, modelos de otras áreas)?<span class="required">*</span></label>
-        <div class="options">
-          <label class="option"><input type="radio" name="p16_busqueda_antec" value="Menos de 30 minutos"><span class="option-text">Menos de 30 minutos</span></label>
-          <label class="option"><input type="radio" name="p16_busqueda_antec" value="Entre 30 minutos y 1 hora"><span class="option-text">Entre 30 minutos y 1 hora</span></label>
-          <label class="option"><input type="radio" name="p16_busqueda_antec" value="Entre 1 y 2 horas"><span class="option-text">Entre 1 y 2 horas</span></label>
-          <label class="option"><input type="radio" name="p16_busqueda_antec" value="Más de 2 horas"><span class="option-text">Más de 2 horas</span></label>
-          <label class="option"><input type="radio" name="p16_busqueda_antec" value="No suelo buscar antecedentes"><span class="option-text">No suelo buscar antecedentes</span></label>
-        </div>
-        <div class="err-msg">Seleccione una opción.</div>
-      </div>
-
-      <div class="question">
-        <label class="question-label"><span class="num">15.</span>¿Qué tan seguro/a está de que está usando la versión correcta y actualizada de la normativa o el modelo?<span class="required">*</span></label>
-        <div class="options">
-          <label class="option"><input type="radio" name="p17_seguridad" value="Muy seguro"><span class="option-text">Muy seguro/a</span></label>
-          <label class="option"><input type="radio" name="p17_seguridad" value="Bastante seguro"><span class="option-text">Bastante seguro/a</span></label>
-          <label class="option"><input type="radio" name="p17_seguridad" value="Más o menos"><span class="option-text">Más o menos</span></label>
-          <label class="option"><input type="radio" name="p17_seguridad" value="Poco seguro"><span class="option-text">Poco seguro/a</span></label>
-          <label class="option"><input type="radio" name="p17_seguridad" value="Muy poco seguro"><span class="option-text">Muy poco seguro/a</span></label>
+        <label class="question-label"><span class="num">14.</span>¿Qué tan trabajoso le resulta asegurarse de que la normativa, guía o modelo que está usando es la versión vigente?<span class="required">*</span></label>
+        <div class="escala semaforo" data-escala-name="p15_vigencia">
+          <div class="escala-row cols-4">
+            <label class="escala-btn" data-val="1"><input type="radio" name="p15_vigencia" value="1">1</label>
+            <label class="escala-btn" data-val="2"><input type="radio" name="p15_vigencia" value="2">2</label>
+            <label class="escala-btn" data-val="3"><input type="radio" name="p15_vigencia" value="3">3</label>
+            <label class="escala-btn" data-val="4"><input type="radio" name="p15_vigencia" value="4">4</label>
+          </div>
+          <div class="escala-labels">
+            <span>1 = Muy fácil</span>
+            <span class="right">4 = Muy trabajoso</span>
+          </div>
         </div>
         <div class="err-msg">Seleccione una opción.</div>
       </div>
@@ -948,7 +1068,7 @@
       <div class="section-title"><span class="section-letter">E</span>Ritmo y demandas externas</div>
 
       <div class="question">
-        <label class="question-label"><span class="num">16.</span>¿Con qué frecuencia recibe solicitudes urgentes de entidades externas (Congreso, Contraloría, PCM, Defensoría, GOREs u otras) que interrumpen su planificación semanal?<span class="required">*</span></label>
+        <label class="question-label"><span class="num">15.</span>¿Con qué frecuencia recibe solicitudes urgentes de entidades externas (Congreso, Contraloría, PCM, Defensoría, GOREs u otras) que interrumpen su planificación semanal?<span class="required">*</span></label>
         <div class="options">
           <label class="option"><input type="radio" name="p18_urgentes" value="Nunca"><span class="option-text">Nunca</span></label>
           <label class="option"><input type="radio" name="p18_urgentes" value="1 a 2 veces por semana"><span class="option-text">1 a 2 veces por semana</span></label>
@@ -959,7 +1079,7 @@
       </div>
 
       <div class="question">
-        <label class="question-label"><span class="num">17.</span>Cuando recibe estas solicitudes externas, ¿cuál es el plazo habitual que le otorgan para responder?<span class="required">*</span></label>
+        <label class="question-label"><span class="num">16.</span>Cuando recibe estas solicitudes externas, ¿cuál es el plazo habitual que le otorgan para responder?<span class="required">*</span></label>
         <div class="options">
           <label class="option"><input type="radio" name="p19_plazo" value="Más de 3 días"><span class="option-text">Más de 3 días</span></label>
           <label class="option"><input type="radio" name="p19_plazo" value="Entre 1 y 3 días"><span class="option-text">Entre 1 y 3 días</span></label>
@@ -971,7 +1091,7 @@
       </div>
 
       <div class="question">
-        <label class="question-label"><span class="num">18.</span>En el último trimestre, ¿la carga documental y administrativa ha ocasionado retrasos en el cumplimiento de actividades planificadas en el POI de su unidad?<span class="required">*</span></label>
+        <label class="question-label"><span class="num">17.</span>En el último trimestre, ¿la carga documental y administrativa ha ocasionado retrasos en el cumplimiento de actividades planificadas en el POI de su unidad?<span class="required">*</span></label>
         <div class="options">
           <label class="option"><input type="radio" name="p20_poi" value="Nunca"><span class="option-text">Nunca</span></label>
           <label class="option"><input type="radio" name="p20_poi" value="En pocas ocasiones"><span class="option-text">En pocas ocasiones</span></label>
@@ -982,7 +1102,7 @@
       </div>
 
       <div class="question">
-        <label class="question-label"><span class="num">19.</span>En el último mes, ¿cuántas veces ha tenido que extender su jornada laboral para cumplir con entregables documentales o administrativos?<span class="required">*</span></label>
+        <label class="question-label"><span class="num">18.</span>En el último mes, ¿cuántas veces ha tenido que extender su jornada laboral para cumplir con entregables documentales o administrativos?<span class="required">*</span></label>
         <div class="options">
           <label class="option"><input type="radio" name="p21_jornada" value="Nunca"><span class="option-text">Nunca</span></label>
           <label class="option"><input type="radio" name="p21_jornada" value="1 a 2 veces"><span class="option-text">1 a 2 veces</span></label>
@@ -993,50 +1113,56 @@
       </div>
     </div>
 
-    <!-- ========== SECCIÓN F: BIENESTAR LABORAL ========== -->
+    <!-- ========== SECCIÓN F: OPORTUNIDADES EN TU ÁREA ========== -->
     <div class="section">
-      <div class="section-title"><span class="section-letter">F</span>Bienestar laboral</div>
-      <div class="section-desc">Tu percepción honesta nos ayuda a entender cómo la carga documental impacta tu día a día.</div>
+      <div class="section-title"><span class="section-letter">F</span>Oportunidades en tu área</div>
+      <div class="section-desc">Indica qué tan presentes están estas situaciones en tu equipo (jefe directo, compañeros y personas a tu cargo).</div>
+
+      <div class="question">
+        <label class="question-label"><span class="num">19.</span>Valore qué tan identificado se siente con cada afirmación.<span class="required">*</span></label>
+        <div class="question-hint">Escala: 1 = nada / casi nunca · 4 = mucho / muy frecuente / totalmente</div>
+        <div id="pBcpLikert"></div>
+        <div class="err-msg">Complete todas las afirmaciones.</div>
+      </div>
 
       <div class="question">
         <label class="question-label"><span class="num">20.</span>Al cerrar tu semana laboral, ¿cómo te sientes en términos de agotamiento?<span class="required">*</span></label>
-        <div class="question-hint">1 = nada agotado/a, con energía · 5 = completamente agotado/a</div>
-        <div class="options" style="flex-direction: row; gap: 6px;">
-          <label class="option" style="flex: 1; text-align: center; flex-direction: column; align-items: center; padding: 14px 4px;"><input type="radio" name="p22_agotamiento" value="1" style="margin: 0 0 6px;"><span class="option-text">1</span></label>
-          <label class="option" style="flex: 1; text-align: center; flex-direction: column; align-items: center; padding: 14px 4px;"><input type="radio" name="p22_agotamiento" value="2" style="margin: 0 0 6px;"><span class="option-text">2</span></label>
-          <label class="option" style="flex: 1; text-align: center; flex-direction: column; align-items: center; padding: 14px 4px;"><input type="radio" name="p22_agotamiento" value="3" style="margin: 0 0 6px;"><span class="option-text">3</span></label>
-          <label class="option" style="flex: 1; text-align: center; flex-direction: column; align-items: center; padding: 14px 4px;"><input type="radio" name="p22_agotamiento" value="4" style="margin: 0 0 6px;"><span class="option-text">4</span></label>
-          <label class="option" style="flex: 1; text-align: center; flex-direction: column; align-items: center; padding: 14px 4px;"><input type="radio" name="p22_agotamiento" value="5" style="margin: 0 0 6px;"><span class="option-text">5</span></label>
+        <div class="escala" data-escala-name="p21_agotamiento">
+          <div class="escala-row cols-5">
+            <label class="escala-btn" data-val="1"><input type="radio" name="p21_agotamiento" value="1">1</label>
+            <label class="escala-btn" data-val="2"><input type="radio" name="p21_agotamiento" value="2">2</label>
+            <label class="escala-btn" data-val="3"><input type="radio" name="p21_agotamiento" value="3">3</label>
+            <label class="escala-btn" data-val="4"><input type="radio" name="p21_agotamiento" value="4">4</label>
+            <label class="escala-btn" data-val="5"><input type="radio" name="p21_agotamiento" value="5">5</label>
+          </div>
+          <div class="escala-labels">
+            <span>1 = Nada agotado/a</span>
+            <span class="right">5 = Completamente agotado/a</span>
+          </div>
         </div>
         <div class="err-msg">Seleccione una opción.</div>
       </div>
 
       <div class="question">
         <label class="question-label"><span class="num">21.</span>¿Qué tan satisfecho/a estás con la calidad final de los documentos que produces hoy?<span class="required">*</span></label>
-        <div class="question-hint">1 = muy insatisfecho/a · 5 = muy satisfecho/a</div>
-        <div class="options" style="flex-direction: row; gap: 6px;">
-          <label class="option" style="flex: 1; text-align: center; flex-direction: column; align-items: center; padding: 14px 4px;"><input type="radio" name="p23_satis_calidad" value="1" style="margin: 0 0 6px;"><span class="option-text">1</span></label>
-          <label class="option" style="flex: 1; text-align: center; flex-direction: column; align-items: center; padding: 14px 4px;"><input type="radio" name="p23_satis_calidad" value="2" style="margin: 0 0 6px;"><span class="option-text">2</span></label>
-          <label class="option" style="flex: 1; text-align: center; flex-direction: column; align-items: center; padding: 14px 4px;"><input type="radio" name="p23_satis_calidad" value="3" style="margin: 0 0 6px;"><span class="option-text">3</span></label>
-          <label class="option" style="flex: 1; text-align: center; flex-direction: column; align-items: center; padding: 14px 4px;"><input type="radio" name="p23_satis_calidad" value="4" style="margin: 0 0 6px;"><span class="option-text">4</span></label>
-          <label class="option" style="flex: 1; text-align: center; flex-direction: column; align-items: center; padding: 14px 4px;"><input type="radio" name="p23_satis_calidad" value="5" style="margin: 0 0 6px;"><span class="option-text">5</span></label>
+        <div class="escala" data-escala-name="p22_satis_calidad">
+          <div class="escala-row cols-5">
+            <label class="escala-btn" data-val="1"><input type="radio" name="p22_satis_calidad" value="1">1</label>
+            <label class="escala-btn" data-val="2"><input type="radio" name="p22_satis_calidad" value="2">2</label>
+            <label class="escala-btn" data-val="3"><input type="radio" name="p22_satis_calidad" value="3">3</label>
+            <label class="escala-btn" data-val="4"><input type="radio" name="p22_satis_calidad" value="4">4</label>
+            <label class="escala-btn" data-val="5"><input type="radio" name="p22_satis_calidad" value="5">5</label>
+          </div>
+          <div class="escala-labels">
+            <span>1 = Muy insatisfecho/a</span>
+            <span class="right">5 = Muy satisfecho/a</span>
+          </div>
         </div>
         <div class="err-msg">Seleccione una opción.</div>
       </div>
 
       <div class="question">
-        <label class="question-label"><span class="num">22.</span>¿Considera que la carga de trabajo en su equipo está distribuida de manera equitativa?<span class="required">*</span></label>
-        <div class="options">
-          <label class="option"><input type="radio" name="p25_carga_equitativa" value="Sí, está bien distribuida"><span class="option-text">Sí, está bien distribuida</span></label>
-          <label class="option"><input type="radio" name="p25_carga_equitativa" value="No, algunos absorben la carga de otros"><span class="option-text">No, algunos miembros del equipo absorben la carga de otros</span></label>
-          <label class="option"><input type="radio" name="p25_carga_equitativa" value="Depende del período / varía por temporadas"><span class="option-text">Depende del período / varía por temporadas</span></label>
-          <label class="option"><input type="radio" name="p25_carga_equitativa" value="No lo sé"><span class="option-text">No lo sé</span></label>
-        </div>
-        <div class="err-msg">Seleccione una opción.</div>
-      </div>
-
-      <div class="question">
-        <label class="question-label"><span class="num">23.</span>Si pudiera recuperar tiempo de las tareas repetitivas y administrativas, ¿a qué actividades lo destinaría?<span class="required">*</span></label>
+        <label class="question-label"><span class="num">22.</span>Si pudiera recuperar tiempo de las tareas repetitivas y administrativas, ¿a qué actividades lo destinaría?<span class="required">*</span></label>
         <div class="question-hint">Seleccione como máximo 2 opciones.</div>
         <div class="options" data-max="2" data-group="p26_uso_tiempo">
           <label class="option"><input type="checkbox" name="p26_uso_tiempo" value="Análisis y diagnóstico de problemas"><span class="option-text">Análisis y diagnóstico de problemas</span></label>
@@ -1050,25 +1176,12 @@
       </div>
     </div>
 
-    <!-- ========== SECCIÓN G: OPORTUNIDADES EN TU ÁREA ========== -->
+    <!-- ========== SECCIÓN G: USO ACTUAL DE IA ========== -->
     <div class="section">
-      <div class="section-title"><span class="section-letter">G</span>Oportunidades en tu área</div>
-      <div class="section-desc">Indica qué tan presentes están estas situaciones en tu equipo (jefe directo, compañeros y personas a tu cargo).</div>
+      <div class="section-title"><span class="section-letter">G</span>Uso actual de inteligencia artificial</div>
 
       <div class="question">
-        <label class="question-label"><span class="num">24.</span>Valore qué tan identificado se siente con cada afirmación.<span class="required">*</span></label>
-        <div class="question-hint">Escala: 1 = nada / casi nunca · 4 = mucho / muy frecuente / totalmente</div>
-        <div id="pBcpLikert"></div>
-        <div class="err-msg">Complete todas las afirmaciones.</div>
-      </div>
-    </div>
-
-    <!-- ========== SECCIÓN H: USO ACTUAL DE IA ========== -->
-    <div class="section">
-      <div class="section-title"><span class="section-letter">H</span>Uso actual de inteligencia artificial</div>
-
-      <div class="question">
-        <label class="question-label"><span class="num">25.</span>¿Cuál es tu nivel actual de uso de inteligencia artificial?<span class="required">*</span></label>
+        <label class="question-label"><span class="num">23.</span>¿Cuál es tu nivel actual de uso de inteligencia artificial?<span class="required">*</span></label>
         <div class="options">
           <label class="option"><input type="radio" name="p27_nivel_ia" value="No uso"><span class="option-text">No uso ninguna herramienta de IA</span></label>
           <label class="option"><input type="radio" name="p27_nivel_ia" value="1 - Básico"><span class="option-text">Nivel 1 - Básico: consultas y consejos puntuales</span></label>
@@ -1080,7 +1193,7 @@
       </div>
 
       <div class="question">
-        <label class="question-label"><span class="num">26.</span>¿Usas alguna herramienta de inteligencia artificial para facilitar tu trabajo?<span class="required">*</span></label>
+        <label class="question-label"><span class="num">24.</span>¿Usas alguna herramienta de inteligencia artificial para facilitar tu trabajo?<span class="required">*</span></label>
         <div class="options">
           <label class="option"><input type="radio" name="p28_usa_ia" value="Sí, con cuenta pagada por mí"><span class="option-text">Sí, con cuenta pagada por mí</span></label>
           <label class="option"><input type="radio" name="p28_usa_ia" value="Sí, con cuenta gratuita"><span class="option-text">Sí, con cuenta gratuita</span></label>
@@ -1089,8 +1202,8 @@
         <div class="err-msg">Seleccione una opción.</div>
       </div>
 
-      <div class="question">
-        <label class="question-label"><span class="num">27.</span>¿Para qué tareas de tu trabajo usas inteligencia artificial hoy?<span class="required">*</span></label>
+      <div class="question question-tareas-ia">
+        <label class="question-label"><span class="num">25.</span>¿Para qué tareas de tu trabajo usas inteligencia artificial hoy?<span class="required">*</span></label>
         <div class="question-hint">Seleccione hasta 3 opciones. Si no usa IA, marque "No uso IA para mi trabajo".</div>
         <div class="options" data-max="3" data-group="p29_tareas_ia">
           <label class="option"><input type="checkbox" name="p29_tareas_ia" value="Redactar borradores de informes u oficios"><span class="option-text">Redactar borradores de informes u oficios</span></label>
@@ -1109,17 +1222,17 @@
 
     <!-- ========== SECCIÓN H: PERCEPCIÓN MODERNIZA ========== -->
     <div class="section">
-      <div class="section-title"><span class="section-letter">I</span>Percepción sobre una plataforma de asistencia con IA</div>
+      <div class="section-title"><span class="section-letter">H</span>Percepción sobre una plataforma de asistencia con IA</div>
 
       <div class="question">
-        <label class="question-label"><span class="num">28.</span>Valore su nivel de acuerdo con las siguientes afirmaciones sobre una posible plataforma de asistencia con IA para elaborar instrumentos de gestión.<span class="required">*</span></label>
+        <label class="question-label"><span class="num">26.</span>Valore su nivel de acuerdo con las siguientes afirmaciones sobre una posible plataforma de asistencia con IA para elaborar instrumentos de gestión.<span class="required">*</span></label>
         <div class="question-hint">Escala: 1 = Totalmente en desacuerdo · 5 = Totalmente de acuerdo</div>
         <div id="p30Likert"></div>
         <div class="err-msg">Complete todas las afirmaciones.</div>
       </div>
 
       <div class="question">
-        <label class="question-label"><span class="num">29.</span>¿Cuáles serían sus principales preocupaciones al usar una herramienta de IA para elaborar instrumentos de gestión?<span class="required">*</span></label>
+        <label class="question-label"><span class="num">27.</span>¿Cuáles serían sus principales preocupaciones al usar una herramienta de IA para elaborar instrumentos de gestión?<span class="required">*</span></label>
         <div class="question-hint">Seleccione como máximo 2 opciones.</div>
         <div class="options" data-max="2" data-group="p31_preocup">
           <label class="option"><input type="checkbox" name="p31_preocup" value="Errores técnicos o normativos en los borradores"><span class="option-text">Que los borradores generados tengan errores técnicos o normativos</span></label>
@@ -1135,7 +1248,7 @@
       </div>
 
       <div class="question">
-        <label class="question-label"><span class="num">30.</span>¿Qué condición considera indispensable para adoptar una herramienta de IA en su trabajo?<span class="required">*</span></label>
+        <label class="question-label"><span class="num">28.</span>¿Qué condición considera indispensable para adoptar una herramienta de IA en su trabajo?<span class="required">*</span></label>
         <div class="question-hint">Seleccione como máximo 2 opciones.</div>
         <div class="options" data-max="2" data-group="p33_condicion">
           <label class="option"><input type="checkbox" name="p33_condicion" value="Validada institucionalmente"><span class="option-text">Que esté validada y autorizada institucionalmente</span></label>
@@ -1151,23 +1264,49 @@
 
     <!-- ========== SECCIÓN I: HIPÓTESIS DE IMPACTO ========== -->
     <div class="section">
-      <div class="section-title"><span class="section-letter">J</span>Tu estimación de impacto</div>
+      <div class="section-title"><span class="section-letter">I</span>Tu estimación de impacto</div>
       <div class="section-desc">Imagina por un momento que tienes una herramienta de IA que te genera borradores automáticos de los siguientes documentos.</div>
 
       <div class="question">
-        <label class="question-label"><span class="num">31.</span>¿Cuántas horas a la semana estimas que te ahorraría en cada tipo de documento?<span class="required">*</span></label>
-        <div class="matrix-wrap" id="p34Matrix"></div>
-        <div class="err-msg">Complete todas las filas.</div>
+        <label class="question-label"><span class="num">29.</span>Arrastra los siguientes tipos de documento para ordenarlos según en cuál te ahorraría MÁS horas de trabajo (arriba) y en cuál MENOS (abajo).<span class="required">*</span></label>
+        <div class="question-hint">Mantén presionado un ítem y arrástralo hacia arriba o abajo para cambiar el orden.</div>
+        <div class="orden-list" id="ordenImpacto">
+          <div class="orden-item" data-value="Fichas de proceso">
+            <div class="orden-rank">1</div>
+            <div class="orden-text">Fichas de proceso</div>
+            <div class="orden-handle">≡</div>
+          </div>
+          <div class="orden-item" data-value="Diagramas de procesos">
+            <div class="orden-rank">2</div>
+            <div class="orden-text">Diagramas de procesos</div>
+            <div class="orden-handle">≡</div>
+          </div>
+          <div class="orden-item" data-value="Informes técnicos">
+            <div class="orden-rank">3</div>
+            <div class="orden-text">Informes técnicos</div>
+            <div class="orden-handle">≡</div>
+          </div>
+          <div class="orden-item" data-value="Presentaciones institucionales">
+            <div class="orden-rank">4</div>
+            <div class="orden-text">Presentaciones institucionales</div>
+            <div class="orden-handle">≡</div>
+          </div>
+          <div class="orden-item" data-value="Inventario de procesos">
+            <div class="orden-rank">5</div>
+            <div class="orden-text">Inventario de procesos</div>
+            <div class="orden-handle">≡</div>
+          </div>
+        </div>
       </div>
     </div>
 
     <!-- ========== SECCIÓN J: PREGUNTAS ABIERTAS ========== -->
     <div class="section">
-      <div class="section-title"><span class="section-letter">K</span>Tu voz cuenta</div>
+      <div class="section-title"><span class="section-letter">J</span>Tu voz cuenta</div>
       <div class="section-desc">Cuéntanos en tus palabras lo que no entró en las preguntas anteriores.</div>
 
       <div class="question">
-        <label class="question-label" for="p35_repetitivas"><span class="num">32.</span>En sus propias palabras: ¿cuáles son las 2 o 3 tareas repetitivas que más tiempo le quitan en su trabajo semanal?<span class="required">*</span></label>
+        <label class="question-label" for="p35_repetitivas"><span class="num">30.</span>En sus propias palabras: ¿cuáles son las 2 o 3 tareas repetitivas que más tiempo le quitan en su trabajo semanal?<span class="required">*</span></label>
         <textarea class="textarea" id="p35_repetitivas" name="p35_repetitivas" rows="3" required></textarea>
         <div class="err-msg">Por favor escriba una respuesta.</div>
       </div>
@@ -1266,7 +1405,8 @@
     { id: "bcp_manual_auto", txt: "Hay mucho trabajo manual repetitivo en mi área que podría automatizarse" },
     { id: "bcp_info_personas", txt: "Mucha información importante de mi área está en la cabeza de pocas personas" },
     { id: "bcp_datos_dispersos", txt: "Tenemos datos importantes pero dispersos en distintos formatos que nos cuesta consolidar" },
-    { id: "bcp_indicadores", txt: "Nos cuesta transformar la información disponible en indicadores para tomar decisiones" }
+    { id: "bcp_indicadores", txt: "Nos cuesta transformar la información disponible en indicadores para tomar decisiones" },
+    { id: "bcp_carga_equitativa", txt: "La carga de trabajo de mi equipo está bien distribuida entre sus miembros" }
   ];
 
   // ============== BUILD CARDS P6 (volumen + tiempo) ==============
@@ -1295,45 +1435,40 @@
     document.getElementById('p6Matrix').innerHTML = html;
   }
 
-  // ============== BUILD LIKERT BCP (4 niveles) ==============
+  // ============== BUILD LIKERT BCP (4 niveles, escala visual) ==============
   function buildLikertBcp() {
-    const NIVELES = [
-      { n: 1, lbl: 'Nada / casi nunca' },
-      { n: 2, lbl: 'Poco' },
-      { n: 3, lbl: 'Bastante' },
-      { n: 4, lbl: 'Mucho / muy frecuente' }
-    ];
-    let html = '<div class="doc-cards">';
+    let html = '<div class="afirmaciones">';
     BCP_AFIRMACIONES.forEach(af => {
-      html += '<div class="doc-card">';
-      html += '<div class="doc-card-title">' + af.txt + '</div>';
-      html += '<div class="pill-group">';
-      NIVELES.forEach(lv => {
-        html += '<label class="pill" title="' + lv.lbl + '"><input type="radio" name="pbcp_' + af.id + '" value="' + lv.n + '">' + lv.n + ' · ' + lv.lbl + '</label>';
-      });
+      const name = 'pbcp_' + af.id;
+      html += '<div class="afirmacion">';
+      html += '<div class="afirmacion-text">' + af.txt + '</div>';
+      html += '<div class="escala" data-escala-name="' + name + '">';
+      html += '<div class="escala-row cols-4">';
+      for (let n = 1; n <= 4; n++) {
+        html += '<label class="escala-btn" data-val="' + n + '"><input type="radio" name="' + name + '" value="' + n + '">' + n + '</label>';
+      }
+      html += '</div>';
+      html += '<div class="escala-labels"><span>1 = Nada</span><span class="right">4 = Mucho</span></div>';
       html += '</div></div>';
     });
     html += '</div>';
     document.getElementById('pBcpLikert').innerHTML = html;
   }
 
-  // ============== BUILD LIKERT P29 ==============
+  // ============== BUILD LIKERT P28 (afirmaciones plataforma, 5 niveles) ==============
   function buildLikertP30() {
-    const NIVELES = [
-      { n: 1, lbl: 'Totalmente en desacuerdo' },
-      { n: 2, lbl: 'En desacuerdo' },
-      { n: 3, lbl: 'Neutral' },
-      { n: 4, lbl: 'De acuerdo' },
-      { n: 5, lbl: 'Totalmente de acuerdo' }
-    ];
-    let html = '<div class="doc-cards">';
+    let html = '<div class="afirmaciones">';
     LIKERT_AFIRMACIONES.forEach(af => {
-      html += '<div class="doc-card">';
-      html += '<div class="doc-card-title">' + af.txt + '</div>';
-      html += '<div class="pill-group">';
-      NIVELES.forEach(lv => {
-        html += '<label class="pill" title="' + lv.lbl + '"><input type="radio" name="p30_' + af.id + '" value="' + lv.n + '">' + lv.n + ' · ' + lv.lbl + '</label>';
-      });
+      const name = 'p30_' + af.id;
+      html += '<div class="afirmacion">';
+      html += '<div class="afirmacion-text">' + af.txt + '</div>';
+      html += '<div class="escala" data-escala-name="' + name + '">';
+      html += '<div class="escala-row cols-5">';
+      for (let n = 1; n <= 5; n++) {
+        html += '<label class="escala-btn" data-val="' + n + '"><input type="radio" name="' + name + '" value="' + n + '">' + n + '</label>';
+      }
+      html += '</div>';
+      html += '<div class="escala-labels"><span>1 = Totalmente en desacuerdo</span><span class="right">5 = Totalmente de acuerdo</span></div>';
       html += '</div></div>';
     });
     html += '</div>';
@@ -1429,6 +1564,100 @@
       btn.textContent = '✓ Distribución confirmada';
     });
 
+    update();
+  }
+
+  // ============== ESCALA (selección visual) ==============
+  function bindEscalas() {
+    document.addEventListener('change', (e) => {
+      const input = e.target;
+      if (input.type !== 'radio') return;
+      const btn = input.closest('.escala-btn');
+      if (!btn) return;
+      const name = input.name;
+      document.querySelectorAll('.escala-btn input[name="' + name + '"]').forEach(i => {
+        i.closest('.escala-btn').classList.remove('selected');
+      });
+      btn.classList.add('selected');
+    });
+    // En toda la página
+    document.addEventListener('click', (e) => {
+      const btn = e.target.closest('.escala-btn');
+      if (!btn) return;
+      const input = btn.querySelector('input');
+      if (input && !input.checked) {
+        input.checked = true;
+        input.dispatchEvent(new Event('change', { bubbles: true }));
+      }
+    });
+  }
+
+  // ============== ORDEN ARRASTRABLE (priorización P31) ==============
+  function bindOrdenable() {
+    const list = document.getElementById('ordenImpacto');
+    if (!list) return;
+    let dragEl = null;
+    let placeholder = null;
+
+    function updateRanks() {
+      list.querySelectorAll('.orden-item').forEach((item, i) => {
+        item.querySelector('.orden-rank').textContent = i + 1;
+      });
+    }
+
+    function getDragAfterElement(y) {
+      const items = [...list.querySelectorAll('.orden-item:not(.dragging)')];
+      return items.reduce((closest, child) => {
+        const box = child.getBoundingClientRect();
+        const offset = y - box.top - box.height / 2;
+        if (offset < 0 && offset > closest.offset) return { offset, element: child };
+        return closest;
+      }, { offset: -Infinity }).element;
+    }
+
+    // Pointer Events (funciona en mouse y touch)
+    list.querySelectorAll('.orden-item').forEach(item => {
+      item.addEventListener('pointerdown', (e) => {
+        dragEl = item;
+        item.classList.add('dragging');
+        item.setPointerCapture(e.pointerId);
+      });
+      item.addEventListener('pointermove', (e) => {
+        if (!dragEl) return;
+        e.preventDefault();
+        const afterEl = getDragAfterElement(e.clientY);
+        if (afterEl == null) list.appendChild(dragEl);
+        else list.insertBefore(dragEl, afterEl);
+      });
+      item.addEventListener('pointerup', () => {
+        if (dragEl) dragEl.classList.remove('dragging');
+        dragEl = null;
+        updateRanks();
+      });
+      item.addEventListener('pointercancel', () => {
+        if (dragEl) dragEl.classList.remove('dragging');
+        dragEl = null;
+        updateRanks();
+      });
+    });
+
+    updateRanks();
+  }
+
+  // ============== CONDICIONAL: P27 (tareas IA) solo si P26 = sí ==============
+  function bindCondicionalIA() {
+    const radios = document.querySelectorAll('input[name="p28_usa_ia"]');
+    const tareasQ = document.querySelector('.question-tareas-ia');
+    if (!tareasQ) return;
+    function update() {
+      const checked = document.querySelector('input[name="p28_usa_ia"]:checked');
+      if (!checked || checked.value === 'No uso ninguna') {
+        tareasQ.style.display = 'none';
+      } else {
+        tareasQ.style.display = '';
+      }
+    }
+    radios.forEach(r => r.addEventListener('change', update));
     update();
   }
 
@@ -1582,16 +1811,7 @@
       if (!firstError) firstError = q;
     }
 
-    // P34 matrix
-    let p34Complete = true;
-    TIPOS_DOC_IMPACTO.forEach((_, i) => {
-      if (!document.querySelector('[name="p34_impacto_' + i + '"]:checked')) p34Complete = false;
-    });
-    if (!p34Complete) {
-      const q = document.getElementById('p34Matrix').closest('.question');
-      q.classList.add('has-error');
-      if (!firstError) firstError = q;
-    }
+    // P31 orden: no requiere validación (siempre tiene un orden por default)
 
     if (firstError) {
       firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
@@ -1638,6 +1858,16 @@
     data['p6_distrib_documentos'] = Math.round(segPositions[1] - segPositions[0]);
     data['p6_distrib_administrativas'] = Math.round(segPositions[2] - segPositions[1]);
     data['p6_distrib_externas'] = Math.round(100 - segPositions[2]);
+
+    // P31 orden de impacto: posición 1 (más ahorro) → posición 5 (menos)
+    const items = document.querySelectorAll('#ordenImpacto .orden-item');
+    items.forEach((item, i) => {
+      const val = item.dataset.value
+        .toLowerCase()
+        .replace(/[áàä]/g, 'a').replace(/[éèë]/g, 'e').replace(/[íìï]/g, 'i').replace(/[óòö]/g, 'o').replace(/[úùü]/g, 'u')
+        .replace(/[^a-z0-9]+/g, '_').replace(/^_|_$/g, '');
+      data['p31_orden_' + val] = i + 1;
+    });
 
     return data;
   }
@@ -1690,8 +1920,10 @@
     buildMatrixP6();
     buildLikertBcp();
     buildLikertP30();
-    buildMatrixP34();
     bindSegmentedRange();
+    bindEscalas();
+    bindOrdenable();
+    bindCondicionalIA();
     bindMaxCheckboxes();
     document.getElementById('form').addEventListener('submit', handleSubmit);
     document.getElementById('form').addEventListener('change', updateProgress);
