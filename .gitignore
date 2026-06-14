@@ -17,3 +17,7 @@ Thumbs.db
 
 # Logs
 *.log
+
+# Material interno de Tidú (no debe ir al repo público)
+Comparativo_Cuestionario_Moderniza*.xlsx
+comparativo_preguntas.py
