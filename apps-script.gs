@@ -86,7 +86,7 @@ function writeHeaders(sheet) {
     'p15_vigencia',
     'p18_urgentes',
     'p19_plazo',
-    // BCP — afirmaciones (9) escala semáforo 1-4
+    // BCP — afirmaciones (9 + 2 DRE/UGEL) escala semáforo 1-4
     'pbcp_bcp_poi_retrasos',
     'pbcp_bcp_carga_no_distrib',
     'pbcp_bcp_sobre_horas',
@@ -96,6 +96,8 @@ function writeHeaders(sheet) {
     'pbcp_bcp_info_personas',
     'pbcp_bcp_datos_dispersos',
     'pbcp_bcp_indicadores',
+    'pbcp_bcp_normas_iiee',
+    'pbcp_bcp_consultas_repetidas',
     'p26_uso_tiempo',
     'p27_nivel_ia',
     'p28_usa_ia',
