@@ -1215,9 +1215,9 @@
       <div class="question">
         <label class="question-label"><span class="num">28.</span>De las situaciones que marcaste 3 o 4 (las que más te ocurren), describe las 3 más concretas que ilustran cómo se viven en tu día a día.</label>
         <div class="question-hint">Pueden ser ejemplos cortos. Si solo tienes 1 o 2 que destacar, déjalas y deja en blanco las demás.</div>
-        <textarea class="textarea situacion-top-input" name="situacion_top_1" rows="2" placeholder="Situación 1..." onchange="actualizarPriorizacion()"></textarea>
-        <textarea class="textarea situacion-top-input" name="situacion_top_2" rows="2" placeholder="Situación 2..." style="margin-top:8px;" onchange="actualizarPriorizacion()"></textarea>
-        <textarea class="textarea situacion-top-input" name="situacion_top_3" rows="2" placeholder="Situación 3..." style="margin-top:8px;" onchange="actualizarPriorizacion()"></textarea>
+        <textarea class="textarea situacion-top-input" name="situacion_top_1" rows="2" placeholder="Situación 1..."></textarea>
+        <textarea class="textarea situacion-top-input" name="situacion_top_2" rows="2" placeholder="Situación 2..." style="margin-top:8px;"></textarea>
+        <textarea class="textarea situacion-top-input" name="situacion_top_3" rows="2" placeholder="Situación 3..." style="margin-top:8px;"></textarea>
       </div>
 
       <div class="question">
@@ -1250,14 +1250,6 @@
         <div id="pMbiLikert"></div>
         <div class="err-msg">Complete todas las afirmaciones.</div>
       </div>
-    </div>
-
-    <!-- ========== SECCIÓN I: PRIORIZACIÓN ========== -->
-    <div class="section" id="seccionPriorizacion" style="display:none;">
-      <div class="section-title"><span class="section-letter">I</span>Priorización de situaciones</div>
-      <div class="section-desc">Estas son las situaciones que describiste. Arrástralas para ordenarlas de la MÁS importante (arriba) a la MENOS importante (abajo).</div>
-      <div class="orden-list" id="ordenSituaciones"></div>
-      <input type="hidden" id="situacionesOrden" name="situacionesOrden">
     </div>
 
     <!-- ========== SECCIÓN H: USO ACTUAL DE IA ========== -->
@@ -2260,11 +2252,6 @@
     data['p6_distrib_administrativas'] = Math.round(segPositions[2] - segPositions[1]);
     data['p6_distrib_externas'] = Math.round(100 - segPositions[2]);
 
-    // Las 3 situaciones top y su orden de priorización
-    const ordenItems = document.querySelectorAll('#ordenSituaciones .orden-item');
-    const ordenado = [...ordenItems].map(it => it.dataset.value);
-    data['situaciones_orden'] = JSON.stringify(ordenado);
-
     return data;
   }
 
@@ -2330,6 +2317,10 @@
     document.getElementById('form').addEventListener('submit', handleSubmit);
     document.getElementById('form').addEventListener('change', updateProgress);
     document.getElementById('form').addEventListener('input', updateProgress);
+    document.getElementById('form').addEventListener('change', (e) => {
+      const q = e.target.closest('.question');
+      if (q) q.classList.remove('has-error');
+    });
     updateProgress();
   });
 </script>
