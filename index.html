@@ -934,6 +934,17 @@
         <div class="err-msg">Seleccione una opción.</div>
       </div>
 
+      <div class="question">
+        <label class="question-label"><span class="num">9.</span>¿Cuántas horas trabajas en promedio por semana?<span class="required">*</span></label>
+        <div class="options">
+          <label class="option"><input type="radio" name="p4b_horas_semana" value="Menos de 40 h"><span class="option-text">Menos de 40 horas</span></label>
+          <label class="option"><input type="radio" name="p4b_horas_semana" value="40 a 48 h"><span class="option-text">40 a 48 horas</span></label>
+          <label class="option"><input type="radio" name="p4b_horas_semana" value="49 a 60 h"><span class="option-text">49 a 60 horas</span></label>
+          <label class="option"><input type="radio" name="p4b_horas_semana" value="Más de 60 h"><span class="option-text">Más de 60 horas</span></label>
+        </div>
+        <div class="err-msg">Seleccione una opción.</div>
+      </div>
+
       <div class="question question-dre-ugel-only" style="display:none;">
         <label class="question-label"><span class="num">9.</span>¿Cuántas Instituciones Educativas (IIEE) están a tu cargo o jurisdicción?<span class="required">*</span></label>
         <div class="options">
@@ -1327,6 +1338,20 @@
         <div class="err-msg">Seleccione al menos una opción.</div>
       </div>
 
+      <div class="question">
+        <label class="question-label"><span class="num">37.</span>¿Qué condición considera indispensable para adoptar una herramienta de IA en su trabajo?<span class="required">*</span></label>
+        <div class="question-hint">Seleccione como máximo 2 opciones.</div>
+        <div class="options" data-max="2" data-group="p33_condicion">
+          <label class="option"><input type="checkbox" name="p33_condicion" value="Validada institucionalmente"><span class="option-text">Que esté validada y autorizada institucionalmente</span></label>
+          <label class="option"><input type="checkbox" name="p33_condicion" value="Capacitación previa"><span class="option-text">Que haya una capacitación previa</span></label>
+          <label class="option"><input type="checkbox" name="p33_condicion" value="Fácil de usar"><span class="option-text">Que sea fácil de usar (interfaz intuitiva)</span></label>
+          <label class="option"><input type="checkbox" name="p33_condicion" value="Confidencialidad garantizada"><span class="option-text">Que garantice la confidencialidad de la información</span></label>
+          <label class="option"><input type="checkbox" name="p33_condicion" value="Soporte técnico disponible"><span class="option-text">Que exista soporte técnico disponible</span></label>
+          <label class="option"><input type="checkbox" name="p33_condicion" value="Permita revisar y modificar el borrador"><span class="option-text">Que permita revisar y modificar el borrador antes de utilizarlo oficialmente</span></label>
+        </div>
+        <div class="err-msg">Seleccione al menos una opción.</div>
+      </div>
+
     </div>
 
     <!-- ========== SUBMIT ========== -->
@@ -1408,6 +1433,8 @@
   // ============== AFIRMACIONES LIKERT P30 ==============
   const LIKERT_AFIRMACIONES = [
     { id: "lik_reduce_tiempo", txt: "Reduciría significativamente el tiempo que dedico a tareas repetitivas" },
+    { id: "lik_calidad_borradores", txt: "Me ayudaría a generar borradores de mayor calidad que los que elaboro sin apoyo" },
+    { id: "lik_mas_tiempo_estrategico", txt: "Me daría más tiempo para actividades estratégicas y de mayor valor" },
     { id: "lik_piloto", txt: "Me gustaría participar en una prueba piloto de esta herramienta" }
   ];
 

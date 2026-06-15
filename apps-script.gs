@@ -64,6 +64,7 @@ function writeHeaders(sheet) {
     'p2_ugel',
     'p3_rol',
     'p4_anios',
+    'p4b_horas_semana',
     // P5: distribución porcentual del tiempo semanal (4 categorías)
     'p6_distrib_sustantivas',
     'p6_distrib_documentos',
@@ -102,10 +103,13 @@ function writeHeaders(sheet) {
     'p27_nivel_ia',
     'p28_usa_ia',
     'p29_tareas_ia',
-    // Likert plataforma (2)
+    // Likert plataforma (4)
     'p30_lik_reduce_tiempo',
+    'p30_lik_calidad_borradores',
+    'p30_lik_mas_tiempo_estrategico',
     'p30_lik_piloto',
     'p31_preocup',
+    'p33_condicion',
     // 3 situaciones más concretas + priorización
     'situacion_top_1',
     'situacion_top_2',
