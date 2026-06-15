@@ -1255,9 +1255,22 @@
       </div>
     </div>
 
-    <!-- ========== SECCIÓN G: PRIORIZACIÓN ========== -->
+    <!-- ========== SECCIÓN H: BIENESTAR EMOCIONAL (MBI) ========== -->
+    <div class="section">
+      <div class="section-title"><span class="section-letter">H</span>Cómo te sientes en tu trabajo</div>
+      <div class="section-desc">Tus respuestas son confidenciales y se analizan únicamente en agregado. Indica con qué frecuencia te ocurre cada una.</div>
+
+      <div class="question">
+        <label class="question-label"><span class="num">30.</span>Valore con qué frecuencia se aplican las siguientes afirmaciones a su día a día.<span class="required">*</span></label>
+        <div class="question-hint">Escala: 1 = Casi nunca · 4 = Casi todos los días</div>
+        <div id="pMbiLikert"></div>
+        <div class="err-msg">Complete todas las afirmaciones.</div>
+      </div>
+    </div>
+
+    <!-- ========== SECCIÓN I: PRIORIZACIÓN ========== -->
     <div class="section" id="seccionPriorizacion" style="display:none;">
-      <div class="section-title"><span class="section-letter">H</span>Priorización de situaciones</div>
+      <div class="section-title"><span class="section-letter">I</span>Priorización de situaciones</div>
       <div class="section-desc">Estas son las situaciones que describiste. Arrástralas para ordenarlas de la MÁS importante (arriba) a la MENOS importante (abajo).</div>
       <div class="orden-list" id="ordenSituaciones"></div>
       <input type="hidden" id="situacionesOrden" name="situacionesOrden">
@@ -1265,10 +1278,10 @@
 
     <!-- ========== SECCIÓN H: USO ACTUAL DE IA ========== -->
     <div class="section" id="seccionG">
-      <div class="section-title"><span class="section-letter">I</span>Uso actual de inteligencia artificial</div>
+      <div class="section-title"><span class="section-letter">J</span>Uso actual de inteligencia artificial</div>
 
       <div class="question">
-        <label class="question-label"><span class="num">30.</span>¿Cuál es tu nivel actual de uso de inteligencia artificial?<span class="required">*</span></label>
+        <label class="question-label"><span class="num">31.</span>¿Cuál es tu nivel actual de uso de inteligencia artificial?<span class="required">*</span></label>
         <div class="options">
           <label class="option"><input type="radio" name="p27_nivel_ia" value="No uso"><span class="option-text">No uso ninguna herramienta de IA</span></label>
           <label class="option"><input type="radio" name="p27_nivel_ia" value="1 - Básico"><span class="option-text">Nivel 1 - Básico: consultas y consejos puntuales</span></label>
@@ -1280,7 +1293,7 @@
       </div>
 
       <div class="question">
-        <label class="question-label"><span class="num">31.</span>¿Usas alguna herramienta de inteligencia artificial para facilitar tu trabajo?<span class="required">*</span></label>
+        <label class="question-label"><span class="num">32.</span>¿Usas alguna herramienta de inteligencia artificial para facilitar tu trabajo?<span class="required">*</span></label>
         <div class="options">
           <label class="option"><input type="radio" name="p28_usa_ia" value="Sí, con cuenta pagada por el MINEDU"><span class="option-text">Sí, con cuenta pagada por el MINEDU</span></label>
           <label class="option"><input type="radio" name="p28_usa_ia" value="Sí, con cuenta pagada por mí"><span class="option-text">Sí, con cuenta pagada por mí</span></label>
@@ -1291,7 +1304,7 @@
       </div>
 
       <div class="question question-tareas-ia">
-        <label class="question-label"><span class="num">32.</span>¿Para qué tareas de tu trabajo usas inteligencia artificial hoy?<span class="required">*</span></label>
+        <label class="question-label"><span class="num">33.</span>¿Para qué tareas de tu trabajo usas inteligencia artificial hoy?<span class="required">*</span></label>
         <div class="question-hint">Seleccione hasta 3 opciones. Si no usa IA, marque "No uso IA para mi trabajo".</div>
         <div class="options" data-max="3" data-group="p29_tareas_ia">
           <label class="option"><input type="checkbox" name="p29_tareas_ia" value="Redactar borradores de informes u oficios"><span class="option-text">Redactar borradores de informes u oficios</span></label>
@@ -1310,17 +1323,17 @@
 
     <!-- ========== SECCIÓN H: PERCEPCIÓN MODERNIZA ========== -->
     <div class="section">
-      <div class="section-title"><span class="section-letter">J</span>Percepción sobre una plataforma de asistencia con IA</div>
+      <div class="section-title"><span class="section-letter">K</span>Percepción sobre una plataforma de asistencia con IA</div>
 
       <div class="question">
-        <label class="question-label"><span class="num">33.</span>Valore su nivel de acuerdo con las siguientes afirmaciones sobre una posible plataforma de asistencia con IA para elaborar instrumentos de gestión.<span class="required">*</span></label>
+        <label class="question-label"><span class="num">34.</span>Valore su nivel de acuerdo con las siguientes afirmaciones sobre una posible plataforma de asistencia con IA para elaborar instrumentos de gestión.<span class="required">*</span></label>
         <div class="question-hint">Escala: 1 = Totalmente en desacuerdo · 5 = Totalmente de acuerdo</div>
         <div id="p30Likert"></div>
         <div class="err-msg">Complete todas las afirmaciones.</div>
       </div>
 
       <div class="question question-dre-ugel-only" style="display:none;">
-        <label class="question-label"><span class="num">34.</span>¿Para cuáles tareas de tu unidad sería MÁS útil una herramienta con IA?<span class="required">*</span></label>
+        <label class="question-label"><span class="num">35.</span>¿Para cuáles tareas de tu unidad sería MÁS útil una herramienta con IA?<span class="required">*</span></label>
         <div class="question-hint">Seleccione hasta 3 opciones.</div>
         <div class="options" data-max="3" data-group="pdu_oportunidades">
           <label class="option"><input type="checkbox" name="pdu_oportunidades" value="Preparar visitas de supervisión"><span class="option-text">Preparar visitas de supervisión</span></label>
@@ -1337,7 +1350,7 @@
       </div>
 
       <div class="question">
-        <label class="question-label"><span class="num">35.</span>¿Cuáles serían sus principales preocupaciones al usar una herramienta de IA para elaborar instrumentos de gestión?<span class="required">*</span></label>
+        <label class="question-label"><span class="num">36.</span>¿Cuáles serían sus principales preocupaciones al usar una herramienta de IA para elaborar instrumentos de gestión?<span class="required">*</span></label>
         <div class="question-hint">Seleccione como máximo 2 opciones.</div>
         <div class="options" data-max="2" data-group="p31_preocup">
           <label class="option"><input type="checkbox" name="p31_preocup" value="Errores técnicos o normativos en los borradores"><span class="option-text">Que los borradores generados tengan errores técnicos o normativos</span></label>
@@ -1353,7 +1366,7 @@
       </div>
 
       <div class="question">
-        <label class="question-label"><span class="num">36.</span>¿Qué condición considera indispensable para adoptar una herramienta de IA en su trabajo?<span class="required">*</span></label>
+        <label class="question-label"><span class="num">37.</span>¿Qué condición considera indispensable para adoptar una herramienta de IA en su trabajo?<span class="required">*</span></label>
         <div class="question-hint">Seleccione como máximo 2 opciones.</div>
         <div class="options" data-max="2" data-group="p33_condicion">
           <label class="option"><input type="checkbox" name="p33_condicion" value="Validada institucionalmente"><span class="option-text">Que esté validada y autorizada institucionalmente</span></label>
@@ -1452,6 +1465,14 @@
     { id: "lik_piloto", txt: "Me gustaría participar en una prueba piloto de esta herramienta" }
   ];
 
+  // ============== AFIRMACIONES MBI — agotamiento emocional (escala frecuencia 1-4) ==============
+  const MBI_AFIRMACIONES = [
+    { id: "mbi_agotado", txt: "Me siento emocionalmente agotado/a por mi trabajo" },
+    { id: "mbi_cansado_fin_dia", txt: "Me siento cansado/a al final de la jornada laboral" },
+    { id: "mbi_cuesta_levantarme", txt: "Me cuesta levantarme por la mañana y tener que enfrentarme a otro día de trabajo" },
+    { id: "mbi_desgasta", txt: "Siento que mi trabajo me desgasta" }
+  ];
+
   // ============== AFIRMACIONES BCP — oportunidades en el área (todas semáforo 1-4) ==============
   const BCP_AFIRMACIONES = [
     { id: "bcp_poi_retrasos", txt: "La carga documental y administrativa ha ocasionado retrasos en el cumplimiento de actividades planificadas en el POI de mi unidad" },
@@ -1492,6 +1513,28 @@
     });
     html += '</div>';
     document.getElementById('p6Matrix').innerHTML = html;
+  }
+
+  // ============== BUILD LIKERT MBI (4 niveles frecuencia semáforo) ==============
+  function buildLikertMbi() {
+    const el = document.getElementById('pMbiLikert');
+    if (!el) return;
+    let html = '<div class="afirmaciones">';
+    MBI_AFIRMACIONES.forEach(af => {
+      const name = 'pmbi_' + af.id;
+      html += '<div class="afirmacion">';
+      html += '<div class="afirmacion-text">' + af.txt + '</div>';
+      html += '<div class="escala semaforo" data-escala-name="' + name + '">';
+      html += '<div class="escala-row cols-4">';
+      for (let n = 1; n <= 4; n++) {
+        html += '<label class="escala-btn" data-val="' + n + '"><input type="radio" name="' + name + '" value="' + n + '">' + n + '</label>';
+      }
+      html += '</div>';
+      html += '<div class="escala-labels"><span>1 = Casi nunca</span><span class="right">4 = Casi todos los días</span></div>';
+      html += '</div></div>';
+    });
+    html += '</div>';
+    el.innerHTML = html;
   }
 
   // ============== BUILD LIKERT BCP (4 niveles semáforo + mini-form si score 3 o 4) ==============
@@ -2129,7 +2172,7 @@
         const input = form.querySelector('[name="' + name + '"]');
         const q = input.closest('.question');
         // skip P6 / P34 matrices and BCP/P30 likerts (validated as group below)
-        if (name.startsWith('p6_') || name.startsWith('p34_') || name.startsWith('p30_') || name.startsWith('pbcp_')) return;
+        if (name.startsWith('p6_') || name.startsWith('p34_') || name.startsWith('p30_') || name.startsWith('pbcp_') || name.startsWith('pmbi_')) return;
         q.classList.add('has-error');
         if (!firstError) firstError = q;
       }
@@ -2171,6 +2214,17 @@
     });
     if (!p30Complete) {
       const q = document.getElementById('p30Likert').closest('.question');
+      q.classList.add('has-error');
+      if (!firstError) firstError = q;
+    }
+
+    // MBI likert: all 4 statements
+    let mbiComplete = true;
+    MBI_AFIRMACIONES.forEach(af => {
+      if (!document.querySelector('[name="pmbi_' + af.id + '"]:checked')) mbiComplete = false;
+    });
+    if (!mbiComplete) {
+      const q = document.getElementById('pMbiLikert').closest('.question');
       q.classList.add('has-error');
       if (!firstError) firstError = q;
     }
@@ -2293,6 +2347,7 @@
   document.addEventListener('DOMContentLoaded', () => {
     buildMatrixP6();
     buildLikertBcp();
+    buildLikertMbi();
     buildLikertP30();
     bindSegmentedRange();
     bindEscalas();

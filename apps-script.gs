@@ -99,6 +99,11 @@ function writeHeaders(sheet) {
     'pbcp_bcp_normas_iiee',
     'pbcp_bcp_consultas_repetidas',
     'pbcp_bcp_seguimiento_iiee',
+    // MBI — agotamiento emocional (todos)
+    'pmbi_mbi_agotado',
+    'pmbi_mbi_cansado_fin_dia',
+    'pmbi_mbi_cuesta_levantarme',
+    'pmbi_mbi_desgasta',
     'p26_uso_tiempo',
     'p27_nivel_ia',
     'p28_usa_ia',
