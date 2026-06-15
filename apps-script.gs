@@ -56,8 +56,12 @@ function doGet() {
 function writeHeaders(sheet) {
   const headers = [
     'timestamp',
+    'p0_nivel',
     'p1_regimen',
+    'p2_categoria',
     'p2_unidad',
+    'p2_dre',
+    'p2_ugel',
     'p3_rol',
     'p4_anios',
     // P5: distribución porcentual del tiempo semanal (4 categorías)
@@ -105,7 +109,16 @@ function writeHeaders(sheet) {
     'p30_lik_piloto',
     'p31_preocup',
     'p33_condicion',
-    'p35_repetitivas'
+    'p35_repetitivas',
+    // ===== Específicas DRE / UGEL (vacías si nivel = MINEDU) =====
+    'pdu_num_iiee',
+    'pdu_visitas_mes',
+    'pdu_tiempo_informe',
+    'pdu_pre_visita',
+    'pdu_consolidar',
+    'pdu_traduce_normas',
+    'pdu_consultas',
+    'pdu_oportunidades'
   ];
   sheet.getRange(1, 1, 1, headers.length).setValues([headers]);
   sheet.getRange(1, 1, 1, headers.length)

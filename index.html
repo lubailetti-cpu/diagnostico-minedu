@@ -752,7 +752,18 @@
       <div class="section-title"><span class="section-letter">A</span>Perfil del servidor</div>
 
       <div class="question">
-        <label class="question-label" for="p1_regimen"><span class="num">1.</span>¿A qué régimen laboral pertenece?<span class="required">*</span></label>
+        <label class="question-label" for="p0_nivel"><span class="num">1.</span>¿En qué nivel del sector educativo trabaja?<span class="required">*</span></label>
+        <select class="select" id="p0_nivel" name="p0_nivel" required>
+          <option value="">— Seleccionar —</option>
+          <option>MINEDU - Sede central</option>
+          <option>Dirección Regional de Educación (DRE)</option>
+          <option>Unidad de Gestión Educativa Local (UGEL)</option>
+        </select>
+        <div class="err-msg">Seleccione una opción.</div>
+      </div>
+
+      <div class="question">
+        <label class="question-label" for="p1_regimen"><span class="num">2.</span>¿A qué régimen laboral pertenece?<span class="required">*</span></label>
         <select class="select" id="p1_regimen" name="p1_regimen" required>
           <option value="">— Seleccionar —</option>
           <option>D. L. N° 1057 - CAS (Contrato Administrativo de Servicios)</option>
@@ -765,101 +776,72 @@
         <div class="err-msg">Seleccione una opción.</div>
       </div>
 
-      <div class="question">
-        <label class="question-label" for="p2_unidad"><span class="num">2.</span>¿A qué unidad organizacional (U.O.) del Minedu pertenece?<span class="required">*</span></label>
-        <select class="select" id="p2_unidad" name="p2_unidad" required>
+      <div class="question question-minedu-only">
+        <label class="question-label" for="p2_categoria"><span class="num">3.</span>¿En qué categoría se ubica su unidad organizacional?<span class="required">*</span></label>
+        <div class="question-hint">Según el ROF del MINEDU (DS 001-2015-MINEDU)</div>
+        <select class="select" id="p2_categoria" name="p2_categoria" required>
           <option value="">— Seleccionar —</option>
-          <option>CASLIT - CASA DE LA LITERATURA</option>
-          <option>CNE - CONSEJO NACIONAL DE EDUCACIÓN</option>
-          <option>DAGED - DIRECCIÓN DE APOYO A LA GESTIÓN EDUCATIVA DESCENTRALIZADA</option>
-          <option>DAIM - DIRECCIÓN DE ASISTENCIA INTEGRAL Y MONITOREO</option>
-          <option>DEBA - DIRECCIÓN DE EDUCACIÓN BÁSICA ALTERNATIVA</option>
-          <option>DEBE - DIRECCIÓN DE EDUCACIÓN BÁSICA ESPECIAL</option>
-          <option>DEBEDSAR (COAR) - DIRECCIÓN DE EDUCACIÓN BÁSICA PARA ESTUDIANTES CON DESEMPEÑO SOBRESALIENTE Y ALTO RENDIMIENTO</option>
-          <option>DEBEDSAR (SEDE CENTRAL) - DIRECCIÓN DE EDUCACIÓN BÁSICA PARA ESTUDIANTES CON DESEMPEÑO SOBRESALIENTE Y ALTO RENDIMIENTO</option>
-          <option>DEFID - DIRECCIÓN DE EDUCACIÓN FÍSICA Y DEPORTE</option>
-          <option>DEI - DIRECCIÓN DE EDUCACIÓN INICIAL</option>
-          <option>DEIB - DIRECCIÓN DE EDUCACIÓN INTERCULTURAL BILINGÜE</option>
-          <option>DEP - DIRECCIÓN DE EDUCACIÓN PRIMARIA</option>
-          <option>DES - DIRECCIÓN DE EDUCACIÓN SECUNDARIA</option>
-          <option>DIBRED - DIRECCIÓN DE PROMOCIÓN DEL BIENESTAR Y RECONOCIMIENTO DEL DOCENTE</option>
-          <option>DICOPRO - DIRECCIÓN DE COORDINACIÓN Y PROMOCIÓN DE LA CALIDAD DE LA EDUCACIÓN SUPERIOR UNIVERSITARIA</option>
-          <option>DIED - DIRECCIÓN DE EVALUACIÓN DOCENTE</option>
-          <option>DIF - DIRECCIÓN DE FORTALECIMIENTO DE LA GESTIÓN ESCOLAR</option>
-          <option>DIFOCA - DIRECCIÓN DE FORTALECIMIENTO DE CAPACIDADES</option>
-          <option>DIFODS - DIRECCIÓN DE FORMACIÓN DOCENTE EN SERVICIO</option>
-          <option>DIFOID - DIRECCIÓN DE FORMACIÓN INICIAL DOCENTE</option>
-          <option>DIGC - DIRECCIÓN GENERAL DE CALIDAD DE LA GESTIÓN ESCOLAR</option>
-          <option>DIGE - DIRECCIÓN DE GESTIÓN ESCOLAR</option>
-          <option>DIGEBEC - DIRECCIÓN GENERAL DE BECAS Y CRÉDITO EDUCATIVO</option>
-          <option>DIGEBR - DIRECCIÓN GENERAL DE EDUCACIÓN BÁSICA REGULAR</option>
-          <option>DIGEDD - DIRECCIÓN GENERAL DE DESARROLLO DOCENTE</option>
-          <option>DIGEGED - DIRECCIÓN GENERAL DE GESTIÓN DESCENTRALIZADA</option>
-          <option>DIGEIBIRA - DIRECCIÓN GENERAL DE EDUCACIÓN BÁSICA ALTERNATIVA INTERCULTURAL BILINGÜE Y DE SERVICIOS EDUCATIVOS EN EL ÁMBITO RURAL</option>
-          <option>DIGEIE - DIRECCIÓN GENERAL DE INFRAESTRUCTURA EDUCATIVA</option>
-          <option>DIGESE - DIRECCIÓN GENERAL DE SERVICIOS EDUCATIVOS ESPECIALIZADOS</option>
-          <option>DIGEST - DIRECCIÓN DE GESTIÓN DE INSTITUCIONES DE EDUCACIÓN TÉCNICO-PRODUCTIVA Y SUPERIOR TECNOLÓGICA Y ARTÍSTICA</option>
-          <option>DIGESU - DIRECCIÓN GENERAL DE EDUCACIÓN SUPERIOR UNIVERSITARIA</option>
-          <option>DIGESUTPA - DIRECCIÓN GENERAL DE EDUCACIÓN TÉCNICO-PRODUCTIVA Y SUPERIOR TECNOLÓGICA Y ARTÍSTICA</option>
-          <option>DINDES - DIRECCIÓN DE INVESTIGACIÓN Y DESARROLLO</option>
-          <option>DINOR - DIRECCIÓN DE NORMATIVIDAD DE INFRAESTRUCTURA</option>
-          <option>DIPLAN - DIRECCIÓN DE PLANIFICACIÓN DE INVERSIONES</option>
-          <option>DIPODA - DIRECCIÓN DE POLÍTICAS PARA EL DESARROLLO Y ASEGURAMIENTO DE LA CALIDAD EDUCATIVA SUPERIOR UNIVERSITARIA</option>
-          <option>DIPROGE - DIRECCIÓN DE PROMOCIÓN ORGANIZACIÓN Y GESTIÓN</option>
-          <option>DIRI - DIRECCIÓN DE RELACIONES INTERGUBERNAMENTALES</option>
-          <option>DISAFIL - DIRECCIÓN DE SANEAMIENTO FÍSICO-LEGAL Y REGISTRO INMOBILIARIO</option>
-          <option>DISER - DIRECCIÓN DE SERVICIOS EDUCATIVOS EN EL ÁMBITO RURAL</option>
-          <option>DISERTPA - DIRECCIÓN DE SERVICIOS DE EDUCACIÓN TÉCNICO-PRODUCTIVA Y SUPERIOR TECNOLÓGICA Y ARTÍSTICA</option>
-          <option>DITE - DIRECCIÓN DE INNOVACIÓN TECNOLÓGICA EN EDUCACIÓN</option>
-          <option>DITEN - DIRECCIÓN TÉCNICO NORMATIVA DE DOCENTES</option>
-          <option>DM - DESPACHO MINISTERIAL</option>
-          <option>FONDEP - FONDO NACIONAL DE DESARROLLO DE LA EDUCACIÓN PERUANA</option>
-          <option>OACIGED - OFICINA DE ATENCIÓN AL CIUDADANO Y GESTIÓN DOCUMENTAL</option>
-          <option>OBIR - OFICINA DE BIENESTAR SOCIAL Y RELACIONES LABORALES</option>
-          <option>OCCP - OFICINA DE CONTABILIDAD Y CONTROL PREVIO</option>
-          <option>OCI - ÓRGANO DE CONTROL INSTITUCIONAL</option>
-          <option>OCOM - OFICINA DE COMUNICACIONES</option>
-          <option>ODENAGED - OFICINA DE DEFENSA NACIONAL Y DE GESTIÓN DEL RIESGO DE DESASTRES</option>
-          <option>ODI - OFICINA DE DIÁLOGO</option>
-          <option>OEC - OFICINA DE EJECUCIÓN COACTIVA</option>
-          <option>OGA - OFICINA GENERAL DE ADMINISTRACIÓN</option>
-          <option>OGAJ - OFICINA GENERAL DE ASESORÍA JURÍDICA</option>
-          <option>OGC - OFICINA GENERAL DE COMUNICACIONES</option>
-          <option>OGCI - OFICINA GENERAL DE COOPERACIÓN Y ASUNTOS INTERNACIONALES</option>
-          <option>OGDC - OFICINA DE GESTIÓN DEL DESARROLLO Y LA CAPACITACIÓN</option>
-          <option>OGEPER - OFICINA DE GESTIÓN DE PERSONAL</option>
-          <option>OGRH - OFICINA GENERAL DE RECURSOS HUMANOS</option>
-          <option>OL - OFICINA DE LOGÍSTICA</option>
-          <option>OPEP - OFICINA DE PLANIFICACIÓN ESTRATÉGICA Y PRESUPUESTO</option>
-          <option>OPRE - OFICINA DE PRENSA</option>
-          <option>ORI - OFICINA DE RELACIONES INTERINSTITUCIONALES</option>
-          <option>OSEE - OFICINA DE SEGUIMIENTO Y EVALUACIÓN ESTRATÉGICA</option>
-          <option>OT - OFICINA DE TESORERÍA</option>
-          <option>OTEPA - OFICINA GENERAL DE TRANSPARENCIA ÉTICA PÚBLICA Y ANTICORRUPCIÓN</option>
-          <option>OTIC - OFICINA DE TECNOLOGÍAS DE LA INFORMACIÓN Y COMUNICACIÓN</option>
-          <option>PP - PROCURADURÍA PÚBLICA</option>
-          <option>SENAJU - SECRETARÍA NACIONAL DE LA JUVENTUD</option>
-          <option>SG - SECRETARÍA GENERAL</option>
-          <option>SPE - SECRETARÍA DE PLANIFICACIÓN ESTRATÉGICA</option>
-          <option>UCSI - UNIDAD DE CALIDAD Y SEGURIDAD DE LA INFORMACIÓN</option>
-          <option>UE - UNIDAD DE ESTADÍSTICA</option>
-          <option>UFD - UNIDAD DE FINANCIAMIENTO POR DESEMPEÑO</option>
-          <option>UIT - UNIDAD DE INFRAESTRUCTURA TECNOLÓGICA</option>
-          <option>UMC - OFICINA DE MEDICIÓN DE LA CALIDAD DE LOS APRENDIZAJES</option>
-          <option>UNOME - UNIDAD DE ORGANIZACIÓN Y MÉTODOS</option>
-          <option>UPI - UNIDAD DE PROGRAMACIÓN E INVERSIONES</option>
-          <option>UPP - UNIDAD DE PLANIFICACIÓN Y PRESUPUESTO</option>
-          <option>USAU - UNIDAD DE SERVICIO DE ATENCIÓN AL USUARIO</option>
-          <option>USE - UNIDAD DE SEGUIMIENTO Y EVALUACIÓN</option>
-          <option>USI - UNIDAD DE SISTEMAS DE INFORMACIÓN</option>
-          <option>VMGI - DESPACHO VICEMINISTERIO DE GESTIÓN INSTITUCIONAL</option>
-          <option>VMGP - DESPACHO VICEMINISTERIO DE GESTIÓN PEDAGÓGICA</option>
+          <option>Alta Dirección</option>
+          <option>Órganos de Control y Defensa</option>
+          <option>Órganos de Asesoramiento</option>
+          <option>Órganos de Apoyo</option>
+          <option>Órganos de Línea — Gestión Pedagógica</option>
+          <option>Órganos de Línea — Gestión Institucional</option>
+          <option>Organismos Adscritos</option>
+        </select>
+        <div class="err-msg">Seleccione una categoría.</div>
+      </div>
+
+      <div class="question question-minedu-only">
+        <label class="question-label" for="p2_unidad"><span class="num">4.</span>¿Cuál unidad específicamente?<span class="required">*</span></label>
+        <select class="select" id="p2_unidad" name="p2_unidad" required disabled>
+          <option value="">— Primero seleccione una categoría —</option>
         </select>
         <div class="err-msg">Seleccione su unidad organizacional.</div>
       </div>
 
+      <div class="question question-dre-only">
+        <label class="question-label" for="p2_dre"><span class="num">5.</span>¿A qué Dirección Regional de Educación (DRE) pertenece?<span class="required">*</span></label>
+        <select class="select" id="p2_dre" name="p2_dre">
+          <option value="">— Seleccionar —</option>
+          <option>DRE Amazonas</option>
+          <option>DRE Áncash</option>
+          <option>DRE Apurímac</option>
+          <option>DRE Arequipa</option>
+          <option>DRE Ayacucho</option>
+          <option>DRE Cajamarca</option>
+          <option>DRE Callao</option>
+          <option>DRE Cusco</option>
+          <option>DRE Huancavelica</option>
+          <option>DRE Huánuco</option>
+          <option>DRE Ica</option>
+          <option>DRE Junín</option>
+          <option>DRE La Libertad</option>
+          <option>DRE Lambayeque</option>
+          <option>DRE Lima Metropolitana</option>
+          <option>DRE Lima Provincias</option>
+          <option>DRE Loreto</option>
+          <option>DRE Madre de Dios</option>
+          <option>DRE Moquegua</option>
+          <option>DRE Pasco</option>
+          <option>DRE Piura</option>
+          <option>DRE Puno</option>
+          <option>DRE San Martín</option>
+          <option>DRE Tacna</option>
+          <option>DRE Tumbes</option>
+          <option>DRE Ucayali</option>
+        </select>
+        <div class="err-msg">Seleccione una DRE.</div>
+      </div>
+
+      <div class="question question-ugel-only">
+        <label class="question-label" for="p2_ugel"><span class="num">6.</span>¿A qué Unidad de Gestión Educativa Local (UGEL) pertenece?<span class="required">*</span></label>
+        <input type="text" class="input" id="p2_ugel" name="p2_ugel" placeholder="Escriba el nombre de su UGEL">
+        <div class="err-msg">Indique su UGEL.</div>
+      </div>
+
       <div class="question">
-        <label class="question-label" for="p3_rol"><span class="num">3.</span>¿Cuál es el rol principal que ejerce actualmente dentro de su U.O.?<span class="required">*</span></label>
+        <label class="question-label" for="p3_rol"><span class="num">7.</span>¿Cuál es el rol principal que ejerce actualmente dentro de su U.O.?<span class="required">*</span></label>
         <select class="select" id="p3_rol" name="p3_rol" required>
           <option value="">— Seleccionar —</option>
           <option>Asesor/a</option>
@@ -872,7 +854,7 @@
       </div>
 
       <div class="question">
-        <label class="question-label" for="p4_anios"><span class="num">4.</span>En general, ¿cuántos años de experiencia tiene en el sector público?<span class="required">*</span></label>
+        <label class="question-label" for="p4_anios"><span class="num">8.</span>En general, ¿cuántos años de experiencia tiene en el sector público?<span class="required">*</span></label>
         <select class="select" id="p4_anios" name="p4_anios" required>
           <option value="">— Seleccionar —</option>
           <option>Menos de 2 años</option>
@@ -889,7 +871,7 @@
       <div class="section-title"><span class="section-letter">B</span>Tu trabajo documental</div>
 
       <div class="question">
-        <label class="question-label"><span class="num">5.</span>Distribución de su tiempo laboral semanal<span class="required">*</span></label>
+        <label class="question-label"><span class="num">9.</span>Distribución de su tiempo laboral semanal<span class="required">*</span></label>
         <div class="question-hint">Arrastra los puntos para indicar cómo se distribuye en porcentajes tu tiempo entre estas 4 actividades. Cuando termines, haz clic en "Confirmar distribución".</div>
         <div class="seg-range" id="segRange">
           <div class="seg-range-track" id="segTrack">
@@ -943,14 +925,14 @@
       </div>
 
       <div class="question">
-        <label class="question-label"><span class="num">6.</span>Para cada tipo de documento, indique cuántos elabora o revisa al mes y cuánto tiempo le toma en promedio elaborar cada uno.<span class="required">*</span></label>
+        <label class="question-label"><span class="num">10.</span>Para cada tipo de documento, indique cuántos elabora o revisa al mes y cuánto tiempo le toma en promedio elaborar cada uno.<span class="required">*</span></label>
         <div class="question-hint">Si no elabora ese tipo, marque "0" en cantidad. Si elabora pero no aplica el tiempo, déjelo en blanco.</div>
         <div class="matrix-wrap" id="p6Matrix"></div>
         <div class="err-msg">Complete al menos un tipo de documento.</div>
       </div>
 
       <div class="question">
-        <label class="question-label"><span class="num">7.</span>¿Cuál es la principal dificultad al elaborar estos instrumentos?<span class="required">*</span></label>
+        <label class="question-label"><span class="num">11.</span>¿Cuál es la principal dificultad al elaborar estos instrumentos?<span class="required">*</span></label>
         <div class="question-hint">Seleccione como máximo 2 opciones.</div>
         <div class="options" data-max="2" data-group="p7_dificultad">
           <label class="option"><input type="checkbox" name="p7_dificultad" value="La normativa está dispersa o es de difícil acceso"><span class="option-text">La normativa está dispersa o es de difícil acceso</span></label>
@@ -966,7 +948,7 @@
       </div>
 
       <div class="question">
-        <label class="question-label"><span class="num">8.</span>¿Tiene acceso a plantillas, guías o herramientas estandarizadas para elaborar estos instrumentos?<span class="required">*</span></label>
+        <label class="question-label"><span class="num">12.</span>¿Tiene acceso a plantillas, guías o herramientas estandarizadas para elaborar estos instrumentos?<span class="required">*</span></label>
         <div class="options">
           <label class="option"><input type="radio" name="p8_plantillas" value="Sí, y las uso regularmente"><span class="option-text">Sí, y las uso regularmente</span></label>
           <label class="option"><input type="radio" name="p8_plantillas" value="Sí, pero están desactualizadas o son insuficientes"><span class="option-text">Sí, pero están desactualizadas o son insuficientes</span></label>
@@ -982,7 +964,7 @@
       <div class="section-title"><span class="section-letter">C</span>Reproceso y calidad</div>
 
       <div class="question">
-        <label class="question-label"><span class="num">9.</span>De cada 10 documentos que entrega, ¿cuántos le devuelven con observaciones?<span class="required">*</span></label>
+        <label class="question-label"><span class="num">13.</span>De cada 10 documentos que entrega, ¿cuántos le devuelven con observaciones?<span class="required">*</span></label>
         <div class="options">
           <label class="option"><input type="radio" name="p12_devolucion" value="0-1"><span class="option-text">Casi ninguno (0-1)</span></label>
           <label class="option"><input type="radio" name="p12_devolucion" value="2-3"><span class="option-text">Pocos (2-3)</span></label>
@@ -994,7 +976,7 @@
       </div>
 
       <div class="question">
-        <label class="question-label"><span class="num">10.</span>Cuando un documento requiere reproceso, ¿cuántas rondas de revisión/devolución se producen en promedio antes de su aprobación final?<span class="required">*</span></label>
+        <label class="question-label"><span class="num">14.</span>Cuando un documento requiere reproceso, ¿cuántas rondas de revisión/devolución se producen en promedio antes de su aprobación final?<span class="required">*</span></label>
         <div class="options">
           <label class="option"><input type="radio" name="p10_rondas" value="1 ronda"><span class="option-text">1 ronda</span></label>
           <label class="option"><input type="radio" name="p10_rondas" value="2 rondas"><span class="option-text">2 rondas</span></label>
@@ -1005,7 +987,7 @@
       </div>
 
       <div class="question">
-        <label class="question-label"><span class="num">11.</span>Cuando le devuelven un documento, ¿por qué suele ser?<span class="required">*</span></label>
+        <label class="question-label"><span class="num">15.</span>Cuando le devuelven un documento, ¿por qué suele ser?<span class="required">*</span></label>
         <div class="question-hint">Seleccione como máximo 2 opciones.</div>
         <div class="options" data-max="2" data-group="p13_razon_dev">
           <label class="option"><input type="checkbox" name="p13_razon_dev" value="Errores de forma (formato, redacción, ortografía, citas)"><span class="option-text">Errores de forma (formato, redacción, ortografía, citas)</span></label>
@@ -1025,7 +1007,7 @@
       <div class="section-title"><span class="section-letter">D</span>Búsqueda de información</div>
 
       <div class="question">
-        <label class="question-label"><span class="num">12.</span>En promedio, ¿cuánto tiempo dedica a buscar normativa, guías metodológicas o modelos de referencia ANTES de empezar a elaborar un instrumento?<span class="required">*</span></label>
+        <label class="question-label"><span class="num">16.</span>En promedio, ¿cuánto tiempo dedica a buscar normativa, guías metodológicas o modelos de referencia ANTES de empezar a elaborar un instrumento?<span class="required">*</span></label>
         <div class="options">
           <label class="option"><input type="radio" name="p15_busqueda_norma" value="Menos de 30 minutos"><span class="option-text">Menos de 30 minutos</span></label>
           <label class="option"><input type="radio" name="p15_busqueda_norma" value="Entre 30 minutos y 1 hora"><span class="option-text">Entre 30 minutos y 1 hora</span></label>
@@ -1037,7 +1019,7 @@
       </div>
 
       <div class="question">
-        <label class="question-label"><span class="num">13.</span>¿Qué tan trabajoso le resulta asegurarse de que la normativa, guía o modelo que está usando es la versión vigente?<span class="required">*</span></label>
+        <label class="question-label"><span class="num">17.</span>¿Qué tan trabajoso le resulta asegurarse de que la normativa, guía o modelo que está usando es la versión vigente?<span class="required">*</span></label>
         <div class="escala semaforo" data-escala-name="p15_vigencia">
           <div class="escala-row cols-4">
             <label class="escala-btn" data-val="1"><input type="radio" name="p15_vigencia" value="1">1</label>
@@ -1059,7 +1041,7 @@
       <div class="section-title"><span class="section-letter">E</span>Ritmo y demandas externas</div>
 
       <div class="question">
-        <label class="question-label"><span class="num">14.</span>¿Con qué frecuencia recibe solicitudes urgentes de entidades externas (Congreso, Contraloría, PCM, Defensoría, GOREs u otras) que interrumpen su planificación semanal?<span class="required">*</span></label>
+        <label class="question-label"><span class="num">18.</span>¿Con qué frecuencia recibe solicitudes urgentes de entidades externas (Congreso, Contraloría, PCM, Defensoría, GOREs u otras) que interrumpen su planificación semanal?<span class="required">*</span></label>
         <div class="options">
           <label class="option"><input type="radio" name="p18_urgentes" value="Nunca"><span class="option-text">Nunca</span></label>
           <label class="option"><input type="radio" name="p18_urgentes" value="1 a 2 veces por semana"><span class="option-text">1 a 2 veces por semana</span></label>
@@ -1070,7 +1052,7 @@
       </div>
 
       <div class="question">
-        <label class="question-label"><span class="num">15.</span>Cuando recibe estas solicitudes externas, ¿cuál es el plazo habitual que le otorgan para responder?<span class="required">*</span></label>
+        <label class="question-label"><span class="num">19.</span>Cuando recibe estas solicitudes externas, ¿cuál es el plazo habitual que le otorgan para responder?<span class="required">*</span></label>
         <div class="options">
           <label class="option"><input type="radio" name="p19_plazo" value="Más de 3 días"><span class="option-text">Más de 3 días</span></label>
           <label class="option"><input type="radio" name="p19_plazo" value="Entre 1 y 3 días"><span class="option-text">Entre 1 y 3 días</span></label>
@@ -1089,14 +1071,14 @@
       <div class="section-desc">Indica qué tan presentes están estas situaciones en tu equipo (jefe directo, compañeros y personas a tu cargo).</div>
 
       <div class="question">
-        <label class="question-label"><span class="num">16.</span>Valore qué tan identificado se siente con cada afirmación.<span class="required">*</span></label>
+        <label class="question-label"><span class="num">20.</span>Valore qué tan identificado se siente con cada afirmación.<span class="required">*</span></label>
         <div class="question-hint">Escala: 1 = nada / casi nunca · 4 = mucho / muy frecuente / totalmente</div>
         <div id="pBcpLikert"></div>
         <div class="err-msg">Complete todas las afirmaciones.</div>
       </div>
 
       <div class="question">
-        <label class="question-label"><span class="num">17.</span>En el último mes, ¿cuántas veces ha tenido que extender su jornada laboral para cumplir con entregables documentales o administrativos?<span class="required">*</span></label>
+        <label class="question-label"><span class="num">21.</span>En el último mes, ¿cuántas veces ha tenido que extender su jornada laboral para cumplir con entregables documentales o administrativos?<span class="required">*</span></label>
         <div class="options">
           <label class="option"><input type="radio" name="p21_jornada" value="Nunca"><span class="option-text">Nunca</span></label>
           <label class="option"><input type="radio" name="p21_jornada" value="1 a 2 veces"><span class="option-text">1 a 2 veces</span></label>
@@ -1107,7 +1089,7 @@
       </div>
 
       <div class="question">
-        <label class="question-label"><span class="num">18.</span>Si pudiera recuperar tiempo de las tareas repetitivas y administrativas, ¿a qué actividades lo destinaría?<span class="required">*</span></label>
+        <label class="question-label"><span class="num">22.</span>Si pudiera recuperar tiempo de las tareas repetitivas y administrativas, ¿a qué actividades lo destinaría?<span class="required">*</span></label>
         <div class="question-hint">Seleccione como máximo 2 opciones.</div>
         <div class="options" data-max="2" data-group="p26_uso_tiempo">
           <label class="option"><input type="checkbox" name="p26_uso_tiempo" value="Análisis y diagnóstico de problemas"><span class="option-text">Análisis y diagnóstico de problemas</span></label>
@@ -1126,7 +1108,7 @@
       <div class="section-title"><span class="section-letter">G</span>Uso actual de inteligencia artificial</div>
 
       <div class="question">
-        <label class="question-label"><span class="num">19.</span>¿Cuál es tu nivel actual de uso de inteligencia artificial?<span class="required">*</span></label>
+        <label class="question-label"><span class="num">23.</span>¿Cuál es tu nivel actual de uso de inteligencia artificial?<span class="required">*</span></label>
         <div class="options">
           <label class="option"><input type="radio" name="p27_nivel_ia" value="No uso"><span class="option-text">No uso ninguna herramienta de IA</span></label>
           <label class="option"><input type="radio" name="p27_nivel_ia" value="1 - Básico"><span class="option-text">Nivel 1 - Básico: consultas y consejos puntuales</span></label>
@@ -1138,7 +1120,7 @@
       </div>
 
       <div class="question">
-        <label class="question-label"><span class="num">20.</span>¿Usas alguna herramienta de inteligencia artificial para facilitar tu trabajo?<span class="required">*</span></label>
+        <label class="question-label"><span class="num">24.</span>¿Usas alguna herramienta de inteligencia artificial para facilitar tu trabajo?<span class="required">*</span></label>
         <div class="options">
           <label class="option"><input type="radio" name="p28_usa_ia" value="Sí, con cuenta pagada por el MINEDU"><span class="option-text">Sí, con cuenta pagada por el MINEDU</span></label>
           <label class="option"><input type="radio" name="p28_usa_ia" value="Sí, con cuenta pagada por mí"><span class="option-text">Sí, con cuenta pagada por mí</span></label>
@@ -1149,7 +1131,7 @@
       </div>
 
       <div class="question question-tareas-ia">
-        <label class="question-label"><span class="num">21.</span>¿Para qué tareas de tu trabajo usas inteligencia artificial hoy?<span class="required">*</span></label>
+        <label class="question-label"><span class="num">25.</span>¿Para qué tareas de tu trabajo usas inteligencia artificial hoy?<span class="required">*</span></label>
         <div class="question-hint">Seleccione hasta 3 opciones. Si no usa IA, marque "No uso IA para mi trabajo".</div>
         <div class="options" data-max="3" data-group="p29_tareas_ia">
           <label class="option"><input type="checkbox" name="p29_tareas_ia" value="Redactar borradores de informes u oficios"><span class="option-text">Redactar borradores de informes u oficios</span></label>
@@ -1171,14 +1153,14 @@
       <div class="section-title"><span class="section-letter">H</span>Percepción sobre una plataforma de asistencia con IA</div>
 
       <div class="question">
-        <label class="question-label"><span class="num">22.</span>Valore su nivel de acuerdo con las siguientes afirmaciones sobre una posible plataforma de asistencia con IA para elaborar instrumentos de gestión.<span class="required">*</span></label>
+        <label class="question-label"><span class="num">26.</span>Valore su nivel de acuerdo con las siguientes afirmaciones sobre una posible plataforma de asistencia con IA para elaborar instrumentos de gestión.<span class="required">*</span></label>
         <div class="question-hint">Escala: 1 = Totalmente en desacuerdo · 5 = Totalmente de acuerdo</div>
         <div id="p30Likert"></div>
         <div class="err-msg">Complete todas las afirmaciones.</div>
       </div>
 
       <div class="question">
-        <label class="question-label"><span class="num">23.</span>¿Cuáles serían sus principales preocupaciones al usar una herramienta de IA para elaborar instrumentos de gestión?<span class="required">*</span></label>
+        <label class="question-label"><span class="num">27.</span>¿Cuáles serían sus principales preocupaciones al usar una herramienta de IA para elaborar instrumentos de gestión?<span class="required">*</span></label>
         <div class="question-hint">Seleccione como máximo 2 opciones.</div>
         <div class="options" data-max="2" data-group="p31_preocup">
           <label class="option"><input type="checkbox" name="p31_preocup" value="Errores técnicos o normativos en los borradores"><span class="option-text">Que los borradores generados tengan errores técnicos o normativos</span></label>
@@ -1194,7 +1176,7 @@
       </div>
 
       <div class="question">
-        <label class="question-label"><span class="num">24.</span>¿Qué condición considera indispensable para adoptar una herramienta de IA en su trabajo?<span class="required">*</span></label>
+        <label class="question-label"><span class="num">28.</span>¿Qué condición considera indispensable para adoptar una herramienta de IA en su trabajo?<span class="required">*</span></label>
         <div class="question-hint">Seleccione como máximo 2 opciones.</div>
         <div class="options" data-max="2" data-group="p33_condicion">
           <label class="option"><input type="checkbox" name="p33_condicion" value="Validada institucionalmente"><span class="option-text">Que esté validada y autorizada institucionalmente</span></label>
@@ -1208,13 +1190,113 @@
       </div>
     </div>
 
-    <!-- ========== SECCIÓN I: PREGUNTAS ABIERTAS ========== -->
+    <!-- ========== SECCIÓN I bis: ESPECÍFICA DRE / UGEL ========== -->
+    <div class="section section-dre-ugel" style="display:none;">
+      <div class="section-title"><span class="section-letter">I</span>Trabajo específico DRE / UGEL</div>
+      <div class="section-desc">Esta sección aplica solo si tu unidad supervisa Instituciones Educativas (IIEE) directamente.</div>
+
+      <div class="question">
+        <label class="question-label"><span class="num">29.</span>¿Cuántas Instituciones Educativas (IIEE) están a tu cargo o jurisdicción?<span class="required">*</span></label>
+        <div class="options">
+          <label class="option"><input type="radio" name="pdu_num_iiee" value="Menos de 10"><span class="option-text">Menos de 10</span></label>
+          <label class="option"><input type="radio" name="pdu_num_iiee" value="10 a 50"><span class="option-text">10 a 50</span></label>
+          <label class="option"><input type="radio" name="pdu_num_iiee" value="51 a 200"><span class="option-text">51 a 200</span></label>
+          <label class="option"><input type="radio" name="pdu_num_iiee" value="Más de 200"><span class="option-text">Más de 200</span></label>
+        </div>
+        <div class="err-msg">Seleccione una opción.</div>
+      </div>
+
+      <div class="question">
+        <label class="question-label"><span class="num">30.</span>¿Cuántas visitas o supervisiones a IIEE realizas en promedio al mes?<span class="required">*</span></label>
+        <div class="options">
+          <label class="option"><input type="radio" name="pdu_visitas_mes" value="Ninguna"><span class="option-text">Ninguna</span></label>
+          <label class="option"><input type="radio" name="pdu_visitas_mes" value="1 a 3"><span class="option-text">1 a 3</span></label>
+          <label class="option"><input type="radio" name="pdu_visitas_mes" value="4 a 10"><span class="option-text">4 a 10</span></label>
+          <label class="option"><input type="radio" name="pdu_visitas_mes" value="Más de 10"><span class="option-text">Más de 10</span></label>
+        </div>
+        <div class="err-msg">Seleccione una opción.</div>
+      </div>
+
+      <div class="question">
+        <label class="question-label"><span class="num">31.</span>Después de una visita a IIEE, ¿cuánto tiempo te toma elaborar el informe correspondiente?<span class="required">*</span></label>
+        <div class="options">
+          <label class="option"><input type="radio" name="pdu_tiempo_informe" value="Menos de 1 hora"><span class="option-text">Menos de 1 hora</span></label>
+          <label class="option"><input type="radio" name="pdu_tiempo_informe" value="Entre 1 y 3 horas"><span class="option-text">Entre 1 y 3 horas</span></label>
+          <label class="option"><input type="radio" name="pdu_tiempo_informe" value="Entre 3 y 8 horas"><span class="option-text">Entre 3 y 8 horas</span></label>
+          <label class="option"><input type="radio" name="pdu_tiempo_informe" value="Más de un día"><span class="option-text">Más de un día</span></label>
+        </div>
+        <div class="err-msg">Seleccione una opción.</div>
+      </div>
+
+      <div class="question">
+        <label class="question-label"><span class="num">32.</span>Antes de una visita, ¿cuánto tiempo dedicas a preparar antecedentes y documentación de la IIEE?<span class="required">*</span></label>
+        <div class="options">
+          <label class="option"><input type="radio" name="pdu_pre_visita" value="Menos de 30 min"><span class="option-text">Menos de 30 minutos</span></label>
+          <label class="option"><input type="radio" name="pdu_pre_visita" value="Entre 30 min y 2 h"><span class="option-text">Entre 30 minutos y 2 horas</span></label>
+          <label class="option"><input type="radio" name="pdu_pre_visita" value="Más de 2 h"><span class="option-text">Más de 2 horas</span></label>
+          <label class="option"><input type="radio" name="pdu_pre_visita" value="No preparo antecedentes"><span class="option-text">No preparo antecedentes</span></label>
+        </div>
+        <div class="err-msg">Seleccione una opción.</div>
+      </div>
+
+      <div class="question">
+        <label class="question-label"><span class="num">33.</span>¿Cuánto tiempo dedicas a consolidar respuestas que vienen de IIEE en formatos distintos (Excel, Word, PDF)?<span class="required">*</span></label>
+        <div class="options">
+          <label class="option"><input type="radio" name="pdu_consolidar" value="Menos de 2 h"><span class="option-text">Menos de 2 horas por semana</span></label>
+          <label class="option"><input type="radio" name="pdu_consolidar" value="2 a 5 h"><span class="option-text">Entre 2 y 5 horas por semana</span></label>
+          <label class="option"><input type="radio" name="pdu_consolidar" value="5 a 10 h"><span class="option-text">Entre 5 y 10 horas por semana</span></label>
+          <label class="option"><input type="radio" name="pdu_consolidar" value="Más de 10 h"><span class="option-text">Más de 10 horas por semana</span></label>
+        </div>
+        <div class="err-msg">Seleccione una opción.</div>
+      </div>
+
+      <div class="question">
+        <label class="question-label"><span class="num">34.</span>¿Cuántas normas o directivas del MINEDU traduces o adaptas para las IIEE al mes?<span class="required">*</span></label>
+        <div class="options">
+          <label class="option"><input type="radio" name="pdu_traduce_normas" value="Ninguna"><span class="option-text">Ninguna</span></label>
+          <label class="option"><input type="radio" name="pdu_traduce_normas" value="1 a 3"><span class="option-text">1 a 3</span></label>
+          <label class="option"><input type="radio" name="pdu_traduce_normas" value="4 a 10"><span class="option-text">4 a 10</span></label>
+          <label class="option"><input type="radio" name="pdu_traduce_normas" value="Más de 10"><span class="option-text">Más de 10</span></label>
+        </div>
+        <div class="err-msg">Seleccione una opción.</div>
+      </div>
+
+      <div class="question">
+        <label class="question-label"><span class="num">35.</span>¿Cuánto tiempo dedicas a responder consultas frecuentes de directores y docentes?<span class="required">*</span></label>
+        <div class="options">
+          <label class="option"><input type="radio" name="pdu_consultas" value="Menos de 2 h"><span class="option-text">Menos de 2 horas por semana</span></label>
+          <label class="option"><input type="radio" name="pdu_consultas" value="2 a 5 h"><span class="option-text">Entre 2 y 5 horas por semana</span></label>
+          <label class="option"><input type="radio" name="pdu_consultas" value="5 a 10 h"><span class="option-text">Entre 5 y 10 horas por semana</span></label>
+          <label class="option"><input type="radio" name="pdu_consultas" value="Más de 10 h"><span class="option-text">Más de 10 horas por semana</span></label>
+        </div>
+        <div class="err-msg">Seleccione una opción.</div>
+      </div>
+
+      <div class="question">
+        <label class="question-label"><span class="num">36.</span>¿Para cuáles tareas de tu unidad sería MÁS útil una herramienta con IA?<span class="required">*</span></label>
+        <div class="question-hint">Seleccione hasta 3 opciones.</div>
+        <div class="options" data-max="3" data-group="pdu_oportunidades">
+          <label class="option"><input type="checkbox" name="pdu_oportunidades" value="Preparar visitas de supervisión"><span class="option-text">Preparar visitas de supervisión</span></label>
+          <label class="option"><input type="checkbox" name="pdu_oportunidades" value="Elaborar informes post-visita"><span class="option-text">Elaborar informes post-visita</span></label>
+          <label class="option"><input type="checkbox" name="pdu_oportunidades" value="Consolidar reportes que vienen de IIEE"><span class="option-text">Consolidar reportes que vienen de IIEE</span></label>
+          <label class="option"><input type="checkbox" name="pdu_oportunidades" value="Traducir normas a lenguaje claro para directores"><span class="option-text">Traducir normas a lenguaje claro para directores</span></label>
+          <label class="option"><input type="checkbox" name="pdu_oportunidades" value="Responder consultas frecuentes de docentes"><span class="option-text">Responder consultas frecuentes de docentes</span></label>
+          <label class="option"><input type="checkbox" name="pdu_oportunidades" value="Generar oficios masivos"><span class="option-text">Generar oficios masivos a IIEE</span></label>
+          <label class="option"><input type="checkbox" name="pdu_oportunidades" value="Procesar trámites de docentes"><span class="option-text">Procesar trámites de docentes (contratos, evaluaciones)</span></label>
+          <label class="option"><input type="checkbox" name="pdu_oportunidades" value="Capacitaciones y materiales pedagógicos"><span class="option-text">Capacitaciones y materiales pedagógicos</span></label>
+          <label class="option"><input type="checkbox" name="pdu_oportunidades" value="Otra"><span class="option-text">Otra</span></label>
+        </div>
+        <div class="err-msg">Seleccione al menos una opción.</div>
+      </div>
+    </div>
+
+    <!-- ========== SECCIÓN J: PREGUNTAS ABIERTAS ========== -->
     <div class="section">
-      <div class="section-title"><span class="section-letter">I</span>Tu voz cuenta</div>
+      <div class="section-title"><span class="section-letter">J</span>Tu voz cuenta</div>
       <div class="section-desc">Cuéntanos en tus palabras lo que no entró en las preguntas anteriores.</div>
 
       <div class="question">
-        <label class="question-label" for="p35_repetitivas"><span class="num">25.</span>En sus propias palabras: ¿cuáles son las 2 o 3 tareas repetitivas que más tiempo le quitan en su trabajo semanal?<span class="required">*</span></label>
+        <label class="question-label" for="p35_repetitivas"><span class="num">37.</span>En sus propias palabras: ¿cuáles son las 2 o 3 tareas repetitivas que más tiempo le quitan en su trabajo semanal?<span class="required">*</span></label>
         <textarea class="textarea" id="p35_repetitivas" name="p35_repetitivas" rows="3" required></textarea>
         <div class="err-msg">Por favor escriba una respuesta.</div>
       </div>
@@ -1553,6 +1635,194 @@
     updateRanks();
   }
 
+  // ============== UNIDADES MINEDU AGRUPADAS POR CATEGORÍA (ROF DS 001-2015-MINEDU) ==============
+  const UNIDADES_MINEDU = {
+    "Alta Dirección": [
+      "DM - DESPACHO MINISTERIAL",
+      "VMGP - DESPACHO VICEMINISTERIO DE GESTIÓN PEDAGÓGICA",
+      "VMGI - DESPACHO VICEMINISTERIO DE GESTIÓN INSTITUCIONAL",
+      "SG - SECRETARÍA GENERAL"
+    ],
+    "Órganos de Control y Defensa": [
+      "OCI - ÓRGANO DE CONTROL INSTITUCIONAL",
+      "PP - PROCURADURÍA PÚBLICA",
+      "CNE - CONSEJO NACIONAL DE EDUCACIÓN"
+    ],
+    "Órganos de Asesoramiento": [
+      "SPE - SECRETARÍA DE PLANIFICACIÓN ESTRATÉGICA",
+      "OPEP - OFICINA DE PLANIFICACIÓN ESTRATÉGICA Y PRESUPUESTO",
+      "UFD - UNIDAD DE FINANCIAMIENTO POR DESEMPEÑO",
+      "UPP - UNIDAD DE PLANIFICACIÓN Y PRESUPUESTO",
+      "UPI - UNIDAD DE PROGRAMACIÓN E INVERSIONES",
+      "UNOME - UNIDAD DE ORGANIZACIÓN Y MÉTODOS",
+      "OSEE - OFICINA DE SEGUIMIENTO Y EVALUACIÓN ESTRATÉGICA",
+      "UE - UNIDAD DE ESTADÍSTICA",
+      "USE - UNIDAD DE SEGUIMIENTO Y EVALUACIÓN",
+      "UMC - OFICINA DE MEDICIÓN DE LA CALIDAD DE LOS APRENDIZAJES",
+      "OTIC - OFICINA DE TECNOLOGÍAS DE LA INFORMACIÓN Y COMUNICACIÓN",
+      "UCSI - UNIDAD DE CALIDAD Y SEGURIDAD DE LA INFORMACIÓN",
+      "USI - UNIDAD DE SISTEMAS DE INFORMACIÓN",
+      "UIT - UNIDAD DE INFRAESTRUCTURA TECNOLÓGICA",
+      "USAU - UNIDAD DE SERVICIO DE ATENCIÓN AL USUARIO",
+      "SENAJU - SECRETARÍA NACIONAL DE LA JUVENTUD",
+      "DIPROGE - DIRECCIÓN DE PROMOCIÓN, ORGANIZACIÓN Y GESTIÓN (SENAJU)",
+      "DINDES - DIRECCIÓN DE INVESTIGACIÓN Y DESARROLLO (SENAJU)",
+      "DAIM - DIRECCIÓN DE ASISTENCIA INTEGRAL Y MONITOREO (SENAJU)",
+      "OGAJ - OFICINA GENERAL DE ASESORÍA JURÍDICA",
+      "OGCI - OFICINA GENERAL DE COOPERACIÓN Y ASUNTOS INTERNACIONALES",
+      "ODENAGED - OFICINA DE DEFENSA NACIONAL Y DE GESTIÓN DEL RIESGO DE DESASTRES"
+    ],
+    "Órganos de Apoyo": [
+      "OGA - OFICINA GENERAL DE ADMINISTRACIÓN",
+      "OL - OFICINA DE LOGÍSTICA",
+      "OCCP - OFICINA DE CONTABILIDAD Y CONTROL PREVIO",
+      "OT - OFICINA DE TESORERÍA",
+      "OEC - OFICINA DE EJECUCIÓN COACTIVA",
+      "OGRH - OFICINA GENERAL DE RECURSOS HUMANOS",
+      "OGEPER - OFICINA DE GESTIÓN DE PERSONAL",
+      "OGDC - OFICINA DE GESTIÓN DEL DESARROLLO Y LA CAPACITACIÓN",
+      "OBIR - OFICINA DE BIENESTAR SOCIAL Y RELACIONES LABORALES",
+      "OGC - OFICINA GENERAL DE COMUNICACIONES",
+      "OCOM - OFICINA DE COMUNICACIONES",
+      "ORI - OFICINA DE RELACIONES INTERINSTITUCIONALES",
+      "OPRE - OFICINA DE PRENSA",
+      "OTEPA - OFICINA GENERAL DE TRANSPARENCIA, ÉTICA PÚBLICA Y ANTICORRUPCIÓN",
+      "OACIGED - OFICINA DE ATENCIÓN AL CIUDADANO Y GESTIÓN DOCUMENTAL",
+      "ODI - OFICINA DE DIÁLOGO"
+    ],
+    "Órganos de Línea — Gestión Pedagógica": [
+      "DIGEBR - DIRECCIÓN GENERAL DE EDUCACIÓN BÁSICA REGULAR",
+      "DEI - DIRECCIÓN DE EDUCACIÓN INICIAL (DIGEBR)",
+      "DEP - DIRECCIÓN DE EDUCACIÓN PRIMARIA (DIGEBR)",
+      "DES - DIRECCIÓN DE EDUCACIÓN SECUNDARIA (DIGEBR)",
+      "DEFID - DIRECCIÓN DE EDUCACIÓN FÍSICA Y DEPORTE (DIGEBR)",
+      "DIGEIBIRA - DIRECCIÓN GENERAL DE EDUCACIÓN BÁSICA ALTERNATIVA, INTERCULTURAL BILINGÜE Y RURAL",
+      "DEBA - DIRECCIÓN DE EDUCACIÓN BÁSICA ALTERNATIVA (DIGEIBIRA)",
+      "DEIB - DIRECCIÓN DE EDUCACIÓN INTERCULTURAL BILINGÜE (DIGEIBIRA)",
+      "DISER - DIRECCIÓN DE SERVICIOS EDUCATIVOS EN EL ÁMBITO RURAL (DIGEIBIRA)",
+      "DIGESE - DIRECCIÓN GENERAL DE SERVICIOS EDUCATIVOS ESPECIALIZADOS",
+      "DEBE - DIRECCIÓN DE EDUCACIÓN BÁSICA ESPECIAL (DIGESE)",
+      "DEBEDSAR (SEDE CENTRAL) - ESTUDIANTES DESEMPEÑO SOBRESALIENTE Y ALTO RENDIMIENTO (DIGESE)",
+      "DEBEDSAR (COAR) - ESTUDIANTES DESEMPEÑO SOBRESALIENTE Y ALTO RENDIMIENTO (DIGESE)",
+      "DITE - DIRECCIÓN DE INNOVACIÓN TECNOLÓGICA EN EDUCACIÓN",
+      "DIGEDD - DIRECCIÓN GENERAL DE DESARROLLO DOCENTE",
+      "DITEN - DIRECCIÓN TÉCNICO NORMATIVA DE DOCENTES (DIGEDD)",
+      "DIED - DIRECCIÓN DE EVALUACIÓN DOCENTE (DIGEDD)",
+      "DIBRED - DIRECCIÓN DE PROMOCIÓN DEL BIENESTAR Y RECONOCIMIENTO DEL DOCENTE (DIGEDD)",
+      "DIFOID - DIRECCIÓN DE FORMACIÓN INICIAL DOCENTE (DIGEDD)",
+      "DIFODS - DIRECCIÓN DE FORMACIÓN DOCENTE EN SERVICIO (DIGEDD)",
+      "DIGESU - DIRECCIÓN GENERAL DE EDUCACIÓN SUPERIOR UNIVERSITARIA",
+      "DIPODA - DIRECCIÓN DE POLÍTICAS PARA EDUCACIÓN SUPERIOR UNIVERSITARIA (DIGESU)",
+      "DICOPRO - DIRECCIÓN DE COORDINACIÓN Y PROMOCIÓN DE LA CALIDAD ESU (DIGESU)",
+      "DIGESUTPA - DIRECCIÓN GENERAL DE EDUCACIÓN TÉCNICO-PRODUCTIVA Y SUPERIOR TECNOLÓGICA Y ARTÍSTICA",
+      "DISERTPA - DIRECCIÓN DE SERVICIOS DE EDUCACIÓN TÉCNICO-PRODUCTIVA Y SUPERIOR (DIGESUTPA)",
+      "DIGEST - DIRECCIÓN DE GESTIÓN DE INSTITUCIONES DE EDUCACIÓN TÉCNICO-PRODUCTIVA (DIGESUTPA)",
+      "CASLIT - CASA DE LA LITERATURA"
+    ],
+    "Órganos de Línea — Gestión Institucional": [
+      "DIGEGED - DIRECCIÓN GENERAL DE GESTIÓN DESCENTRALIZADA",
+      "DIRI - DIRECCIÓN DE RELACIONES INTERGUBERNAMENTALES (DIGEGED)",
+      "DAGED - DIRECCIÓN DE APOYO A LA GESTIÓN EDUCATIVA DESCENTRALIZADA (DIGEGED)",
+      "DIFOCA - DIRECCIÓN DE FORTALECIMIENTO DE CAPACIDADES (DIGEGED)",
+      "DIGC - DIRECCIÓN GENERAL DE CALIDAD DE LA GESTIÓN ESCOLAR",
+      "DIGE - DIRECCIÓN DE GESTIÓN ESCOLAR (DIGC)",
+      "DIF - DIRECCIÓN DE FORTALECIMIENTO DE LA GESTIÓN ESCOLAR (DIGC)",
+      "DIGEIE - DIRECCIÓN GENERAL DE INFRAESTRUCTURA EDUCATIVA",
+      "DIPLAN - DIRECCIÓN DE PLANIFICACIÓN DE INVERSIONES (DIGEIE)",
+      "DINOR - DIRECCIÓN DE NORMATIVIDAD DE INFRAESTRUCTURA (DIGEIE)",
+      "DISAFIL - DIRECCIÓN DE SANEAMIENTO FÍSICO-LEGAL Y REGISTRO INMOBILIARIO (DIGEIE)",
+      "DIGEBEC - DIRECCIÓN GENERAL DE BECAS Y CRÉDITO EDUCATIVO"
+    ],
+    "Organismos Adscritos": [
+      "FONDEP - FONDO NACIONAL DE DESARROLLO DE LA EDUCACIÓN PERUANA"
+    ]
+  };
+
+  // ============== RENUMERAR preguntas visibles dinámicamente ==============
+  function renumerarVisibles() {
+    let n = 0;
+    document.querySelectorAll('#form .question').forEach(q => {
+      const section = q.closest('.section');
+      const sectionHidden = section && section.style.display === 'none';
+      const questionHidden = q.style.display === 'none';
+      if (sectionHidden || questionHidden) return;
+      n++;
+      const numSpan = q.querySelector('.question-label .num');
+      if (numSpan) numSpan.textContent = n + '.';
+    });
+  }
+
+  // ============== CASCADA categoría -> unidad MINEDU ==============
+  function bindCascadaMinedu() {
+    const catSel = document.getElementById('p2_categoria');
+    const uniSel = document.getElementById('p2_unidad');
+    if (!catSel || !uniSel) return;
+    catSel.addEventListener('change', () => {
+      const cat = catSel.value;
+      uniSel.innerHTML = '<option value="">— Seleccionar unidad —</option>';
+      if (!cat) {
+        uniSel.disabled = true;
+        return;
+      }
+      const opciones = UNIDADES_MINEDU[cat] || [];
+      opciones.forEach(o => {
+        const opt = document.createElement('option');
+        opt.textContent = o;
+        uniSel.appendChild(opt);
+      });
+      uniSel.disabled = false;
+    });
+  }
+
+  // ============== CONDICIONAL: bloques MINEDU vs DRE vs UGEL ==============
+  function bindCondicionalNivel() {
+    const nivelSel = document.getElementById('p0_nivel');
+    if (!nivelSel) return;
+
+    function update() {
+      const v = nivelSel.value;
+      const isMinedu = v === 'MINEDU - Sede central';
+      const isDre = v === 'Dirección Regional de Educación (DRE)';
+      const isUgel = v === 'Unidad de Gestión Educativa Local (UGEL)';
+
+      document.querySelectorAll('.question-minedu-only').forEach(q => {
+        q.style.display = isMinedu ? '' : 'none';
+        q.querySelectorAll('select, input').forEach(el => {
+          if (isMinedu) el.setAttribute('required', '');
+          else el.removeAttribute('required');
+        });
+      });
+      document.querySelectorAll('.question-dre-only').forEach(q => {
+        q.style.display = isDre ? '' : 'none';
+        q.querySelectorAll('select, input').forEach(el => {
+          if (isDre) el.setAttribute('required', '');
+          else el.removeAttribute('required');
+        });
+      });
+      document.querySelectorAll('.question-ugel-only').forEach(q => {
+        q.style.display = isUgel ? '' : 'none';
+        q.querySelectorAll('select, input').forEach(el => {
+          if (isUgel) el.setAttribute('required', '');
+          else el.removeAttribute('required');
+        });
+      });
+      // Bloque DRE/UGEL específico (sección entera al final)
+      document.querySelectorAll('.section-dre-ugel').forEach(s => {
+        s.style.display = (isDre || isUgel) ? '' : 'none';
+        s.querySelectorAll('select, input[type="text"], textarea').forEach(el => {
+          if (isDre || isUgel) el.setAttribute('required', '');
+          else el.removeAttribute('required');
+        });
+        s.querySelectorAll('input[type="radio"]').forEach(el => {
+          el.dataset.cond = (isDre || isUgel) ? 'on' : 'off';
+        });
+      });
+      renumerarVisibles();
+    }
+    nivelSel.addEventListener('change', update);
+    update();
+  }
+
   // ============== CONDICIONAL: P27 (tareas IA) solo si P26 = sí ==============
   function bindCondicionalIA() {
     const radios = document.querySelectorAll('input[name="p28_usa_ia"]');
@@ -1565,6 +1835,7 @@
       } else {
         tareasQ.style.display = '';
       }
+      renumerarVisibles();
     }
     radios.forEach(r => r.addEventListener('change', update));
     update();
@@ -1822,6 +2093,8 @@
     bindEscalas();
     bindOrdenable();
     bindCondicionalIA();
+    bindCondicionalNivel();
+    bindCascadaMinedu();
     bindMaxCheckboxes();
     document.getElementById('form').addEventListener('submit', handleSubmit);
     document.getElementById('form').addEventListener('change', updateProgress);
