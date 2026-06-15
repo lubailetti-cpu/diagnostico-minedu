@@ -20,4 +20,8 @@ Thumbs.db
 
 # Material interno de Tidú (no debe ir al repo público)
 Comparativo_Cuestionario_Moderniza*.xlsx
+Cuestionario_Completo_Moderniza*.xlsx
+Cuestionario_Diagnostico_MINEDU*.docx
 comparativo_preguntas.py
+cuestionario_completo.py
+cuestionario_word.py
