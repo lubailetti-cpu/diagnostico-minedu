@@ -1229,7 +1229,15 @@
 
 
       <div class="question">
-        <label class="question-label"><span class="num">28.</span>Si pudiera recuperar tiempo de las tareas repetitivas y administrativas, ¿a qué actividades lo destinaría?<span class="required">*</span></label>
+        <label class="question-label"><span class="num">28.</span>De las situaciones que marcaste 3 o 4 (las que más te ocurren), describe las 3 más concretas que ilustran cómo se viven en tu día a día.</label>
+        <div class="question-hint">Pueden ser ejemplos cortos. Si solo tienes 1 o 2 que destacar, déjalas y deja en blanco las demás.</div>
+        <textarea class="textarea situacion-top-input" name="situacion_top_1" rows="2" placeholder="Situación 1..." onchange="actualizarPriorizacion()"></textarea>
+        <textarea class="textarea situacion-top-input" name="situacion_top_2" rows="2" placeholder="Situación 2..." style="margin-top:8px;" onchange="actualizarPriorizacion()"></textarea>
+        <textarea class="textarea situacion-top-input" name="situacion_top_3" rows="2" placeholder="Situación 3..." style="margin-top:8px;" onchange="actualizarPriorizacion()"></textarea>
+      </div>
+
+      <div class="question">
+        <label class="question-label"><span class="num">29.</span>Si pudiera recuperar tiempo de las tareas repetitivas y administrativas, ¿a qué actividades lo destinaría?<span class="required">*</span></label>
         <div class="question-hint">Seleccione como máximo 2 opciones.</div>
         <div class="options" data-max="2" data-group="p26_uso_tiempo">
           <label class="option"><input type="checkbox" name="p26_uso_tiempo" value="Análisis y diagnóstico de problemas"><span class="option-text">Análisis y diagnóstico de problemas</span></label>
@@ -1250,7 +1258,7 @@
     <!-- ========== SECCIÓN G: PRIORIZACIÓN ========== -->
     <div class="section" id="seccionPriorizacion" style="display:none;">
       <div class="section-title"><span class="section-letter">H</span>Priorización de situaciones</div>
-      <div class="section-desc">Indicaste algunas situaciones específicas en las afirmaciones de "Oportunidades en tu área". Arrastra las situaciones para ordenarlas de la MÁS importante (arriba) a la MENOS importante (abajo).</div>
+      <div class="section-desc">Estas son las situaciones que describiste. Arrástralas para ordenarlas de la MÁS importante (arriba) a la MENOS importante (abajo).</div>
       <div class="orden-list" id="ordenSituaciones"></div>
       <input type="hidden" id="situacionesOrden" name="situacionesOrden">
     </div>
@@ -1260,7 +1268,7 @@
       <div class="section-title"><span class="section-letter">I</span>Uso actual de inteligencia artificial</div>
 
       <div class="question">
-        <label class="question-label"><span class="num">29.</span>¿Cuál es tu nivel actual de uso de inteligencia artificial?<span class="required">*</span></label>
+        <label class="question-label"><span class="num">30.</span>¿Cuál es tu nivel actual de uso de inteligencia artificial?<span class="required">*</span></label>
         <div class="options">
           <label class="option"><input type="radio" name="p27_nivel_ia" value="No uso"><span class="option-text">No uso ninguna herramienta de IA</span></label>
           <label class="option"><input type="radio" name="p27_nivel_ia" value="1 - Básico"><span class="option-text">Nivel 1 - Básico: consultas y consejos puntuales</span></label>
@@ -1272,7 +1280,7 @@
       </div>
 
       <div class="question">
-        <label class="question-label"><span class="num">30.</span>¿Usas alguna herramienta de inteligencia artificial para facilitar tu trabajo?<span class="required">*</span></label>
+        <label class="question-label"><span class="num">31.</span>¿Usas alguna herramienta de inteligencia artificial para facilitar tu trabajo?<span class="required">*</span></label>
         <div class="options">
           <label class="option"><input type="radio" name="p28_usa_ia" value="Sí, con cuenta pagada por el MINEDU"><span class="option-text">Sí, con cuenta pagada por el MINEDU</span></label>
           <label class="option"><input type="radio" name="p28_usa_ia" value="Sí, con cuenta pagada por mí"><span class="option-text">Sí, con cuenta pagada por mí</span></label>
@@ -1283,7 +1291,7 @@
       </div>
 
       <div class="question question-tareas-ia">
-        <label class="question-label"><span class="num">31.</span>¿Para qué tareas de tu trabajo usas inteligencia artificial hoy?<span class="required">*</span></label>
+        <label class="question-label"><span class="num">32.</span>¿Para qué tareas de tu trabajo usas inteligencia artificial hoy?<span class="required">*</span></label>
         <div class="question-hint">Seleccione hasta 3 opciones. Si no usa IA, marque "No uso IA para mi trabajo".</div>
         <div class="options" data-max="3" data-group="p29_tareas_ia">
           <label class="option"><input type="checkbox" name="p29_tareas_ia" value="Redactar borradores de informes u oficios"><span class="option-text">Redactar borradores de informes u oficios</span></label>
@@ -1305,14 +1313,14 @@
       <div class="section-title"><span class="section-letter">J</span>Percepción sobre una plataforma de asistencia con IA</div>
 
       <div class="question">
-        <label class="question-label"><span class="num">32.</span>Valore su nivel de acuerdo con las siguientes afirmaciones sobre una posible plataforma de asistencia con IA para elaborar instrumentos de gestión.<span class="required">*</span></label>
+        <label class="question-label"><span class="num">33.</span>Valore su nivel de acuerdo con las siguientes afirmaciones sobre una posible plataforma de asistencia con IA para elaborar instrumentos de gestión.<span class="required">*</span></label>
         <div class="question-hint">Escala: 1 = Totalmente en desacuerdo · 5 = Totalmente de acuerdo</div>
         <div id="p30Likert"></div>
         <div class="err-msg">Complete todas las afirmaciones.</div>
       </div>
 
       <div class="question question-dre-ugel-only" style="display:none;">
-        <label class="question-label"><span class="num">33.</span>¿Para cuáles tareas de tu unidad sería MÁS útil una herramienta con IA?<span class="required">*</span></label>
+        <label class="question-label"><span class="num">34.</span>¿Para cuáles tareas de tu unidad sería MÁS útil una herramienta con IA?<span class="required">*</span></label>
         <div class="question-hint">Seleccione hasta 3 opciones.</div>
         <div class="options" data-max="3" data-group="pdu_oportunidades">
           <label class="option"><input type="checkbox" name="pdu_oportunidades" value="Preparar visitas de supervisión"><span class="option-text">Preparar visitas de supervisión</span></label>
@@ -1329,7 +1337,7 @@
       </div>
 
       <div class="question">
-        <label class="question-label"><span class="num">34.</span>¿Cuáles serían sus principales preocupaciones al usar una herramienta de IA para elaborar instrumentos de gestión?<span class="required">*</span></label>
+        <label class="question-label"><span class="num">35.</span>¿Cuáles serían sus principales preocupaciones al usar una herramienta de IA para elaborar instrumentos de gestión?<span class="required">*</span></label>
         <div class="question-hint">Seleccione como máximo 2 opciones.</div>
         <div class="options" data-max="2" data-group="p31_preocup">
           <label class="option"><input type="checkbox" name="p31_preocup" value="Errores técnicos o normativos en los borradores"><span class="option-text">Que los borradores generados tengan errores técnicos o normativos</span></label>
@@ -1345,7 +1353,7 @@
       </div>
 
       <div class="question">
-        <label class="question-label"><span class="num">35.</span>¿Qué condición considera indispensable para adoptar una herramienta de IA en su trabajo?<span class="required">*</span></label>
+        <label class="question-label"><span class="num">36.</span>¿Qué condición considera indispensable para adoptar una herramienta de IA en su trabajo?<span class="required">*</span></label>
         <div class="question-hint">Seleccione como máximo 2 opciones.</div>
         <div class="options" data-max="2" data-group="p33_condicion">
           <label class="option"><input type="checkbox" name="p33_condicion" value="Validada institucionalmente"><span class="option-text">Que esté validada y autorizada institucionalmente</span></label>
@@ -1503,57 +1511,29 @@
       }
       html += '</div>';
       html += '<div class="escala-labels"><span>1 = Totalmente en desacuerdo</span><span class="right">4 = Totalmente de acuerdo</span></div>';
-      html += '</div>';
-      // Mini-form condicional para score 3 o 4
-      html += '<div class="situaciones-block" id="situaciones_' + af.id + '">';
-      html += '<div class="situaciones-block-label">Por favor, incluye de 1 a 3 situaciones específicas donde sucede esto en tu día a día:</div>';
-      html += '<textarea class="situacion-input" data-af="' + af.id + '" data-idx="0" placeholder="Situación 1..." onchange="actualizarPriorizacion()"></textarea>';
-      html += '<button type="button" class="situacion-add-btn" data-af="' + af.id + '">+ Agregar otra situación</button>';
-      html += '</div>';
-      html += '</div>';
+      html += '</div></div>';
     });
     html += '</div>';
     document.getElementById('pBcpLikert').innerHTML = html;
-
-    // Bind botones "+"
-    document.querySelectorAll('.situacion-add-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const afId = btn.dataset.af;
-        const block = document.getElementById('situaciones_' + afId);
-        const inputs = block.querySelectorAll('.situacion-input');
-        if (inputs.length >= 3) return;
-        const newInput = document.createElement('textarea');
-        newInput.className = 'situacion-input';
-        newInput.dataset.af = afId;
-        newInput.dataset.idx = inputs.length;
-        newInput.placeholder = 'Situación ' + (inputs.length + 1) + '...';
-        newInput.addEventListener('change', actualizarPriorizacion);
-        block.insertBefore(newInput, btn);
-        if (inputs.length + 1 >= 3) btn.disabled = true;
-      });
-    });
   }
 
-  // ============== Actualizar sección de priorización (drag-to-order) ==============
+  // ============== Actualizar sección de priorización (drag-to-order de las 3 situaciones) ==============
   function actualizarPriorizacion() {
     const lista = document.getElementById('ordenSituaciones');
     const seccion = document.getElementById('seccionPriorizacion');
     if (!lista || !seccion) return;
     const situaciones = [];
-    document.querySelectorAll('.situaciones-block.visible').forEach(block => {
-      block.querySelectorAll('.situacion-input').forEach(inp => {
-        const txt = inp.value.trim();
-        if (txt) situaciones.push(txt);
-      });
+    document.querySelectorAll('.situacion-top-input').forEach(inp => {
+      const txt = inp.value.trim();
+      if (txt) situaciones.push(txt);
     });
-    if (situaciones.length === 0) {
+    if (situaciones.length < 2) {
       seccion.style.display = 'none';
       lista.innerHTML = '';
       renumerarVisibles();
       return;
     }
     seccion.style.display = '';
-    // Conservar el orden actual si los textos ya existen
     const existentes = [...lista.querySelectorAll('.orden-item')].map(it => it.dataset.value);
     const nuevosEnOrden = [];
     existentes.forEach(t => { if (situaciones.includes(t)) nuevosEnOrden.push(t); });
@@ -1696,22 +1676,6 @@
       });
       btn.classList.add('selected');
 
-      // Si es una afirmación BCP y score >= 3, mostrar mini-form de situaciones
-      if (name.startsWith('pbcp_')) {
-        const afId = name.replace('pbcp_', '');
-        const block = document.getElementById('situaciones_' + afId);
-        if (block) {
-          const val = parseInt(input.value);
-          if (val >= 3) {
-            block.classList.add('visible');
-          } else {
-            block.classList.remove('visible');
-            block.querySelectorAll('.situacion-input').forEach(inp => inp.value = '');
-          }
-          actualizarPriorizacion();
-          renumerarVisibles();
-        }
-      }
     });
     // En toda la página
     document.addEventListener('click', (e) => {
@@ -2274,22 +2238,7 @@
     data['p6_distrib_administrativas'] = Math.round(segPositions[2] - segPositions[1]);
     data['p6_distrib_externas'] = Math.round(100 - segPositions[2]);
 
-    // Situaciones específicas (cuando BCP >= 3)
-    const situacionesPorAfirmacion = {};
-    document.querySelectorAll('.situaciones-block.visible').forEach(block => {
-      const inputs = block.querySelectorAll('.situacion-input');
-      inputs.forEach(inp => {
-        const txt = inp.value.trim();
-        if (txt) {
-          const afId = inp.dataset.af;
-          if (!situacionesPorAfirmacion[afId]) situacionesPorAfirmacion[afId] = [];
-          situacionesPorAfirmacion[afId].push(txt);
-        }
-      });
-    });
-    data['situaciones'] = JSON.stringify(situacionesPorAfirmacion);
-
-    // Orden de priorización (de más a menos importante)
+    // Las 3 situaciones top y su orden de priorización
     const ordenItems = document.querySelectorAll('#ordenSituaciones .orden-item');
     const ordenado = [...ordenItems].map(it => it.dataset.value);
     data['situaciones_orden'] = JSON.stringify(ordenado);

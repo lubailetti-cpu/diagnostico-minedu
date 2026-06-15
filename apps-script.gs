@@ -110,8 +110,10 @@ function writeHeaders(sheet) {
     'p30_lik_piloto',
     'p31_preocup',
     'p33_condicion',
-    // Situaciones específicas y priorización
-    'situaciones',
+    // 3 situaciones más concretas + priorización
+    'situacion_top_1',
+    'situacion_top_2',
+    'situacion_top_3',
     'situaciones_orden',
     // ===== Específicas DRE / UGEL (vacías si nivel = MINEDU) =====
     'pdu_num_iiee',
