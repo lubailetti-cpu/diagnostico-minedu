@@ -1168,22 +1168,6 @@
         <div class="err-msg">Seleccione una opción.</div>
       </div>
 
-      <div class="question">
-        <label class="question-label"><span class="num">24.</span>¿Qué tan trabajoso le resulta asegurarse de que la normativa, guía o modelo que está usando es la versión vigente?<span class="required">*</span></label>
-        <div class="escala semaforo" data-escala-name="p15_vigencia">
-          <div class="escala-row cols-4">
-            <label class="escala-btn" data-val="1"><input type="radio" name="p15_vigencia" value="1">1</label>
-            <label class="escala-btn" data-val="2"><input type="radio" name="p15_vigencia" value="2">2</label>
-            <label class="escala-btn" data-val="3"><input type="radio" name="p15_vigencia" value="3">3</label>
-            <label class="escala-btn" data-val="4"><input type="radio" name="p15_vigencia" value="4">4</label>
-          </div>
-          <div class="escala-labels">
-            <span>1 = Muy fácil</span>
-            <span class="right">4 = Muy trabajoso</span>
-          </div>
-        </div>
-        <div class="err-msg">Seleccione una opción.</div>
-      </div>
     </div>
 
     <!-- ========== SECCIÓN E: RITMO Y DEMANDAS EXTERNAS ========== -->
@@ -1365,19 +1349,6 @@
         <div class="err-msg">Seleccione al menos una opción.</div>
       </div>
 
-      <div class="question">
-        <label class="question-label"><span class="num">37.</span>¿Qué condición considera indispensable para adoptar una herramienta de IA en su trabajo?<span class="required">*</span></label>
-        <div class="question-hint">Seleccione como máximo 2 opciones.</div>
-        <div class="options" data-max="2" data-group="p33_condicion">
-          <label class="option"><input type="checkbox" name="p33_condicion" value="Validada institucionalmente"><span class="option-text">Que esté validada y autorizada institucionalmente</span></label>
-          <label class="option"><input type="checkbox" name="p33_condicion" value="Capacitación previa"><span class="option-text">Que haya una capacitación previa</span></label>
-          <label class="option"><input type="checkbox" name="p33_condicion" value="Fácil de usar"><span class="option-text">Que sea fácil de usar (interfaz intuitiva)</span></label>
-          <label class="option"><input type="checkbox" name="p33_condicion" value="Confidencialidad garantizada"><span class="option-text">Que garantice la confidencialidad de la información</span></label>
-          <label class="option"><input type="checkbox" name="p33_condicion" value="Soporte técnico disponible"><span class="option-text">Que exista soporte técnico disponible</span></label>
-          <label class="option"><input type="checkbox" name="p33_condicion" value="Permita revisar y modificar el borrador"><span class="option-text">Que permita revisar y modificar el borrador antes de utilizarlo oficialmente</span></label>
-        </div>
-        <div class="err-msg">Seleccione al menos una opción.</div>
-      </div>
     </div>
 
     <!-- ========== SUBMIT ========== -->
@@ -1434,8 +1405,7 @@
 
   // ============== TIPOS DE DOCUMENTOS para P6 y P34 ==============
   const TIPOS_DOC = [
-    "Ficha de proceso o de producto",
-    "Ficha de procedimiento",
+    "Ficha de proceso, procedimiento o de producto",
     "Diagrama de procesos (notación BPMN)",
     "Informe técnico",
     "Presentación institucional",
@@ -1460,8 +1430,6 @@
   // ============== AFIRMACIONES LIKERT P30 ==============
   const LIKERT_AFIRMACIONES = [
     { id: "lik_reduce_tiempo", txt: "Reduciría significativamente el tiempo que dedico a tareas repetitivas" },
-    { id: "lik_calidad_borradores", txt: "Me ayudaría a generar borradores de mayor calidad que los que elaboro sin apoyo" },
-    { id: "lik_mas_tiempo_estrategico", txt: "Me daría más tiempo para actividades estratégicas y de mayor valor" },
     { id: "lik_piloto", txt: "Me gustaría participar en una prueba piloto de esta herramienta" }
   ];
 

@@ -78,12 +78,10 @@ function writeHeaders(sheet) {
     'p6_cant_5', 'p6_tiempo_5',
     'p6_cant_6', 'p6_tiempo_6',
     'p6_cant_7', 'p6_tiempo_7',
-    'p6_cant_8', 'p6_tiempo_8',
     'p7_dificultad',
     'p12_devolucion',
     'p13_razon_dev',
     'p15_busqueda_norma',
-    'p15_vigencia',
     'p18_urgentes',
     'p19_plazo',
     // BCP — afirmaciones (9 + 2 DRE/UGEL) escala semáforo 1-4
@@ -108,13 +106,10 @@ function writeHeaders(sheet) {
     'p27_nivel_ia',
     'p28_usa_ia',
     'p29_tareas_ia',
-    // Likert plataforma (4)
+    // Likert plataforma (2)
     'p30_lik_reduce_tiempo',
-    'p30_lik_calidad_borradores',
-    'p30_lik_mas_tiempo_estrategico',
     'p30_lik_piloto',
     'p31_preocup',
-    'p33_condicion',
     // 3 situaciones más concretas + priorización
     'situacion_top_1',
     'situacion_top_2',
