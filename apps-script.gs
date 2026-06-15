@@ -95,13 +95,9 @@ function writeHeaders(sheet) {
     'pbcp_bcp_datos_dispersos',
     'pbcp_bcp_indicadores',
     'pbcp_bcp_normas_iiee',
-    'pbcp_bcp_consultas_repetidas',
     'pbcp_bcp_seguimiento_iiee',
-    // MBI — agotamiento emocional (todos)
+    // MBI — agotamiento emocional (solo agotado)
     'pmbi_mbi_agotado',
-    'pmbi_mbi_cansado_fin_dia',
-    'pmbi_mbi_cuesta_levantarme',
-    'pmbi_mbi_desgasta',
     'p26_uso_tiempo',
     'p27_nivel_ia',
     'p28_usa_ia',
@@ -123,8 +119,7 @@ function writeHeaders(sheet) {
     'pdu_consolidar',
     'pdu_equipo_traduce',
     'pdu_traduce_normas',
-    'pdu_consultas',
-    'pdu_oportunidades'
+    'pdu_consultas'
   ];
   sheet.getRange(1, 1, 1, headers.length).setValues([headers]);
   sheet.getRange(1, 1, 1, headers.length)
