@@ -875,40 +875,38 @@
         <label class="question-label" for="p2_dre"><span class="num">5.</span>¿A qué Dirección Regional de Educación (DRE) pertenece?<span class="required">*</span></label>
         <select class="select" id="p2_dre" name="p2_dre">
           <option value="">— Seleccionar —</option>
-          <option>DRE Amazonas</option>
-          <option>DRE Áncash</option>
-          <option>DRE Apurímac</option>
-          <option>DRE Arequipa</option>
-          <option>DRE Ayacucho</option>
-          <option>DRE Cajamarca</option>
-          <option>DRE Callao</option>
-          <option>DRE Cusco</option>
-          <option>DRE Huancavelica</option>
-          <option>DRE Huánuco</option>
-          <option>DRE Ica</option>
-          <option>DRE Junín</option>
-          <option>DRE La Libertad</option>
-          <option>DRE Lambayeque</option>
-          <option>DRE Lima Metropolitana</option>
-          <option>DRE Lima Provincias</option>
-          <option>DRE Loreto</option>
-          <option>DRE Madre de Dios</option>
-          <option>DRE Moquegua</option>
-          <option>DRE Pasco</option>
-          <option>DRE Piura</option>
-          <option>DRE Puno</option>
-          <option>DRE San Martín</option>
-          <option>DRE Tacna</option>
-          <option>DRE Tumbes</option>
-          <option>DRE Ucayali</option>
+          <option>DRE Lima Metropolitana (DRELM)</option>
+          <option>DRE Lima Provincias (DRELP)</option>
         </select>
         <div class="err-msg">Seleccione una DRE.</div>
       </div>
 
       <div class="question question-ugel-only">
         <label class="question-label" for="p2_ugel"><span class="num">6.</span>¿A qué Unidad de Gestión Educativa Local (UGEL) pertenece?<span class="required">*</span></label>
-        <input type="text" class="input" id="p2_ugel" name="p2_ugel" placeholder="Escriba el nombre de su UGEL">
-        <div class="err-msg">Indique su UGEL.</div>
+        <select class="select" id="p2_ugel" name="p2_ugel">
+          <option value="">— Seleccionar —</option>
+          <optgroup label="Lima Metropolitana (DRELM)">
+            <option>UGEL 01 - San Juan de Miraflores</option>
+            <option>UGEL 02 - Rímac</option>
+            <option>UGEL 03 - Cercado de Lima</option>
+            <option>UGEL 04 - Comas</option>
+            <option>UGEL 05 - San Juan de Lurigancho</option>
+            <option>UGEL 06 - Ate</option>
+            <option>UGEL 07 - San Borja</option>
+          </optgroup>
+          <optgroup label="Lima Provincias (DRELP)">
+            <option>UGEL 08 - Cañete</option>
+            <option>UGEL 09 - Huaura</option>
+            <option>UGEL 10 - Huaral</option>
+            <option>UGEL 11 - Cajatambo</option>
+            <option>UGEL 12 - Canta</option>
+            <option>UGEL 13 - Yauyos</option>
+            <option>UGEL 14 - Oyón</option>
+            <option>UGEL 15 - Huarochirí</option>
+            <option>UGEL 16 - Barranca</option>
+          </optgroup>
+        </select>
+        <div class="err-msg">Seleccione una UGEL.</div>
       </div>
 
       <div class="question">
