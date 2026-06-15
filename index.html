@@ -945,16 +945,6 @@
         <div class="err-msg">Seleccione una opción.</div>
       </div>
 
-      <div class="question question-dre-ugel-only" style="display:none;">
-        <label class="question-label"><span class="num">10.</span>¿Cuántas visitas o supervisiones a IIEE realizas en promedio al mes?<span class="required">*</span></label>
-        <div class="options">
-          <label class="option"><input type="radio" name="pdu_visitas_mes" value="Ninguna"><span class="option-text">Ninguna</span></label>
-          <label class="option"><input type="radio" name="pdu_visitas_mes" value="1 a 3"><span class="option-text">1 a 3</span></label>
-          <label class="option"><input type="radio" name="pdu_visitas_mes" value="4 a 10"><span class="option-text">4 a 10</span></label>
-          <label class="option"><input type="radio" name="pdu_visitas_mes" value="Más de 10"><span class="option-text">Más de 10</span></label>
-        </div>
-        <div class="err-msg">Seleccione una opción.</div>
-      </div>
     </div>
 
     <!-- ========== SECCIÓN B: TU TRABAJO DOCUMENTAL ========== -->
@@ -962,7 +952,7 @@
       <div class="section-title"><span class="section-letter">B</span>Ayúdanos a entender cómo se ve tu dinámica laboral</div>
 
       <div class="question">
-        <label class="question-label"><span class="num">11.</span>Distribución de su tiempo laboral semanal<span class="required">*</span></label>
+        <label class="question-label"><span class="num">10.</span>Distribución de su tiempo laboral semanal<span class="required">*</span></label>
         <div class="question-hint">Arrastra los puntos para indicar cómo se distribuye en porcentajes tu tiempo entre estas 4 actividades. Cuando termines, haz clic en "Confirmar distribución".</div>
         <div class="seg-range" id="segRange">
           <div class="seg-range-track" id="segTrack">
@@ -1016,14 +1006,14 @@
       </div>
 
       <div class="question">
-        <label class="question-label"><span class="num">12.</span>Para cada tipo de documento, indique cuántos elabora o revisa al mes y cuánto tiempo le toma en promedio elaborar cada uno.<span class="required">*</span></label>
+        <label class="question-label"><span class="num">11.</span>Para cada tipo de documento, indique cuántos elabora o revisa USTED al mes y cuánto tiempo le toma en promedio elaborar cada uno.<span class="required">*</span></label>
         <div class="question-hint">Si no elabora ese tipo, marque "0" en cantidad. Si elabora pero no aplica el tiempo, déjelo en blanco.</div>
         <div class="matrix-wrap" id="p6Matrix"></div>
         <div class="err-msg">Complete al menos un tipo de documento.</div>
       </div>
 
       <div class="question">
-        <label class="question-label"><span class="num">13.</span>¿Cuál es la principal dificultad al elaborar estos instrumentos?<span class="required">*</span></label>
+        <label class="question-label"><span class="num">12.</span>¿Cuál es la principal dificultad al elaborar estos instrumentos?<span class="required">*</span></label>
         <div class="question-hint">Seleccione como máximo 2 opciones.</div>
         <div class="options" data-max="2" data-group="p7_dificultad">
           <label class="option"><input type="checkbox" name="p7_dificultad" value="La normativa está dispersa o es de difícil acceso"><span class="option-text">La normativa está dispersa o es de difícil acceso</span></label>
@@ -1046,7 +1036,37 @@
       <div class="section-desc">Esta sección está pensada para entender cómo se distribuye tu tiempo en supervisión, consolidación y atención a las IIEE de tu jurisdicción.</div>
 
       <div class="question">
-        <label class="question-label"><span class="num">14.</span>Después de una visita a IIEE, ¿cuánto tiempo te toma elaborar el informe correspondiente?<span class="required">*</span></label>
+        <label class="question-label"><span class="num">13.</span>Como parte de tu rol, ¿realizas visitas o supervisiones a IIEE?<span class="required">*</span></label>
+        <div class="options">
+          <label class="option"><input type="radio" name="pdu_hace_visitas" value="Sí"><span class="option-text">Sí</span></label>
+          <label class="option"><input type="radio" name="pdu_hace_visitas" value="No"><span class="option-text">No</span></label>
+        </div>
+        <div class="err-msg">Seleccione una opción.</div>
+      </div>
+
+      <div class="question question-visitas-only" style="display:none;">
+        <label class="question-label"><span class="num">14.</span>¿Cuántas visitas o supervisiones a IIEE realizas TÚ en promedio al mes?<span class="required">*</span></label>
+        <div class="options">
+          <label class="option"><input type="radio" name="pdu_visitas_mes" value="1 a 3"><span class="option-text">1 a 3</span></label>
+          <label class="option"><input type="radio" name="pdu_visitas_mes" value="4 a 10"><span class="option-text">4 a 10</span></label>
+          <label class="option"><input type="radio" name="pdu_visitas_mes" value="Más de 10"><span class="option-text">Más de 10</span></label>
+        </div>
+        <div class="err-msg">Seleccione una opción.</div>
+      </div>
+
+      <div class="question question-visitas-only" style="display:none;">
+        <label class="question-label"><span class="num">15.</span>Antes de una visita, ¿cuánto tiempo dedicas TÚ a preparar antecedentes y documentación de la IIEE?<span class="required">*</span></label>
+        <div class="options">
+          <label class="option"><input type="radio" name="pdu_pre_visita" value="Menos de 30 min"><span class="option-text">Menos de 30 minutos</span></label>
+          <label class="option"><input type="radio" name="pdu_pre_visita" value="Entre 30 min y 2 h"><span class="option-text">Entre 30 minutos y 2 horas</span></label>
+          <label class="option"><input type="radio" name="pdu_pre_visita" value="Más de 2 h"><span class="option-text">Más de 2 horas</span></label>
+          <label class="option"><input type="radio" name="pdu_pre_visita" value="No preparo antecedentes"><span class="option-text">No preparo antecedentes</span></label>
+        </div>
+        <div class="err-msg">Seleccione una opción.</div>
+      </div>
+
+      <div class="question question-visitas-only" style="display:none;">
+        <label class="question-label"><span class="num">16.</span>Después de una visita a IIEE, ¿cuánto tiempo te toma a TI elaborar el informe correspondiente?<span class="required">*</span></label>
         <div class="options">
           <label class="option"><input type="radio" name="pdu_tiempo_informe" value="Menos de 1 hora"><span class="option-text">Menos de 1 hora</span></label>
           <label class="option"><input type="radio" name="pdu_tiempo_informe" value="Entre 1 y 3 horas"><span class="option-text">Entre 1 y 3 horas</span></label>
@@ -1057,31 +1077,29 @@
       </div>
 
       <div class="question">
-        <label class="question-label"><span class="num">15.</span>Antes de una visita, ¿cuánto tiempo dedicas a preparar antecedentes y documentación de la IIEE?<span class="required">*</span></label>
-        <div class="options">
-          <label class="option"><input type="radio" name="pdu_pre_visita" value="Menos de 30 min"><span class="option-text">Menos de 30 minutos</span></label>
-          <label class="option"><input type="radio" name="pdu_pre_visita" value="Entre 30 min y 2 h"><span class="option-text">Entre 30 minutos y 2 horas</span></label>
-          <label class="option"><input type="radio" name="pdu_pre_visita" value="Más de 2 h"><span class="option-text">Más de 2 horas</span></label>
-          <label class="option"><input type="radio" name="pdu_pre_visita" value="No preparo antecedentes"><span class="option-text">No preparo antecedentes</span></label>
-        </div>
-        <div class="err-msg">Seleccione una opción.</div>
-      </div>
-
-      <div class="question">
-        <label class="question-label"><span class="num">16.</span>¿Cuánto tiempo dedicas a consolidar respuestas que vienen de IIEE en formatos distintos (Excel, Word, PDF)?<span class="required">*</span></label>
+        <label class="question-label"><span class="num">17.</span>¿Cuánto tiempo dedicas TÚ a consolidar respuestas que vienen de IIEE en formatos distintos (Excel, Word, PDF)?<span class="required">*</span></label>
         <div class="options">
           <label class="option"><input type="radio" name="pdu_consolidar" value="Menos de 2 h"><span class="option-text">Menos de 2 horas por semana</span></label>
           <label class="option"><input type="radio" name="pdu_consolidar" value="2 a 5 h"><span class="option-text">Entre 2 y 5 horas por semana</span></label>
           <label class="option"><input type="radio" name="pdu_consolidar" value="5 a 10 h"><span class="option-text">Entre 5 y 10 horas por semana</span></label>
           <label class="option"><input type="radio" name="pdu_consolidar" value="Más de 10 h"><span class="option-text">Más de 10 horas por semana</span></label>
+          <label class="option"><input type="radio" name="pdu_consolidar" value="No consolido respuestas"><span class="option-text">No consolido respuestas de IIEE</span></label>
         </div>
         <div class="err-msg">Seleccione una opción.</div>
       </div>
 
       <div class="question">
-        <label class="question-label"><span class="num">17.</span>¿Cuántas normas o directivas del MINEDU traduces o adaptas para las IIEE al mes?<span class="required">*</span></label>
+        <label class="question-label"><span class="num">18.</span>¿Tu equipo directo traduce o adapta normas o directivas del MINEDU para las IIEE?<span class="required">*</span></label>
         <div class="options">
-          <label class="option"><input type="radio" name="pdu_traduce_normas" value="Ninguna"><span class="option-text">Ninguna</span></label>
+          <label class="option"><input type="radio" name="pdu_equipo_traduce" value="Sí"><span class="option-text">Sí</span></label>
+          <label class="option"><input type="radio" name="pdu_equipo_traduce" value="No"><span class="option-text">No</span></label>
+        </div>
+        <div class="err-msg">Seleccione una opción.</div>
+      </div>
+
+      <div class="question question-equipo-traduce-only" style="display:none;">
+        <label class="question-label"><span class="num">19.</span>¿Cuántas normas o directivas traduce TU EQUIPO DIRECTO en promedio al mes?<span class="required">*</span></label>
+        <div class="options">
           <label class="option"><input type="radio" name="pdu_traduce_normas" value="1 a 3"><span class="option-text">1 a 3</span></label>
           <label class="option"><input type="radio" name="pdu_traduce_normas" value="4 a 10"><span class="option-text">4 a 10</span></label>
           <label class="option"><input type="radio" name="pdu_traduce_normas" value="Más de 10"><span class="option-text">Más de 10</span></label>
@@ -1090,12 +1108,13 @@
       </div>
 
       <div class="question">
-        <label class="question-label"><span class="num">18.</span>¿Cuánto tiempo dedicas a responder consultas frecuentes de directores y docentes?<span class="required">*</span></label>
+        <label class="question-label"><span class="num">20.</span>¿Cuánto tiempo dedicas TÚ a responder consultas frecuentes de directores y docentes?<span class="required">*</span></label>
         <div class="options">
           <label class="option"><input type="radio" name="pdu_consultas" value="Menos de 2 h"><span class="option-text">Menos de 2 horas por semana</span></label>
           <label class="option"><input type="radio" name="pdu_consultas" value="2 a 5 h"><span class="option-text">Entre 2 y 5 horas por semana</span></label>
           <label class="option"><input type="radio" name="pdu_consultas" value="5 a 10 h"><span class="option-text">Entre 5 y 10 horas por semana</span></label>
           <label class="option"><input type="radio" name="pdu_consultas" value="Más de 10 h"><span class="option-text">Más de 10 horas por semana</span></label>
+          <label class="option"><input type="radio" name="pdu_consultas" value="No respondo consultas"><span class="option-text">No respondo consultas de IIEE</span></label>
         </div>
         <div class="err-msg">Seleccione una opción.</div>
       </div>
@@ -1106,7 +1125,7 @@
       <div class="section-title"><span class="section-letter">D</span>Reproceso y calidad</div>
 
       <div class="question">
-        <label class="question-label"><span class="num">19.</span>De cada 10 documentos que entrega, ¿cuántos le devuelven con observaciones?<span class="required">*</span></label>
+        <label class="question-label"><span class="num">21.</span>De cada 10 documentos que entrega, ¿cuántos le devuelven con observaciones?<span class="required">*</span></label>
         <div class="options">
           <label class="option"><input type="radio" name="p12_devolucion" value="0-1"><span class="option-text">Casi ninguno (0-1)</span></label>
           <label class="option"><input type="radio" name="p12_devolucion" value="2-3"><span class="option-text">Pocos (2-3)</span></label>
@@ -1118,7 +1137,7 @@
       </div>
 
       <div class="question">
-        <label class="question-label"><span class="num">20.</span>Cuando le devuelven un documento, ¿por qué suele ser?<span class="required">*</span></label>
+        <label class="question-label"><span class="num">22.</span>Cuando le devuelven un documento, ¿por qué suele ser?<span class="required">*</span></label>
         <div class="question-hint">Seleccione como máximo 2 opciones.</div>
         <div class="options" data-max="2" data-group="p13_razon_dev">
           <label class="option"><input type="checkbox" name="p13_razon_dev" value="Errores de forma (formato, redacción, ortografía, citas)"><span class="option-text">Errores de forma (formato, redacción, ortografía, citas)</span></label>
@@ -1138,7 +1157,7 @@
       <div class="section-title"><span class="section-letter">E</span>Búsqueda de información</div>
 
       <div class="question">
-        <label class="question-label"><span class="num">21.</span>En promedio, ¿cuánto tiempo dedica a buscar normativa, guías metodológicas o modelos de referencia ANTES de empezar a elaborar un instrumento?<span class="required">*</span></label>
+        <label class="question-label"><span class="num">23.</span>En promedio, ¿cuánto tiempo dedica a buscar normativa, guías metodológicas o modelos de referencia ANTES de empezar a elaborar un instrumento?<span class="required">*</span></label>
         <div class="options">
           <label class="option"><input type="radio" name="p15_busqueda_norma" value="Menos de 30 minutos"><span class="option-text">Menos de 30 minutos</span></label>
           <label class="option"><input type="radio" name="p15_busqueda_norma" value="Entre 30 minutos y 1 hora"><span class="option-text">Entre 30 minutos y 1 hora</span></label>
@@ -1150,7 +1169,7 @@
       </div>
 
       <div class="question">
-        <label class="question-label"><span class="num">22.</span>¿Qué tan trabajoso le resulta asegurarse de que la normativa, guía o modelo que está usando es la versión vigente?<span class="required">*</span></label>
+        <label class="question-label"><span class="num">24.</span>¿Qué tan trabajoso le resulta asegurarse de que la normativa, guía o modelo que está usando es la versión vigente?<span class="required">*</span></label>
         <div class="escala semaforo" data-escala-name="p15_vigencia">
           <div class="escala-row cols-4">
             <label class="escala-btn" data-val="1"><input type="radio" name="p15_vigencia" value="1">1</label>
@@ -1172,7 +1191,7 @@
       <div class="section-title"><span class="section-letter">F</span>Ritmo y demandas externas</div>
 
       <div class="question">
-        <label class="question-label"><span class="num">23.</span>¿Con qué frecuencia recibe solicitudes urgentes de entidades externas (Congreso, Contraloría, PCM, Defensoría, GOREs u otras) que interrumpen su planificación semanal?<span class="required">*</span></label>
+        <label class="question-label"><span class="num">25.</span>¿Con qué frecuencia recibe solicitudes urgentes de entidades externas (Congreso, Contraloría, PCM, Defensoría, GOREs u otras) que interrumpen su planificación semanal?<span class="required">*</span></label>
         <div class="options">
           <label class="option"><input type="radio" name="p18_urgentes" value="Nunca"><span class="option-text">Nunca</span></label>
           <label class="option"><input type="radio" name="p18_urgentes" value="1 a 2 veces por semana"><span class="option-text">1 a 2 veces por semana</span></label>
@@ -1183,7 +1202,7 @@
       </div>
 
       <div class="question">
-        <label class="question-label"><span class="num">24.</span>Cuando recibe estas solicitudes externas, ¿cuál es el plazo habitual que le otorgan para responder?<span class="required">*</span></label>
+        <label class="question-label"><span class="num">26.</span>Cuando recibe estas solicitudes externas, ¿cuál es el plazo habitual que le otorgan para responder?<span class="required">*</span></label>
         <div class="options">
           <label class="option"><input type="radio" name="p19_plazo" value="Más de 3 días"><span class="option-text">Más de 3 días</span></label>
           <label class="option"><input type="radio" name="p19_plazo" value="Entre 1 y 3 días"><span class="option-text">Entre 1 y 3 días</span></label>
@@ -1202,7 +1221,7 @@
       <div class="section-desc">Indica qué tan presentes están estas situaciones en tu equipo (jefe directo, compañeros y personas a tu cargo).</div>
 
       <div class="question">
-        <label class="question-label"><span class="num">25.</span>Valore qué tan identificado se siente con cada afirmación.<span class="required">*</span></label>
+        <label class="question-label"><span class="num">27.</span>Valore qué tan identificado se siente con cada afirmación.<span class="required">*</span></label>
         <div class="question-hint">Escala: 1 = nada / casi nunca · 4 = mucho / muy frecuente / totalmente</div>
         <div id="pBcpLikert"></div>
         <div class="err-msg">Complete todas las afirmaciones.</div>
@@ -1210,7 +1229,7 @@
 
 
       <div class="question">
-        <label class="question-label"><span class="num">26.</span>Si pudiera recuperar tiempo de las tareas repetitivas y administrativas, ¿a qué actividades lo destinaría?<span class="required">*</span></label>
+        <label class="question-label"><span class="num">28.</span>Si pudiera recuperar tiempo de las tareas repetitivas y administrativas, ¿a qué actividades lo destinaría?<span class="required">*</span></label>
         <div class="question-hint">Seleccione como máximo 2 opciones.</div>
         <div class="options" data-max="2" data-group="p26_uso_tiempo">
           <label class="option"><input type="checkbox" name="p26_uso_tiempo" value="Análisis y diagnóstico de problemas"><span class="option-text">Análisis y diagnóstico de problemas</span></label>
@@ -1241,7 +1260,7 @@
       <div class="section-title"><span class="section-letter">I</span>Uso actual de inteligencia artificial</div>
 
       <div class="question">
-        <label class="question-label"><span class="num">27.</span>¿Cuál es tu nivel actual de uso de inteligencia artificial?<span class="required">*</span></label>
+        <label class="question-label"><span class="num">29.</span>¿Cuál es tu nivel actual de uso de inteligencia artificial?<span class="required">*</span></label>
         <div class="options">
           <label class="option"><input type="radio" name="p27_nivel_ia" value="No uso"><span class="option-text">No uso ninguna herramienta de IA</span></label>
           <label class="option"><input type="radio" name="p27_nivel_ia" value="1 - Básico"><span class="option-text">Nivel 1 - Básico: consultas y consejos puntuales</span></label>
@@ -1253,7 +1272,7 @@
       </div>
 
       <div class="question">
-        <label class="question-label"><span class="num">28.</span>¿Usas alguna herramienta de inteligencia artificial para facilitar tu trabajo?<span class="required">*</span></label>
+        <label class="question-label"><span class="num">30.</span>¿Usas alguna herramienta de inteligencia artificial para facilitar tu trabajo?<span class="required">*</span></label>
         <div class="options">
           <label class="option"><input type="radio" name="p28_usa_ia" value="Sí, con cuenta pagada por el MINEDU"><span class="option-text">Sí, con cuenta pagada por el MINEDU</span></label>
           <label class="option"><input type="radio" name="p28_usa_ia" value="Sí, con cuenta pagada por mí"><span class="option-text">Sí, con cuenta pagada por mí</span></label>
@@ -1264,7 +1283,7 @@
       </div>
 
       <div class="question question-tareas-ia">
-        <label class="question-label"><span class="num">29.</span>¿Para qué tareas de tu trabajo usas inteligencia artificial hoy?<span class="required">*</span></label>
+        <label class="question-label"><span class="num">31.</span>¿Para qué tareas de tu trabajo usas inteligencia artificial hoy?<span class="required">*</span></label>
         <div class="question-hint">Seleccione hasta 3 opciones. Si no usa IA, marque "No uso IA para mi trabajo".</div>
         <div class="options" data-max="3" data-group="p29_tareas_ia">
           <label class="option"><input type="checkbox" name="p29_tareas_ia" value="Redactar borradores de informes u oficios"><span class="option-text">Redactar borradores de informes u oficios</span></label>
@@ -1286,14 +1305,14 @@
       <div class="section-title"><span class="section-letter">J</span>Percepción sobre una plataforma de asistencia con IA</div>
 
       <div class="question">
-        <label class="question-label"><span class="num">30.</span>Valore su nivel de acuerdo con las siguientes afirmaciones sobre una posible plataforma de asistencia con IA para elaborar instrumentos de gestión.<span class="required">*</span></label>
+        <label class="question-label"><span class="num">32.</span>Valore su nivel de acuerdo con las siguientes afirmaciones sobre una posible plataforma de asistencia con IA para elaborar instrumentos de gestión.<span class="required">*</span></label>
         <div class="question-hint">Escala: 1 = Totalmente en desacuerdo · 5 = Totalmente de acuerdo</div>
         <div id="p30Likert"></div>
         <div class="err-msg">Complete todas las afirmaciones.</div>
       </div>
 
       <div class="question question-dre-ugel-only" style="display:none;">
-        <label class="question-label"><span class="num">31.</span>¿Para cuáles tareas de tu unidad sería MÁS útil una herramienta con IA?<span class="required">*</span></label>
+        <label class="question-label"><span class="num">33.</span>¿Para cuáles tareas de tu unidad sería MÁS útil una herramienta con IA?<span class="required">*</span></label>
         <div class="question-hint">Seleccione hasta 3 opciones.</div>
         <div class="options" data-max="3" data-group="pdu_oportunidades">
           <label class="option"><input type="checkbox" name="pdu_oportunidades" value="Preparar visitas de supervisión"><span class="option-text">Preparar visitas de supervisión</span></label>
@@ -1310,7 +1329,7 @@
       </div>
 
       <div class="question">
-        <label class="question-label"><span class="num">32.</span>¿Cuáles serían sus principales preocupaciones al usar una herramienta de IA para elaborar instrumentos de gestión?<span class="required">*</span></label>
+        <label class="question-label"><span class="num">34.</span>¿Cuáles serían sus principales preocupaciones al usar una herramienta de IA para elaborar instrumentos de gestión?<span class="required">*</span></label>
         <div class="question-hint">Seleccione como máximo 2 opciones.</div>
         <div class="options" data-max="2" data-group="p31_preocup">
           <label class="option"><input type="checkbox" name="p31_preocup" value="Errores técnicos o normativos en los borradores"><span class="option-text">Que los borradores generados tengan errores técnicos o normativos</span></label>
@@ -1326,7 +1345,7 @@
       </div>
 
       <div class="question">
-        <label class="question-label"><span class="num">33.</span>¿Qué condición considera indispensable para adoptar una herramienta de IA en su trabajo?<span class="required">*</span></label>
+        <label class="question-label"><span class="num">35.</span>¿Qué condición considera indispensable para adoptar una herramienta de IA en su trabajo?<span class="required">*</span></label>
         <div class="question-hint">Seleccione como máximo 2 opciones.</div>
         <div class="options" data-max="2" data-group="p33_condicion">
           <label class="option"><input type="checkbox" name="p33_condicion" value="Validada institucionalmente"><span class="option-text">Que esté validada y autorizada institucionalmente</span></label>
@@ -1966,6 +1985,46 @@
     update();
   }
 
+  // ============== CONDICIONAL: preguntas de visitas (solo si hace visitas) ==============
+  function bindCondicionalVisitas() {
+    const radios = document.querySelectorAll('input[name="pdu_hace_visitas"]');
+    if (radios.length === 0) return;
+    function update() {
+      const checked = document.querySelector('input[name="pdu_hace_visitas"]:checked');
+      const haceVisitas = checked && checked.value === 'Sí';
+      document.querySelectorAll('.question-visitas-only').forEach(q => {
+        q.style.display = haceVisitas ? '' : 'none';
+        q.querySelectorAll('input[type="radio"]').forEach(el => {
+          el.dataset.cond = haceVisitas ? 'on' : 'off';
+          if (!haceVisitas) el.checked = false;
+        });
+      });
+      renumerarVisibles();
+    }
+    radios.forEach(r => r.addEventListener('change', update));
+    update();
+  }
+
+  // ============== CONDICIONAL: # normas traducidas (solo si equipo traduce) ==============
+  function bindCondicionalEquipoTraduce() {
+    const radios = document.querySelectorAll('input[name="pdu_equipo_traduce"]');
+    if (radios.length === 0) return;
+    function update() {
+      const checked = document.querySelector('input[name="pdu_equipo_traduce"]:checked');
+      const traduce = checked && checked.value === 'Sí';
+      document.querySelectorAll('.question-equipo-traduce-only').forEach(q => {
+        q.style.display = traduce ? '' : 'none';
+        q.querySelectorAll('input[type="radio"]').forEach(el => {
+          el.dataset.cond = traduce ? 'on' : 'off';
+          if (!traduce) el.checked = false;
+        });
+      });
+      renumerarVisibles();
+    }
+    radios.forEach(r => r.addEventListener('change', update));
+    update();
+  }
+
   // ============== CONDICIONAL: P27 (tareas IA) solo si P26 = sí ==============
   function bindCondicionalIA() {
     const radios = document.querySelectorAll('input[name="p28_usa_ia"]');
@@ -2290,6 +2349,8 @@
     bindEscalas();
     bindOrdenable();
     bindCondicionalIA();
+    bindCondicionalVisitas();
+    bindCondicionalEquipoTraduce();
     bindCondicionalNivel();
     bindCascadaMinedu();
     bindOtras();

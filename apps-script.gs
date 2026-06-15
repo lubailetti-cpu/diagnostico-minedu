@@ -115,10 +115,12 @@ function writeHeaders(sheet) {
     'situaciones_orden',
     // ===== Específicas DRE / UGEL (vacías si nivel = MINEDU) =====
     'pdu_num_iiee',
+    'pdu_hace_visitas',
     'pdu_visitas_mes',
-    'pdu_tiempo_informe',
     'pdu_pre_visita',
+    'pdu_tiempo_informe',
     'pdu_consolidar',
+    'pdu_equipo_traduce',
     'pdu_traduce_normas',
     'pdu_consultas',
     'pdu_oportunidades'
