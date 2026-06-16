@@ -1256,7 +1256,6 @@
     <!-- ========== SECCIÓN H: BIENESTAR EMOCIONAL (MBI) ========== -->
     <div class="section">
       <div class="section-title"><span class="section-letter">H</span>Cómo te sientes en tu trabajo</div>
-      <div class="section-desc">Tus respuestas son confidenciales y se analizan únicamente en agregado. Indica con qué frecuencia te ocurre cada una.</div>
 
       <div class="question">
         <label class="question-label"><span class="num">30.</span>Valore con qué frecuencia se aplica la siguiente afirmación a su día a día.<span class="required">*</span></label>
@@ -2092,11 +2091,11 @@
     form.querySelectorAll('input[type="radio"]').forEach(r => radioNames.add(r.name));
     const totalSlots = (requiredInputs.length - form.querySelectorAll('input[type="radio"][required]').length) + radioNames.size;
 
-    // simpler: count total visible questions vs filled
+    // contar solo preguntas visibles, y dentro de cada una solo los grupos visibles
     const allQuestions = [...form.querySelectorAll('.question')].filter(q => q.offsetParent !== null);
     let filledQuestions = 0;
     allQuestions.forEach(q => {
-      const radios = [...q.querySelectorAll('input[type="radio"]')].filter(r => r.offsetParent !== null || q.contains(r));
+      const radios = [...q.querySelectorAll('input[type="radio"]')].filter(r => r.offsetParent !== null);
       const checks = q.querySelectorAll('input[type="checkbox"]');
       const text = q.querySelectorAll('input[type="text"], textarea, select');
       let isFilled = false;
@@ -2114,6 +2113,8 @@
         let allFilled = true;
         text.forEach(t => { if (t.required && !t.value.trim()) allFilled = false; });
         isFilled = allFilled;
+      } else {
+        isFilled = true;
       }
       if (isFilled) filledQuestions++;
     });
