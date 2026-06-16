@@ -116,6 +116,22 @@
   }
   .hero-meta div { display: flex; align-items: center; gap: 6px; }
 
+  .hero-deadline {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 18px;
+    padding: 9px 14px;
+    background: rgba(255,255,255,0.14);
+    border: 1px solid rgba(255,255,255,0.22);
+    border-radius: 99px;
+    font-size: 13px;
+    color: rgba(255,255,255,0.95);
+    position: relative;
+    z-index: 1;
+  }
+  .hero-deadline strong { font-weight: 700; color: #fff; }
+
   /* ========== PROGRESS ========== */
   .progress-wrap {
     position: sticky;
@@ -794,6 +810,10 @@
     <h1>Encuesta sobre carga operativa en la elaboración de documentos</h1>
     <p>Los datos recogidos se utilizarán exclusivamente con fines de investigación aplicada en el marco de una iniciativa de innovación propuesta por la <strong>Unidad de Organización y Métodos (UNOME)</strong>.</p>
     <p><strong>Esta encuesta es confidencial. No estamos recogiendo tus datos personales. Los resultados se comunicarán únicamente de forma agregada, sin identificar respuestas individuales.</strong></p>
+    <div class="hero-deadline">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+      <span>Fecha límite para responder: <strong>viernes 26 de junio</strong></span>
+    </div>
     <div class="hero-meta">
       <div>
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg>
@@ -913,10 +933,10 @@
         <label class="question-label" for="p3_rol"><span class="num">7.</span>¿Cuál es el rol principal que ejerce actualmente dentro de su U.O.?<span class="required">*</span></label>
         <select class="select" id="p3_rol" name="p3_rol" required>
           <option value="">— Seleccionar —</option>
-          <option>Asesor/a</option>
-          <option>Coordinador/a</option>
-          <option>Especialista técnico/a</option>
-          <option>Especialista administrativo/a</option>
+          <option>Asesor/a o similar</option>
+          <option>Coordinador/a o similar</option>
+          <option>Especialista técnico/a o similar</option>
+          <option>Especialista administrativo/a o similar</option>
           <option>Otras</option>
         </select>
         <div class="err-msg">Seleccione una opción.</div>
