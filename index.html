@@ -868,19 +868,16 @@
       </div>
 
       <div class="question question-minedu-only">
-        <label class="question-label" for="p2_categoria"><span class="num">3.</span>¿En qué categoría se ubica su unidad organizacional?<span class="required">*</span></label>
-        <div class="question-hint">Según el ROF del MINEDU (DS 001-2015-MINEDU)</div>
+        <label class="question-label" for="p2_categoria"><span class="num">3.</span>¿De qué órgano de alta dirección depende su unidad organizacional?<span class="required">*</span></label>
+        <div class="question-hint">Según el ROF del MINEDU (DS 001-2015-MINEDU), Art. 5. Elija el órgano de alta dirección del que depende jerárquicamente su unidad.</div>
         <select class="select" id="p2_categoria" name="p2_categoria" required>
           <option value="">— Seleccionar —</option>
-          <option>Alta Dirección</option>
-          <option>Órganos de Control y Defensa</option>
-          <option>Órganos de Asesoramiento</option>
-          <option>Órganos de Apoyo</option>
-          <option>Órganos de Línea — Gestión Pedagógica</option>
-          <option>Órganos de Línea — Gestión Institucional</option>
-          <option>Organismos Adscritos</option>
+          <option>Despacho Ministerial o sus dependencias</option>
+          <option>Despacho Viceministerial de Gestión Pedagógica o sus dependencias</option>
+          <option>Despacho Viceministerial de Gestión Institucional o sus dependencias</option>
+          <option>Secretaría General o sus dependencias</option>
         </select>
-        <div class="err-msg">Seleccione una categoría.</div>
+        <div class="err-msg">Seleccione una opción.</div>
       </div>
 
       <div class="question question-minedu-only">
@@ -893,38 +890,26 @@
 
       <div class="question question-dre-only">
         <label class="question-label" for="p2_dre"><span class="num">5.</span>¿A qué Dirección Regional de Educación (DRE) pertenece?<span class="required">*</span></label>
+        <div class="question-hint">Este diagnóstico aplica únicamente a DRE Lima Metropolitana en esta etapa.</div>
         <select class="select" id="p2_dre" name="p2_dre">
           <option value="">— Seleccionar —</option>
           <option>DRE Lima Metropolitana (DRELM)</option>
-          <option>DRE Lima Provincias (DRELP)</option>
         </select>
         <div class="err-msg">Seleccione una DRE.</div>
       </div>
 
       <div class="question question-ugel-only">
         <label class="question-label" for="p2_ugel"><span class="num">6.</span>¿A qué Unidad de Gestión Educativa Local (UGEL) pertenece?<span class="required">*</span></label>
+        <div class="question-hint">Este diagnóstico aplica únicamente a las UGEL de DRE Lima Metropolitana en esta etapa.</div>
         <select class="select" id="p2_ugel" name="p2_ugel">
           <option value="">— Seleccionar —</option>
-          <optgroup label="Lima Metropolitana (DRELM)">
-            <option>UGEL 01 - San Juan de Miraflores</option>
-            <option>UGEL 02 - Rímac</option>
-            <option>UGEL 03 - Cercado de Lima</option>
-            <option>UGEL 04 - Comas</option>
-            <option>UGEL 05 - San Juan de Lurigancho</option>
-            <option>UGEL 06 - Ate</option>
-            <option>UGEL 07 - San Borja</option>
-          </optgroup>
-          <optgroup label="Lima Provincias (DRELP)">
-            <option>UGEL 08 - Cañete</option>
-            <option>UGEL 09 - Huaura</option>
-            <option>UGEL 10 - Huaral</option>
-            <option>UGEL 11 - Cajatambo</option>
-            <option>UGEL 12 - Canta</option>
-            <option>UGEL 13 - Yauyos</option>
-            <option>UGEL 14 - Oyón</option>
-            <option>UGEL 15 - Huarochirí</option>
-            <option>UGEL 16 - Barranca</option>
-          </optgroup>
+          <option>UGEL 01 - San Juan de Miraflores</option>
+          <option>UGEL 02 - Rímac</option>
+          <option>UGEL 03 - Cercado de Lima</option>
+          <option>UGEL 04 - Comas</option>
+          <option>UGEL 05 - San Juan de Lurigancho</option>
+          <option>UGEL 06 - Ate</option>
+          <option>UGEL 07 - San Borja</option>
         </select>
         <div class="err-msg">Seleccione una UGEL.</div>
       </div>
@@ -955,12 +940,15 @@
       </div>
 
       <div class="question">
-        <label class="question-label"><span class="num">9.</span>¿Cuántas horas trabajas en promedio por semana?<span class="required">*</span></label>
+        <label class="question-label"><span class="num">9.</span>¿En qué rango de edad se encuentra?<span class="required">*</span></label>
         <div class="options">
-          <label class="option"><input type="radio" name="p4b_horas_semana" value="Menos de 40 h"><span class="option-text">Menos de 40 horas</span></label>
-          <label class="option"><input type="radio" name="p4b_horas_semana" value="40 a 48 h"><span class="option-text">40 a 48 horas</span></label>
-          <label class="option"><input type="radio" name="p4b_horas_semana" value="49 a 60 h"><span class="option-text">49 a 60 horas</span></label>
-          <label class="option"><input type="radio" name="p4b_horas_semana" value="Más de 60 h"><span class="option-text">Más de 60 horas</span></label>
+          <label class="option"><input type="radio" name="p4c_edad" value="Menos de 25"><span class="option-text">Menos de 25 años</span></label>
+          <label class="option"><input type="radio" name="p4c_edad" value="25 a 34"><span class="option-text">25 a 34 años</span></label>
+          <label class="option"><input type="radio" name="p4c_edad" value="35 a 44"><span class="option-text">35 a 44 años</span></label>
+          <label class="option"><input type="radio" name="p4c_edad" value="45 a 54"><span class="option-text">45 a 54 años</span></label>
+          <label class="option"><input type="radio" name="p4c_edad" value="55 a 64"><span class="option-text">55 a 64 años</span></label>
+          <label class="option"><input type="radio" name="p4c_edad" value="65 o más"><span class="option-text">65 años o más</span></label>
+          <label class="option"><input type="radio" name="p4c_edad" value="Prefiero no decir"><span class="option-text">Prefiero no decir</span></label>
         </div>
         <div class="err-msg">Seleccione una opción.</div>
       </div>
@@ -1001,10 +989,10 @@
             <div class="seg-legend-item" data-seg-leg="0">
               <div class="seg-legend-row">
                 <span class="seg-dot" data-seg-color="0"></span>
-                <span class="seg-legend-title">Tareas estratégicas, técnicas y de análisis (no administrativas)</span>
+                <span class="seg-legend-title">Tareas sustantivas de mi unidad (las funciones del core según el ROF)</span>
                 <strong class="seg-legend-pct" id="segPct0">25%</strong>
               </div>
-              <small>Análisis técnico y de políticas, propuestas de mejora, asesoría a DREs/UGELs, diseño de proyectos, coordinación interinstitucional.</small>
+              <small>Las funciones directamente vinculadas al propósito de mi unidad organizacional según el ROF (sean técnicas, pedagógicas, administrativas o de soporte). NO incluyas tareas operativas repetitivas como tramitar oficios, llenar formatos o consolidar reportes — esas van en la categoría 3.</small>
             </div>
             <div class="seg-legend-item" data-seg-leg="1">
               <div class="seg-legend-row">
@@ -1037,10 +1025,30 @@
       </div>
 
       <div class="question">
-        <label class="question-label"><span class="num">11.</span>Para cada tipo de documento, indique cuántos elabora o revisa USTED a la semana y cuánto tiempo le toma en promedio elaborar cada uno.<span class="required">*</span></label>
-        <div class="question-hint">Si no elabora ese tipo, marque "0" en cantidad. Si elabora pero no aplica el tiempo, déjelo en blanco.</div>
+        <label class="question-label"><span class="num">11.</span>¿Qué tipos de documentos elabora o revisa USTED como parte de su trabajo?<span class="required">*</span></label>
+        <div class="question-hint">Seleccione todos los que apliquen. En las siguientes preguntas le pediremos detalles solo de los que marque aquí.</div>
+        <div class="options" data-group="p5_tipos_doc" id="p5TiposDoc"></div>
+        <div class="err-msg">Seleccione al menos un tipo de documento.</div>
+      </div>
+
+      <div class="question">
+        <label class="question-label"><span class="num">12.</span>En total, ¿cuántas horas a la semana invierte aproximadamente en elaborar o revisar los tipos de documentos que marcó?<span class="required">*</span></label>
+        <div class="question-hint">Considere el tiempo agregado de todos los documentos que marcó arriba.</div>
+        <div class="options">
+          <label class="option"><input type="radio" name="p5b_horas_doc_total" value="Menos de 2 h"><span class="option-text">Menos de 2 horas</span></label>
+          <label class="option"><input type="radio" name="p5b_horas_doc_total" value="2 a 5 h"><span class="option-text">Entre 2 y 5 horas</span></label>
+          <label class="option"><input type="radio" name="p5b_horas_doc_total" value="6 a 10 h"><span class="option-text">Entre 6 y 10 horas</span></label>
+          <label class="option"><input type="radio" name="p5b_horas_doc_total" value="11 a 20 h"><span class="option-text">Entre 11 y 20 horas</span></label>
+          <label class="option"><input type="radio" name="p5b_horas_doc_total" value="Más de 20 h"><span class="option-text">Más de 20 horas</span></label>
+        </div>
+        <div class="err-msg">Seleccione una opción.</div>
+      </div>
+
+      <div class="question" id="qMatrixDoc">
+        <label class="question-label"><span class="num">13.</span>Para cada tipo de documento que marcó, indique cuántos elabora o revisa USTED a la semana y cuánto tiempo le toma en promedio cada uno.<span class="required">*</span></label>
+        <div class="question-hint">Solo verá los tipos de documento que marcó en la pregunta anterior.</div>
         <div class="matrix-wrap" id="p6Matrix"></div>
-        <div class="err-msg">Complete al menos un tipo de documento.</div>
+        <div class="err-msg">Complete cantidad y tiempo para cada tipo marcado.</div>
       </div>
 
       <div class="question">
@@ -1258,6 +1266,7 @@
         <label class="question-label"><span class="num">29.</span>Si pudiera recuperar tiempo de las tareas repetitivas y administrativas, ¿a qué actividades lo destinaría?<span class="required">*</span></label>
         <div class="question-hint">Seleccione todas las que apliquen.</div>
         <div class="options" data-group="p26_uso_tiempo">
+          <label class="option"><input type="checkbox" name="p26_uso_tiempo" value="Otras tareas sustantivas de mi puesto (estrategia, análisis, NO operativas)"><span class="option-text">Otras tareas sustantivas de mi puesto (estrategia, análisis, NO operativas)</span></label>
           <label class="option"><input type="checkbox" name="p26_uso_tiempo" value="Análisis y diagnóstico de problemas"><span class="option-text">Análisis y diagnóstico de problemas</span></label>
           <label class="option"><input type="checkbox" name="p26_uso_tiempo" value="Mejora de procesos e innovación"><span class="option-text">Mejora de procesos e innovación</span></label>
           <label class="option"><input type="checkbox" name="p26_uso_tiempo" value="Coordinación con otras unidades"><span class="option-text">Coordinación y articulación con otras unidades de organización o equipos</span></label>
@@ -1267,6 +1276,7 @@
           <label class="option option-dre-ugel-only" style="display:none;"><input type="checkbox" name="p26_uso_tiempo" value="Visitas presenciales a más IIEE (ampliar cobertura)"><span class="option-text">Visitas presenciales a más IIEE (ampliar cobertura)</span></label>
           <label class="option option-dre-ugel-only" style="display:none;"><input type="checkbox" name="p26_uso_tiempo" value="Trabajo conjunto con UGELs e IIEE de la jurisdicción"><span class="option-text">Trabajo conjunto con UGELs e IIEE de la jurisdicción</span></label>
           <label class="option option-dre-ugel-only" style="display:none;"><input type="checkbox" name="p26_uso_tiempo" value="Análisis de resultados de aprendizaje de las IIEE"><span class="option-text">Análisis de resultados de aprendizaje de las IIEE</span></label>
+          <label class="option"><input type="checkbox" name="p26_uso_tiempo" value="Más tiempo para mi familia o temas personales fuera del horario laboral"><span class="option-text">Más tiempo para mi familia o temas personales fuera del horario laboral</span></label>
           <label class="option"><input type="checkbox" name="p26_uso_tiempo" value="Otras"><span class="option-text">Otras</span></label>
         </div>
         <div class="err-msg">Seleccione al menos una opción.</div>
@@ -1380,6 +1390,12 @@
         <div class="err-msg">Seleccione al menos una opción.</div>
       </div>
 
+      <div class="question">
+        <label class="question-label" for="p38_comentario"><span class="num">38.</span>¿Hay algún comentario o sugerencia que desees hacernos llegar relacionada al uso de inteligencia artificial para potenciar tu trabajo?</label>
+        <div class="question-hint">Opcional. Puedes dejar este campo en blanco si no tienes nada que agregar.</div>
+        <textarea class="textarea" id="p38_comentario" name="p38_comentario_ia" rows="4" placeholder="Comparte aquí tu comentario, sugerencia, expectativa o preocupación..."></textarea>
+      </div>
+
     </div>
 
     <!-- ========== SUBMIT ========== -->
@@ -1442,7 +1458,9 @@
     "Presentación institucional",
     "Documento normativo (directiva, lineamiento)",
     "Guía metodológica",
-    "Ficha de proceso, procedimiento o de producto",
+    "Manual",
+    "Ficha de proceso o de producto",
+    "Ficha de procedimiento",
     "Diagrama de procesos (notación BPMN)"
   ];
 
@@ -1485,10 +1503,56 @@
     { id: "bcp_seguimiento_iiee", txt: "Nos cuesta hacer seguimiento al cumplimiento de las tareas que encargamos a las IIEE", dreUgelOnly: true }
   ];
 
-  // ============== BUILD CARDS P6 (volumen + tiempo) ==============
+  // ============== BUILD CHECKBOXES FILTRO TIPOS DE DOCUMENTO ==============
+  function buildFiltroTiposDoc() {
+    const el = document.getElementById('p5TiposDoc');
+    if (!el) return;
+    let html = '';
+    TIPOS_DOC.forEach((tipo) => {
+      html += '<label class="option"><input type="checkbox" name="p5_tipos_doc" value="' + tipo + '"><span class="option-text">' + tipo + '</span></label>';
+    });
+    html += '<label class="option"><input type="checkbox" name="p5_tipos_doc" value="No elaboro ni reviso ninguno de estos documentos"><span class="option-text">No elaboro ni reviso ninguno de estos documentos</span></label>';
+    el.innerHTML = html;
+    // Cuando cambian los marcados, re-renderizar la matriz y mostrar/ocultar la pregunta de la matriz
+    el.querySelectorAll('input[type="checkbox"]').forEach(inp => {
+      inp.addEventListener('change', () => {
+        // Si marca "no elaboro ninguno", desmarcar todos los otros y bloquearlos
+        const none = el.querySelector('input[value="No elaboro ni reviso ninguno de estos documentos"]');
+        if (inp === none && inp.checked) {
+          el.querySelectorAll('input[type="checkbox"]').forEach(other => {
+            if (other !== none) { other.checked = false; other.disabled = true; }
+          });
+        } else if (inp === none && !inp.checked) {
+          el.querySelectorAll('input[type="checkbox"]').forEach(other => { other.disabled = false; });
+        } else if (none && none.checked && inp !== none) {
+          inp.checked = false;
+        }
+        buildMatrixP6();
+      });
+    });
+  }
+
+  // ============== BUILD CARDS P6 (volumen + tiempo) — SOLO TIPOS MARCADOS EN P5 ==============
   function buildMatrixP6() {
+    const matrixWrap = document.getElementById('p6Matrix');
+    const matrixQ = document.getElementById('qMatrixDoc');
+    if (!matrixWrap || !matrixQ) return;
+    // Tomar los marcados (excluir "No elaboro ninguno")
+    const marcados = [];
+    document.querySelectorAll('#p5TiposDoc input[type="checkbox"]:checked').forEach(c => {
+      if (c.value !== 'No elaboro ni reviso ninguno de estos documentos') marcados.push(c.value);
+    });
+    if (marcados.length === 0) {
+      matrixWrap.innerHTML = '<div class="question-hint" style="padding:14px; background:#F5F6FA; border-radius:10px; text-align:center;">Marque al menos un tipo de documento arriba para detallar cantidad y tiempo.</div>';
+      matrixQ.style.display = 'none';
+      if (typeof renumerarVisibles === 'function') renumerarVisibles();
+      return;
+    }
+    matrixQ.style.display = '';
     let html = '<div class="doc-cards">';
-    TIPOS_DOC.forEach((tipo, i) => {
+    marcados.forEach((tipo) => {
+      const i = TIPOS_DOC.indexOf(tipo);
+      if (i === -1) return;
       html += '<div class="doc-card">';
       html += '<div class="doc-card-title">' + tipo + '</div>';
       html += '<div class="doc-card-row">';
@@ -1508,7 +1572,8 @@
       html += '</div>';
     });
     html += '</div>';
-    document.getElementById('p6Matrix').innerHTML = html;
+    matrixWrap.innerHTML = html;
+    if (typeof renumerarVisibles === 'function') renumerarVisibles();
   }
 
   // ============== BUILD LIKERT MBI (4 niveles frecuencia semáforo) ==============
@@ -1784,62 +1849,38 @@
     document.querySelectorAll('.orden-list').forEach(list => bindOrdenableForList(list));
   }
 
-  // ============== UNIDADES MINEDU AGRUPADAS POR CATEGORÍA (ROF DS 001-2015-MINEDU) ==============
+  // ============== UNIDADES MINEDU AGRUPADAS POR ÓRGANO DE ALTA DIRECCIÓN (ROF DS 001-2015-MINEDU, Art. 5) ==============
+  // Cada unidad organizacional cuelga jerárquicamente de uno de los 4 órganos de alta dirección.
   const UNIDADES_MINEDU = {
-    "Alta Dirección": [
+    "Despacho Ministerial o sus dependencias": [
       "DM - DESPACHO MINISTERIAL",
-      "VMGP - DESPACHO VICEMINISTERIO DE GESTIÓN PEDAGÓGICA",
-      "VMGI - DESPACHO VICEMINISTERIO DE GESTIÓN INSTITUCIONAL",
-      "SG - SECRETARÍA GENERAL"
-    ],
-    "Órganos de Control y Defensa": [
+      "GABINETE DE ASESORES DEL DESPACHO MINISTERIAL",
+      "CNE - CONSEJO NACIONAL DE EDUCACIÓN (órgano consultivo)",
       "OCI - ÓRGANO DE CONTROL INSTITUCIONAL",
       "PP - PROCURADURÍA PÚBLICA",
-      "CNE - CONSEJO NACIONAL DE EDUCACIÓN"
-    ],
-    "Órganos de Asesoramiento": [
       "SPE - SECRETARÍA DE PLANIFICACIÓN ESTRATÉGICA",
-      "OPEP - OFICINA DE PLANIFICACIÓN ESTRATÉGICA Y PRESUPUESTO",
-      "UFD - UNIDAD DE FINANCIAMIENTO POR DESEMPEÑO",
-      "UPP - UNIDAD DE PLANIFICACIÓN Y PRESUPUESTO",
-      "UPI - UNIDAD DE PROGRAMACIÓN E INVERSIONES",
-      "UNOME - UNIDAD DE ORGANIZACIÓN Y MÉTODOS",
-      "OSEE - OFICINA DE SEGUIMIENTO Y EVALUACIÓN ESTRATÉGICA",
-      "UE - UNIDAD DE ESTADÍSTICA",
-      "USE - UNIDAD DE SEGUIMIENTO Y EVALUACIÓN",
-      "UMC - OFICINA DE MEDICIÓN DE LA CALIDAD DE LOS APRENDIZAJES",
-      "OTIC - OFICINA DE TECNOLOGÍAS DE LA INFORMACIÓN Y COMUNICACIÓN",
-      "UCSI - UNIDAD DE CALIDAD Y SEGURIDAD DE LA INFORMACIÓN",
-      "USI - UNIDAD DE SISTEMAS DE INFORMACIÓN",
-      "UIT - UNIDAD DE INFRAESTRUCTURA TECNOLÓGICA",
-      "USAU - UNIDAD DE SERVICIO DE ATENCIÓN AL USUARIO",
+      "OPEP - OFICINA DE PLANIFICACIÓN ESTRATÉGICA Y PRESUPUESTO (SPE)",
+      "UFD - UNIDAD DE FINANCIAMIENTO POR DESEMPEÑO (OPEP)",
+      "UPP - UNIDAD DE PLANIFICACIÓN Y PRESUPUESTO (OPEP)",
+      "UPI - UNIDAD DE PROGRAMACIÓN E INVERSIONES (OPEP)",
+      "UNOME - UNIDAD DE ORGANIZACIÓN Y MÉTODOS (OPEP)",
+      "OSEE - OFICINA DE SEGUIMIENTO Y EVALUACIÓN ESTRATÉGICA (SPE)",
+      "UE - UNIDAD DE ESTADÍSTICA (OSEE)",
+      "USE - UNIDAD DE SEGUIMIENTO Y EVALUACIÓN (OSEE)",
+      "UMC - OFICINA DE MEDICIÓN DE LA CALIDAD DE LOS APRENDIZAJES (SPE)",
+      "OTIC - OFICINA DE TECNOLOGÍAS DE LA INFORMACIÓN Y COMUNICACIÓN (SPE)",
+      "UCSI - UNIDAD DE CALIDAD Y SEGURIDAD DE LA INFORMACIÓN (OTIC)",
+      "USI - UNIDAD DE SISTEMAS DE INFORMACIÓN (OTIC)",
+      "UIT - UNIDAD DE INFRAESTRUCTURA TECNOLÓGICA (OTIC)",
+      "USAU - UNIDAD DE SERVICIO DE ATENCIÓN AL USUARIO (OTIC)",
       "SENAJU - SECRETARÍA NACIONAL DE LA JUVENTUD",
       "DIPROGE - DIRECCIÓN DE PROMOCIÓN, ORGANIZACIÓN Y GESTIÓN (SENAJU)",
       "DINDES - DIRECCIÓN DE INVESTIGACIÓN Y DESARROLLO (SENAJU)",
       "DAIM - DIRECCIÓN DE ASISTENCIA INTEGRAL Y MONITOREO (SENAJU)",
-      "OGAJ - OFICINA GENERAL DE ASESORÍA JURÍDICA",
-      "OGCI - OFICINA GENERAL DE COOPERACIÓN Y ASUNTOS INTERNACIONALES",
-      "ODENAGED - OFICINA DE DEFENSA NACIONAL Y DE GESTIÓN DEL RIESGO DE DESASTRES"
+      "FONDEP - FONDO NACIONAL DE DESARROLLO DE LA EDUCACIÓN PERUANA (organismo adscrito)"
     ],
-    "Órganos de Apoyo": [
-      "OGA - OFICINA GENERAL DE ADMINISTRACIÓN",
-      "OL - OFICINA DE LOGÍSTICA",
-      "OCCP - OFICINA DE CONTABILIDAD Y CONTROL PREVIO",
-      "OT - OFICINA DE TESORERÍA",
-      "OEC - OFICINA DE EJECUCIÓN COACTIVA",
-      "OGRH - OFICINA GENERAL DE RECURSOS HUMANOS",
-      "OGEPER - OFICINA DE GESTIÓN DE PERSONAL",
-      "OGDC - OFICINA DE GESTIÓN DEL DESARROLLO Y LA CAPACITACIÓN",
-      "OBIR - OFICINA DE BIENESTAR SOCIAL Y RELACIONES LABORALES",
-      "OGC - OFICINA GENERAL DE COMUNICACIONES",
-      "OCOM - OFICINA DE COMUNICACIONES",
-      "ORI - OFICINA DE RELACIONES INTERINSTITUCIONALES",
-      "OPRE - OFICINA DE PRENSA",
-      "OTEPA - OFICINA GENERAL DE TRANSPARENCIA, ÉTICA PÚBLICA Y ANTICORRUPCIÓN",
-      "OACIGED - OFICINA DE ATENCIÓN AL CIUDADANO Y GESTIÓN DOCUMENTAL",
-      "ODI - OFICINA DE DIÁLOGO"
-    ],
-    "Órganos de Línea — Gestión Pedagógica": [
+    "Despacho Viceministerial de Gestión Pedagógica o sus dependencias": [
+      "VMGP - DESPACHO VICEMINISTERIAL DE GESTIÓN PEDAGÓGICA",
       "DIGEBR - DIRECCIÓN GENERAL DE EDUCACIÓN BÁSICA REGULAR",
       "DEI - DIRECCIÓN DE EDUCACIÓN INICIAL (DIGEBR)",
       "DEP - DIRECCIÓN DE EDUCACIÓN PRIMARIA (DIGEBR)",
@@ -1868,7 +1909,8 @@
       "DIGEST - DIRECCIÓN DE GESTIÓN DE INSTITUCIONES DE EDUCACIÓN TÉCNICO-PRODUCTIVA (DIGESUTPA)",
       "CASLIT - CASA DE LA LITERATURA"
     ],
-    "Órganos de Línea — Gestión Institucional": [
+    "Despacho Viceministerial de Gestión Institucional o sus dependencias": [
+      "VMGI - DESPACHO VICEMINISTERIAL DE GESTIÓN INSTITUCIONAL",
       "DIGEGED - DIRECCIÓN GENERAL DE GESTIÓN DESCENTRALIZADA",
       "DIRI - DIRECCIÓN DE RELACIONES INTERGUBERNAMENTALES (DIGEGED)",
       "DAGED - DIRECCIÓN DE APOYO A LA GESTIÓN EDUCATIVA DESCENTRALIZADA (DIGEGED)",
@@ -1882,8 +1924,27 @@
       "DISAFIL - DIRECCIÓN DE SANEAMIENTO FÍSICO-LEGAL Y REGISTRO INMOBILIARIO (DIGEIE)",
       "DIGEBEC - DIRECCIÓN GENERAL DE BECAS Y CRÉDITO EDUCATIVO"
     ],
-    "Organismos Adscritos": [
-      "FONDEP - FONDO NACIONAL DE DESARROLLO DE LA EDUCACIÓN PERUANA"
+    "Secretaría General o sus dependencias": [
+      "SG - SECRETARÍA GENERAL",
+      "OGAJ - OFICINA GENERAL DE ASESORÍA JURÍDICA",
+      "OGCI - OFICINA GENERAL DE COOPERACIÓN Y ASUNTOS INTERNACIONALES",
+      "ODENAGED - OFICINA DE DEFENSA NACIONAL Y DE GESTIÓN DEL RIESGO DE DESASTRES",
+      "OGA - OFICINA GENERAL DE ADMINISTRACIÓN",
+      "OL - OFICINA DE LOGÍSTICA (OGA)",
+      "OCCP - OFICINA DE CONTABILIDAD Y CONTROL PREVIO (OGA)",
+      "OT - OFICINA DE TESORERÍA (OGA)",
+      "OEC - OFICINA DE EJECUCIÓN COACTIVA (OGA)",
+      "OGRH - OFICINA GENERAL DE RECURSOS HUMANOS",
+      "OGEPER - OFICINA DE GESTIÓN DE PERSONAL (OGRH)",
+      "OGDC - OFICINA DE GESTIÓN DEL DESARROLLO Y LA CAPACITACIÓN (OGRH)",
+      "OBIR - OFICINA DE BIENESTAR SOCIAL Y RELACIONES LABORALES (OGRH)",
+      "OGC - OFICINA GENERAL DE COMUNICACIONES",
+      "OCOM - OFICINA DE COMUNICACIONES (OGC)",
+      "ORI - OFICINA DE RELACIONES INTERINSTITUCIONALES (OGC)",
+      "OPRE - OFICINA DE PRENSA (OGC)",
+      "OTEPA - OFICINA GENERAL DE TRANSPARENCIA, ÉTICA PÚBLICA Y ANTICORRUPCIÓN",
+      "OACIGED - OFICINA DE ATENCIÓN AL CIUDADANO Y GESTIÓN DOCUMENTAL",
+      "ODI - OFICINA DE DIÁLOGO"
     ]
   };
 
@@ -2196,15 +2257,24 @@
       if (!firstError) firstError = q;
     }
 
-    // P7 matrix: at least cantidad in every row
-    let p6Complete = true;
-    TIPOS_DOC.forEach((_, i) => {
-      if (!document.querySelector('[name="p6_cant_' + i + '"]:checked')) p6Complete = false;
+    // P6 matrix: solo validar tipos marcados en el filtro P5
+    const marcadosP5 = [];
+    document.querySelectorAll('#p5TiposDoc input[type="checkbox"]:checked').forEach(c => {
+      if (c.value !== 'No elaboro ni reviso ninguno de estos documentos') marcadosP5.push(c.value);
     });
-    if (!p6Complete) {
-      const q = document.getElementById('p6Matrix').closest('.question');
-      q.classList.add('has-error');
-      if (!firstError) firstError = q;
+    if (marcadosP5.length > 0) {
+      let p6Complete = true;
+      marcadosP5.forEach(tipo => {
+        const i = TIPOS_DOC.indexOf(tipo);
+        if (i === -1) return;
+        if (!document.querySelector('[name="p6_cant_' + i + '"]:checked')) p6Complete = false;
+        if (!document.querySelector('[name="p6_tiempo_' + i + '"]:checked')) p6Complete = false;
+      });
+      if (!p6Complete) {
+        const q = document.getElementById('p6Matrix').closest('.question');
+        q.classList.add('has-error');
+        if (!firstError) firstError = q;
+      }
     }
 
     // P30 likert: solo afirmaciones que realmente renderizamos
@@ -2347,6 +2417,7 @@
 
   // ============== INIT ==============
   document.addEventListener('DOMContentLoaded', () => {
+    buildFiltroTiposDoc();
     buildMatrixP6();
     buildLikertBcp();
     buildLikertMbi();
