@@ -739,6 +739,71 @@
     margin: 0 auto 8px;
   }
 
+  /* ========== MODAL CONFIRM (custom) ========== */
+  .modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(26, 29, 43, 0.55);
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+  .modal-overlay.visible { display: flex; }
+  .modal-card {
+    background: var(--white);
+    border-radius: var(--radius);
+    max-width: 460px;
+    width: 100%;
+    padding: 28px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.25);
+    animation: modalIn 0.18s ease-out;
+  }
+  @keyframes modalIn {
+    from { opacity: 0; transform: translateY(8px) scale(0.98); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+  }
+  .modal-title {
+    font-size: 18px;
+    font-weight: 800;
+    color: var(--text);
+    margin-bottom: 10px;
+    letter-spacing: -0.2px;
+  }
+  .modal-message {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.55;
+    margin-bottom: 22px;
+  }
+  .modal-actions {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+  }
+  .modal-btn {
+    padding: 10px 18px;
+    border-radius: var(--radius-sm);
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    border: 1.5px solid transparent;
+    transition: filter 0.15s;
+  }
+  .modal-btn:hover { filter: brightness(0.96); }
+  .modal-btn-secondary {
+    background: #EEF0F5;
+    color: var(--text-secondary);
+    border-color: var(--border);
+  }
+  .modal-btn-primary {
+    background: var(--blue);
+    color: #FFFFFF;
+  }
+
   /* loading spinner */
   .spinner {
     border: 3px solid var(--blue-soft);
@@ -1444,6 +1509,18 @@
 
 </div>
 
+<!-- MODAL CONFIRM CUSTOM -->
+<div class="modal-overlay" id="modalConfirm" role="dialog" aria-modal="true" aria-labelledby="modalConfirmTitle">
+  <div class="modal-card">
+    <div class="modal-title" id="modalConfirmTitle">¡No has modificado la distribución!</div>
+    <div class="modal-message" id="modalConfirmMessage">Indicaste que las 4 actividades ocupan exactamente el mismo porcentaje de tu tiempo (25% cada una). Si es así, mantén tu respuesta. Si no, ajusta la distribución arrastrando los puntos.</div>
+    <div class="modal-actions">
+      <button type="button" class="modal-btn modal-btn-secondary" id="modalConfirmKeep">No quiero cambiarla</button>
+      <button type="button" class="modal-btn modal-btn-primary" id="modalConfirmAdjust">Ajustar distribución</button>
+    </div>
+  </div>
+</div>
+
 <script>
   // ============== CONFIG ==============
   // URL del Apps Script de Javier (la pega él cuando publique la web app).
@@ -1693,6 +1770,33 @@
     document.getElementById('p34Matrix').innerHTML = html;
   }
 
+  // ============== MODAL CONFIRM CUSTOM (distribución 25/25/25/25) ==============
+  function showSegConfirmModal() {
+    return new Promise((resolve) => {
+      const overlay = document.getElementById('modalConfirm');
+      const keepBtn = document.getElementById('modalConfirmKeep');
+      const adjustBtn = document.getElementById('modalConfirmAdjust');
+      overlay.classList.add('visible');
+      function cleanup(value) {
+        overlay.classList.remove('visible');
+        keepBtn.removeEventListener('click', onKeep);
+        adjustBtn.removeEventListener('click', onAdjust);
+        overlay.removeEventListener('click', onOverlay);
+        document.removeEventListener('keydown', onKey);
+        resolve(value);
+      }
+      function onKeep() { cleanup(true); }
+      function onAdjust() { cleanup(false); }
+      function onOverlay(e) { if (e.target === overlay) cleanup(false); }
+      function onKey(e) { if (e.key === 'Escape') cleanup(false); }
+      keepBtn.addEventListener('click', onKeep);
+      adjustBtn.addEventListener('click', onAdjust);
+      overlay.addEventListener('click', onOverlay);
+      document.addEventListener('keydown', onKey);
+      setTimeout(() => adjustBtn.focus(), 50);
+    });
+  }
+
   // ============== SEGMENTED RANGE P6 (1 barra, 3 handles, 4 segmentos) ==============
   let segPositions = [25, 50, 75]; // posiciones de los 3 handles
   let segTouched = false;
@@ -1752,10 +1856,10 @@
     document.addEventListener('mouseup', endDrag);
     document.addEventListener('touchend', endDrag);
 
-    document.getElementById('segConfirm').addEventListener('click', () => {
+    document.getElementById('segConfirm').addEventListener('click', async () => {
       if (!segTouched) {
-        const ok = confirm('Indicaste que las 4 actividades ocupan exactamente el mismo porcentaje de tu tiempo (25% cada una). ¿Es así? Si no, recuerda arrastrar los puntos.');
-        if (!ok) return;
+        const keep = await showSegConfirmModal();
+        if (!keep) return;
       }
       segConfirmed = true;
       const btn = document.getElementById('segConfirm');
