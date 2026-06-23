@@ -912,8 +912,6 @@
         <select class="select" id="p0_nivel" name="p0_nivel" required>
           <option value="">— Seleccionar —</option>
           <option>MINEDU - Sede central</option>
-          <option>Dirección Regional de Educación (DRE)</option>
-          <option>Unidad de Gestión Educativa Local (UGEL)</option>
         </select>
         <div class="err-msg">Seleccione una opción.</div>
       </div>
@@ -932,7 +930,7 @@
         <div class="err-msg">Seleccione una opción.</div>
       </div>
 
-      <div class="question question-minedu-only">
+      <div class="question">
         <label class="question-label" for="p2_categoria"><span class="num">3.</span>¿De qué órgano de alta dirección depende su unidad organizacional?<span class="required">*</span></label>
         <div class="question-hint">Según el ROF del MINEDU (DS 001-2015-MINEDU), Art. 5. Elija el órgano de alta dirección del que depende jerárquicamente su unidad.</div>
         <select class="select" id="p2_categoria" name="p2_categoria" required>
@@ -945,38 +943,12 @@
         <div class="err-msg">Seleccione una opción.</div>
       </div>
 
-      <div class="question question-minedu-only">
+      <div class="question">
         <label class="question-label" for="p2_unidad"><span class="num">4.</span>¿Cuál unidad específicamente?<span class="required">*</span></label>
         <select class="select" id="p2_unidad" name="p2_unidad" required disabled>
           <option value="">— Primero seleccione una categoría —</option>
         </select>
         <div class="err-msg">Seleccione su unidad organizacional.</div>
-      </div>
-
-      <div class="question question-dre-only">
-        <label class="question-label" for="p2_dre"><span class="num">5.</span>¿A qué Dirección Regional de Educación (DRE) pertenece?<span class="required">*</span></label>
-        <div class="question-hint">Este diagnóstico aplica únicamente a DRE Lima Metropolitana en esta etapa.</div>
-        <select class="select" id="p2_dre" name="p2_dre">
-          <option value="">— Seleccionar —</option>
-          <option>DRE Lima Metropolitana (DRELM)</option>
-        </select>
-        <div class="err-msg">Seleccione una DRE.</div>
-      </div>
-
-      <div class="question question-ugel-only">
-        <label class="question-label" for="p2_ugel"><span class="num">6.</span>¿A qué Unidad de Gestión Educativa Local (UGEL) pertenece?<span class="required">*</span></label>
-        <div class="question-hint">Este diagnóstico aplica únicamente a las UGEL de DRE Lima Metropolitana en esta etapa.</div>
-        <select class="select" id="p2_ugel" name="p2_ugel">
-          <option value="">— Seleccionar —</option>
-          <option>UGEL 01 - San Juan de Miraflores</option>
-          <option>UGEL 02 - Rímac</option>
-          <option>UGEL 03 - Cercado de Lima</option>
-          <option>UGEL 04 - Comas</option>
-          <option>UGEL 05 - San Juan de Lurigancho</option>
-          <option>UGEL 06 - Ate</option>
-          <option>UGEL 07 - San Borja</option>
-        </select>
-        <div class="err-msg">Seleccione una UGEL.</div>
       </div>
 
       <div class="question">
@@ -1014,17 +986,6 @@
           <label class="option"><input type="radio" name="p4c_edad" value="55 a 64"><span class="option-text">55 a 64 años</span></label>
           <label class="option"><input type="radio" name="p4c_edad" value="65 o más"><span class="option-text">65 años o más</span></label>
           <label class="option"><input type="radio" name="p4c_edad" value="Prefiero no decir"><span class="option-text">Prefiero no decir</span></label>
-        </div>
-        <div class="err-msg">Seleccione una opción.</div>
-      </div>
-
-      <div class="question question-dre-ugel-only" style="display:none;">
-        <label class="question-label"><span class="num">9.</span>¿Cuántas Instituciones Educativas (IIEE) están a tu cargo o jurisdicción?<span class="required">*</span></label>
-        <div class="options">
-          <label class="option"><input type="radio" name="pdu_num_iiee" value="Menos de 10"><span class="option-text">Menos de 10</span></label>
-          <label class="option"><input type="radio" name="pdu_num_iiee" value="10 a 50"><span class="option-text">10 a 50</span></label>
-          <label class="option"><input type="radio" name="pdu_num_iiee" value="51 a 200"><span class="option-text">51 a 200</span></label>
-          <label class="option"><input type="radio" name="pdu_num_iiee" value="Más de 200"><span class="option-text">Más de 200</span></label>
         </div>
         <div class="err-msg">Seleccione una opción.</div>
       </div>
@@ -1132,99 +1093,6 @@
         <div class="err-msg">Seleccione al menos una opción.</div>
       </div>
 
-    </div>
-
-    <!-- ========== SECCIÓN C: DINÁMICA DE VISITAS A IIEE (solo DRE/UGEL) ========== -->
-    <div class="section section-dre-ugel-only" id="seccionDinamicaIIEE" style="display:none;">
-      <div class="section-title"><span class="section-letter">C</span>Dinámica de visitas a IIEE</div>
-      <div class="section-desc">Esta sección está pensada para entender cómo se distribuye tu tiempo en supervisión, consolidación y atención a las IIEE de tu jurisdicción.</div>
-
-      <div class="question">
-        <label class="question-label"><span class="num">13.</span>Sobre las visitas o supervisiones a IIEE<span class="required">*</span></label>
-        <div class="question-hint">Si haces visitas, cuéntanos cuántas y cuánto tiempo dedicas a la documentación antes y después.</div>
-
-        <div style="margin-top:10px;">
-          <div style="font-size:13px; font-weight:600; color:#5C6178; margin-bottom:8px;">¿Realizas visitas o supervisiones a IIEE?</div>
-          <div class="options">
-            <label class="option"><input type="radio" name="pdu_hace_visitas" value="Sí"><span class="option-text">Sí</span></label>
-            <label class="option"><input type="radio" name="pdu_hace_visitas" value="No"><span class="option-text">No</span></label>
-          </div>
-        </div>
-
-        <div class="question-visitas-only" style="display:none; margin-top:18px;">
-          <div style="font-size:13px; font-weight:600; color:#5C6178; margin-bottom:8px;">¿Cuántas visitas haces TÚ a la semana?</div>
-          <div class="options">
-            <label class="option"><input type="radio" name="pdu_visitas_mes" value="1 a 3"><span class="option-text">1 a 3</span></label>
-            <label class="option"><input type="radio" name="pdu_visitas_mes" value="4 a 10"><span class="option-text">4 a 10</span></label>
-            <label class="option"><input type="radio" name="pdu_visitas_mes" value="Más de 10"><span class="option-text">Más de 10</span></label>
-          </div>
-        </div>
-
-        <div class="question-visitas-only" style="display:none; margin-top:18px;">
-          <div style="font-size:13px; font-weight:600; color:#5C6178; margin-bottom:8px;">¿Cuánto tiempo dedicas a la documentación ANTES de cada visita?</div>
-          <div class="options">
-            <label class="option"><input type="radio" name="pdu_pre_visita" value="Menos de 30 min"><span class="option-text">Menos de 30 minutos</span></label>
-            <label class="option"><input type="radio" name="pdu_pre_visita" value="Entre 30 min y 2 h"><span class="option-text">Entre 30 minutos y 2 horas</span></label>
-            <label class="option"><input type="radio" name="pdu_pre_visita" value="Más de 2 h"><span class="option-text">Más de 2 horas</span></label>
-            <label class="option"><input type="radio" name="pdu_pre_visita" value="No preparo antecedentes"><span class="option-text">No preparo antecedentes</span></label>
-          </div>
-        </div>
-
-        <div class="question-visitas-only" style="display:none; margin-top:18px;">
-          <div style="font-size:13px; font-weight:600; color:#5C6178; margin-bottom:8px;">¿Cuánto tiempo te toma elaborar el informe DESPUÉS de cada visita?</div>
-          <div class="options">
-            <label class="option"><input type="radio" name="pdu_tiempo_informe" value="Menos de 1 hora"><span class="option-text">Menos de 1 hora</span></label>
-            <label class="option"><input type="radio" name="pdu_tiempo_informe" value="Entre 1 y 3 horas"><span class="option-text">Entre 1 y 3 horas</span></label>
-            <label class="option"><input type="radio" name="pdu_tiempo_informe" value="Entre 3 y 8 horas"><span class="option-text">Entre 3 y 8 horas</span></label>
-            <label class="option"><input type="radio" name="pdu_tiempo_informe" value="Más de un día"><span class="option-text">Más de un día</span></label>
-          </div>
-        </div>
-
-        <div class="err-msg">Complete las opciones que correspondan.</div>
-      </div>
-
-      <div class="question">
-        <label class="question-label"><span class="num">17.</span>¿Cuánto tiempo dedicas TÚ a consolidar respuestas que vienen de IIEE en formatos distintos (Excel, Word, PDF)?<span class="required">*</span></label>
-        <div class="options">
-          <label class="option"><input type="radio" name="pdu_consolidar" value="Menos de 2 h"><span class="option-text">Menos de 2 horas por semana</span></label>
-          <label class="option"><input type="radio" name="pdu_consolidar" value="2 a 5 h"><span class="option-text">Entre 2 y 5 horas por semana</span></label>
-          <label class="option"><input type="radio" name="pdu_consolidar" value="5 a 10 h"><span class="option-text">Entre 5 y 10 horas por semana</span></label>
-          <label class="option"><input type="radio" name="pdu_consolidar" value="Más de 10 h"><span class="option-text">Más de 10 horas por semana</span></label>
-          <label class="option"><input type="radio" name="pdu_consolidar" value="No consolido respuestas"><span class="option-text">No consolido respuestas de IIEE</span></label>
-        </div>
-        <div class="err-msg">Seleccione una opción.</div>
-      </div>
-
-      <div class="question">
-        <label class="question-label"><span class="num">18.</span>¿Tu equipo directo traduce o adapta normas o directivas del MINEDU para las IIEE?<span class="required">*</span></label>
-        <div class="options">
-          <label class="option"><input type="radio" name="pdu_equipo_traduce" value="Sí"><span class="option-text">Sí</span></label>
-          <label class="option"><input type="radio" name="pdu_equipo_traduce" value="No"><span class="option-text">No</span></label>
-        </div>
-        <div class="err-msg">Seleccione una opción.</div>
-      </div>
-
-      <div class="question question-equipo-traduce-only" style="display:none;">
-        <label class="question-label"><span class="num">19.</span>¿Cuántas normas o directivas traduce TU EQUIPO DIRECTO en promedio a la semana?<span class="required">*</span></label>
-        <div class="options">
-          <label class="option"><input type="radio" name="pdu_traduce_normas" value="1 a 3"><span class="option-text">1 a 3</span></label>
-          <label class="option"><input type="radio" name="pdu_traduce_normas" value="4 a 10"><span class="option-text">4 a 10</span></label>
-          <label class="option"><input type="radio" name="pdu_traduce_normas" value="Más de 10"><span class="option-text">Más de 10</span></label>
-        </div>
-        <div class="err-msg">Seleccione una opción.</div>
-      </div>
-
-      <div class="question">
-        <label class="question-label"><span class="num">20.</span>¿Cuánto tiempo dedicas TÚ a responder consultas frecuentes de directores y docentes?<span class="required">*</span></label>
-        <div class="options">
-          <label class="option"><input type="radio" name="pdu_consultas" value="Menos de 2 h"><span class="option-text">Menos de 2 horas por semana</span></label>
-          <label class="option"><input type="radio" name="pdu_consultas" value="2 a 5 h"><span class="option-text">Entre 2 y 5 horas por semana</span></label>
-          <label class="option"><input type="radio" name="pdu_consultas" value="5 a 10 h"><span class="option-text">Entre 5 y 10 horas por semana</span></label>
-          <label class="option"><input type="radio" name="pdu_consultas" value="Más de 10 h"><span class="option-text">Más de 10 horas por semana</span></label>
-          <label class="option"><input type="radio" name="pdu_consultas" value="No respondo consultas"><span class="option-text">No respondo consultas de IIEE</span></label>
-        </div>
-        <div class="err-msg">Seleccione una opción.</div>
-      </div>
     </div>
 
     <!-- ========== SECCIÓN D: REPROCESO Y CALIDAD ========== -->
@@ -1337,10 +1205,6 @@
           <label class="option"><input type="checkbox" name="p26_uso_tiempo" value="Coordinación con otras unidades"><span class="option-text">Coordinación y articulación con otras unidades de organización o equipos</span></label>
           <label class="option"><input type="checkbox" name="p26_uso_tiempo" value="Atención a ciudadanos o usuarios"><span class="option-text">Atención a ciudadanos o usuarios del MINEDU</span></label>
           <label class="option"><input type="checkbox" name="p26_uso_tiempo" value="Capacitación y desarrollo profesional"><span class="option-text">Capacitación y desarrollo profesional</span></label>
-          <label class="option option-dre-ugel-only" style="display:none;"><input type="checkbox" name="p26_uso_tiempo" value="Acompañamiento pedagógico a directores y docentes"><span class="option-text">Acompañamiento pedagógico a directores y docentes</span></label>
-          <label class="option option-dre-ugel-only" style="display:none;"><input type="checkbox" name="p26_uso_tiempo" value="Visitas presenciales a más IIEE (ampliar cobertura)"><span class="option-text">Visitas presenciales a más IIEE (ampliar cobertura)</span></label>
-          <label class="option option-dre-ugel-only" style="display:none;"><input type="checkbox" name="p26_uso_tiempo" value="Trabajo conjunto con UGELs e IIEE de la jurisdicción"><span class="option-text">Trabajo conjunto con UGELs e IIEE de la jurisdicción</span></label>
-          <label class="option option-dre-ugel-only" style="display:none;"><input type="checkbox" name="p26_uso_tiempo" value="Análisis de resultados de aprendizaje de las IIEE"><span class="option-text">Análisis de resultados de aprendizaje de las IIEE</span></label>
           <label class="option"><input type="checkbox" name="p26_uso_tiempo" value="Más tiempo para mi familia o temas personales fuera del horario laboral"><span class="option-text">Más tiempo para mi familia o temas personales fuera del horario laboral</span></label>
           <label class="option"><input type="checkbox" name="p26_uso_tiempo" value="Otras"><span class="option-text">Otras</span></label>
         </div>
@@ -1365,7 +1229,7 @@
       <div class="section-title"><span class="section-letter">J</span>Uso actual de inteligencia artificial</div>
 
       <div class="question">
-        <label class="question-label"><span class="num">31.</span>¿Cuál es tu nivel actual de uso de inteligencia artificial?<span class="required">*</span></label>
+        <label class="question-label"><span class="num">31.</span>¿Cuál es tu nivel actual de uso de inteligencia artificial en general (temas personales o de trabajo)?<span class="required">*</span></label>
         <div class="options">
           <label class="option"><input type="radio" name="p27_nivel_ia" value="No uso"><span class="option-text">No uso ninguna herramienta de IA</span></label>
           <label class="option"><input type="radio" name="p27_nivel_ia" value="1 - Básico"><span class="option-text">Nivel 1 - Básico: consultas y consejos puntuales</span></label>
@@ -1377,12 +1241,12 @@
       </div>
 
       <div class="question">
-        <label class="question-label"><span class="num">32.</span>¿Usas alguna herramienta de inteligencia artificial para facilitar tu trabajo?<span class="required">*</span></label>
+        <label class="question-label"><span class="num">32.</span>¿Con qué frecuencia usas herramientas de inteligencia artificial para facilitar tu trabajo?<span class="required">*</span></label>
         <div class="options">
-          <label class="option"><input type="radio" name="p28_usa_ia" value="Sí, con cuenta pagada por el MINEDU"><span class="option-text">Sí, con cuenta pagada por el MINEDU</span></label>
-          <label class="option"><input type="radio" name="p28_usa_ia" value="Sí, con cuenta pagada por mí"><span class="option-text">Sí, con cuenta pagada por mí</span></label>
-          <label class="option"><input type="radio" name="p28_usa_ia" value="Sí, con cuenta gratuita"><span class="option-text">Sí, con cuenta gratuita</span></label>
-          <label class="option"><input type="radio" name="p28_usa_ia" value="No uso ninguna"><span class="option-text">No uso ninguna</span></label>
+          <label class="option"><input type="radio" name="p28_usa_ia" value="Frecuentemente"><span class="option-text">Frecuentemente</span></label>
+          <label class="option"><input type="radio" name="p28_usa_ia" value="A veces"><span class="option-text">A veces</span></label>
+          <label class="option"><input type="radio" name="p28_usa_ia" value="Rara vez"><span class="option-text">Rara vez</span></label>
+          <label class="option"><input type="radio" name="p28_usa_ia" value="Nunca"><span class="option-text">Nunca</span></label>
         </div>
         <div class="err-msg">Seleccione una opción.</div>
       </div>
@@ -1574,9 +1438,7 @@
     { id: "bcp_manual_auto", txt: "Hay mucho trabajo manual y/o repetitivo en mi área que podría automatizarse o reformularse" },
     { id: "bcp_info_personas", txt: "Mucha información importante de mi área está en la cabeza de pocas personas" },
     { id: "bcp_datos_dispersos", txt: "Tenemos datos importantes pero dispersos en distintos formatos que nos cuesta consolidar" },
-    { id: "bcp_indicadores", txt: "Nos cuesta transformar la información disponible en indicadores para tomar decisiones" },
-    { id: "bcp_normas_iiee", txt: "La información que bajamos a las IIEE muchas veces no es revisada o se entiende de forma parcial", dreUgelOnly: true },
-    { id: "bcp_seguimiento_iiee", txt: "Nos cuesta hacer seguimiento al cumplimiento de las tareas que encargamos a las IIEE", dreUgelOnly: true }
+    { id: "bcp_indicadores", txt: "Nos cuesta transformar la información disponible en indicadores para tomar decisiones" }
   ];
 
   // ============== BUILD CHECKBOXES FILTRO TIPOS DE DOCUMENTO ==============
@@ -1676,11 +1538,8 @@
 
   // ============== BUILD LIKERT BCP (4 niveles semáforo + mini-form si score 3 o 4) ==============
   function buildLikertBcp() {
-    const nivelVal = document.getElementById('p0_nivel') ? document.getElementById('p0_nivel').value : '';
-    const isDreUgel = nivelVal === 'Dirección Regional de Educación (DRE)' || nivelVal === 'Unidad de Gestión Educativa Local (UGEL)';
-    const afirmacionesVisibles = BCP_AFIRMACIONES.filter(af => !af.dreUgelOnly || isDreUgel);
     let html = '<div class="afirmaciones">';
-    afirmacionesVisibles.forEach(af => {
+    BCP_AFIRMACIONES.forEach(af => {
       const name = 'pbcp_' + af.id;
       html += '<div class="afirmacion">';
       html += '<div class="afirmacion-text">' + af.txt + '</div>';
@@ -2087,111 +1946,6 @@
     });
   }
 
-  // ============== CONDICIONAL: bloques MINEDU vs DRE vs UGEL ==============
-  function bindCondicionalNivel() {
-    const nivelSel = document.getElementById('p0_nivel');
-    if (!nivelSel) return;
-
-    function update() {
-      const v = nivelSel.value;
-      const isMinedu = v === 'MINEDU - Sede central';
-      const isDre = v === 'Dirección Regional de Educación (DRE)';
-      const isUgel = v === 'Unidad de Gestión Educativa Local (UGEL)';
-
-      document.querySelectorAll('.question-minedu-only').forEach(q => {
-        q.style.display = isMinedu ? '' : 'none';
-        q.querySelectorAll('select, input').forEach(el => {
-          if (isMinedu) el.setAttribute('required', '');
-          else el.removeAttribute('required');
-        });
-      });
-      document.querySelectorAll('.question-dre-only').forEach(q => {
-        q.style.display = isDre ? '' : 'none';
-        q.querySelectorAll('select, input').forEach(el => {
-          if (isDre) el.setAttribute('required', '');
-          else el.removeAttribute('required');
-        });
-      });
-      document.querySelectorAll('.question-ugel-only').forEach(q => {
-        q.style.display = isUgel ? '' : 'none';
-        q.querySelectorAll('select, input').forEach(el => {
-          if (isUgel) el.setAttribute('required', '');
-          else el.removeAttribute('required');
-        });
-      });
-      // Preguntas DRE/UGEL distribuidas en distintas secciones (perfil, percepción)
-      document.querySelectorAll('.question-dre-ugel-only').forEach(q => {
-        q.style.display = (isDre || isUgel) ? '' : 'none';
-        q.querySelectorAll('select, input[type="text"], textarea').forEach(el => {
-          if (isDre || isUgel) el.setAttribute('required', '');
-          else el.removeAttribute('required');
-        });
-        q.querySelectorAll('input[type="radio"]').forEach(el => {
-          el.dataset.cond = (isDre || isUgel) ? 'on' : 'off';
-        });
-      });
-      // Sección entera DRE/UGEL (Dinámica de visitas a IIEE)
-      document.querySelectorAll('.section-dre-ugel-only').forEach(s => {
-        s.style.display = (isDre || isUgel) ? '' : 'none';
-        s.querySelectorAll('input[type="radio"], input[type="text"], select, textarea').forEach(el => {
-          if (isDre || isUgel) el.dataset.cond = 'on';
-          else el.dataset.cond = 'off';
-        });
-      });
-      // Opciones DRE/UGEL específicas dentro de checkboxes (P26 a qué destinaría tiempo)
-      document.querySelectorAll('.option-dre-ugel-only').forEach(o => {
-        o.style.display = (isDre || isUgel) ? '' : 'none';
-        const inp = o.querySelector('input');
-        if (inp && !(isDre || isUgel)) inp.checked = false;
-      });
-      // Rebuild Likert BCP para mostrar/ocultar las 3 afirmaciones DRE/UGEL
-      buildLikertBcp();
-      renumerarVisibles();
-    }
-    nivelSel.addEventListener('change', update);
-    update();
-  }
-
-  // ============== CONDICIONAL: preguntas de visitas (solo si hace visitas) ==============
-  function bindCondicionalVisitas() {
-    const radios = document.querySelectorAll('input[name="pdu_hace_visitas"]');
-    if (radios.length === 0) return;
-    function update() {
-      const checked = document.querySelector('input[name="pdu_hace_visitas"]:checked');
-      const haceVisitas = checked && checked.value === 'Sí';
-      document.querySelectorAll('.question-visitas-only').forEach(q => {
-        q.style.display = haceVisitas ? '' : 'none';
-        q.querySelectorAll('input[type="radio"]').forEach(el => {
-          el.dataset.cond = haceVisitas ? 'on' : 'off';
-          if (!haceVisitas) el.checked = false;
-        });
-      });
-      renumerarVisibles();
-    }
-    radios.forEach(r => r.addEventListener('change', update));
-    update();
-  }
-
-  // ============== CONDICIONAL: # normas traducidas (solo si equipo traduce) ==============
-  function bindCondicionalEquipoTraduce() {
-    const radios = document.querySelectorAll('input[name="pdu_equipo_traduce"]');
-    if (radios.length === 0) return;
-    function update() {
-      const checked = document.querySelector('input[name="pdu_equipo_traduce"]:checked');
-      const traduce = checked && checked.value === 'Sí';
-      document.querySelectorAll('.question-equipo-traduce-only').forEach(q => {
-        q.style.display = traduce ? '' : 'none';
-        q.querySelectorAll('input[type="radio"]').forEach(el => {
-          el.dataset.cond = traduce ? 'on' : 'off';
-          if (!traduce) el.checked = false;
-        });
-      });
-      renumerarVisibles();
-    }
-    radios.forEach(r => r.addEventListener('change', update));
-    update();
-  }
-
   // ============== CONDICIONAL: P27 (tareas IA) solo si P26 = sí ==============
   function bindCondicionalIA() {
     const radios = document.querySelectorAll('input[name="p28_usa_ia"]');
@@ -2199,7 +1953,7 @@
     if (!tareasQ) return;
     function update() {
       const checked = document.querySelector('input[name="p28_usa_ia"]:checked');
-      if (!checked || checked.value === 'No uso ninguna') {
+      if (!checked || checked.value === 'Nunca') {
         tareasQ.style.display = 'none';
       } else {
         tareasQ.style.display = '';
@@ -2406,12 +2160,8 @@
       if (!firstError) firstError = q;
     }
 
-    // BCP likert: solo afirmaciones visibles según ruta
-    const nivelValBcp = document.getElementById('p0_nivel') ? document.getElementById('p0_nivel').value : '';
-    const isDreUgelBcp = nivelValBcp === 'Dirección Regional de Educación (DRE)' || nivelValBcp === 'Unidad de Gestión Educativa Local (UGEL)';
     let bcpComplete = true;
     BCP_AFIRMACIONES.forEach(af => {
-      if (af.dreUgelOnly && !isDreUgelBcp) return;
       if (!document.querySelector('[name="pbcp_' + af.id + '"]:checked')) bcpComplete = false;
     });
     if (!bcpComplete) {
@@ -2529,9 +2279,6 @@
     bindEscalas();
     bindOrdenable();
     bindCondicionalIA();
-    bindCondicionalVisitas();
-    bindCondicionalEquipoTraduce();
-    bindCondicionalNivel();
     bindCascadaMinedu();
     bindOtras();
     bindMaxCheckboxes();
